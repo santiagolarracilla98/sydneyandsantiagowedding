@@ -55,6 +55,97 @@ export const translations = {
       message: 'With love,',
       names: 'Sydney & Santiago',
     },
+    planYourTrip: {
+      title: 'Plan Your Trip',
+      subtitle: 'Getting to Oaxaca',
+      intro: "Oaxaca City is served by Xoxocotlán International Airport (OAX). Here's how to get here from different parts of the world:",
+      flights: {
+        title: 'Flights',
+        regions: [
+          {
+            name: 'From USA & Canada',
+            description: 'Most flights connect through Mexico City (MEX) or Guadalajara (GDL). Direct flights available from some US cities.',
+            searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca',
+          },
+          {
+            name: 'From Europe',
+            description: 'Fly to Mexico City (MEX), then connect to Oaxaca. Flight time from MEX to OAX is about 1 hour.',
+            searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca%20from%20Europe',
+          },
+          {
+            name: 'From Latin America',
+            description: 'Direct or one-stop flights via Mexico City. Many carriers serve this route.',
+            searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca',
+          },
+          {
+            name: 'From Mexico',
+            description: 'Direct flights from Mexico City, Guadalajara, Monterrey, and other major cities.',
+            searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca%20from%20Mexico%20City',
+          },
+        ],
+        cta: 'Search Flights',
+      },
+      accommodations: {
+        title: 'Where to Stay',
+        description: 'We recommend staying in the Centro Histórico for easy walking access to the venue and city attractions.',
+        options: [
+          {
+            name: 'Boutique Hotels',
+            description: 'Charming colonial-style hotels with courtyards. Try Hotel Quinta Real, Casa Oaxaca, or Hotel Los Amantes.',
+          },
+          {
+            name: 'Airbnb & Rentals',
+            description: 'Many beautiful apartments and casas available in the historic center. Great for groups or longer stays.',
+          },
+          {
+            name: 'Budget-Friendly',
+            description: 'Hostels and guesthouses offer comfortable stays. Casa Angel and Hostal de la Noria are popular choices.',
+          },
+        ],
+      },
+      tips: {
+        title: 'Local Tips',
+        items: [
+          'The best time to book flights is 2-3 months in advance.',
+          'November weather is pleasant—warm days (24°C/75°F) and cool evenings.',
+          'Uber and taxis are readily available. The airport is 15 minutes from Centro.',
+          'Mexican pesos are preferred, but USD is accepted at some tourist spots.',
+          'Bring comfortable walking shoes—the city is best explored on foot!',
+        ],
+      },
+    },
+    recommendations: {
+      title: 'Recommendations',
+      subtitle: 'Our Favorite Spots',
+      intro: "Oaxaca is a feast for all senses. Here are some places we love and think you'll enjoy:",
+      categories: [
+        {
+          name: 'Food & Drink',
+          items: [
+            { name: 'Mercado 20 de Noviembre', description: 'Iconic market with incredible tlayudas and grilled meats.' },
+            { name: 'Los Danzantes', description: 'Upscale Oaxacan cuisine with an extensive mezcal menu.' },
+            { name: 'Mezcaloteca', description: 'Intimate mezcal tasting experience with expert guides.' },
+            { name: 'Café Brújula', description: 'Best coffee in town with multiple locations.' },
+          ],
+        },
+        {
+          name: 'Culture & History',
+          items: [
+            { name: 'Monte Albán', description: 'Ancient Zapotec ruins with breathtaking valley views.' },
+            { name: 'Museo de las Culturas', description: 'Stunning museum inside the Santo Domingo church complex.' },
+            { name: 'Hierve el Agua', description: 'Petrified waterfalls and natural infinity pools (day trip).' },
+          ],
+        },
+        {
+          name: 'Shopping & Artisans',
+          items: [
+            { name: 'Mercado de Artesanías', description: 'Traditional crafts, textiles, and black pottery.' },
+            { name: 'Teotitlán del Valle', description: 'Village famous for hand-woven rugs (30 min drive).' },
+            { name: 'MARO', description: 'Curated cooperative featuring local artists and designers.' },
+          ],
+        },
+      ],
+    },
   },
   es: {
     nav: {
@@ -109,6 +200,97 @@ export const translations = {
     footer: {
       message: 'Con amor,',
       names: 'Sydney & Santiago',
+    },
+    planYourTrip: {
+      title: 'Planifica tu Viaje',
+      subtitle: 'Cómo llegar a Oaxaca',
+      intro: 'La ciudad de Oaxaca cuenta con el Aeropuerto Internacional de Xoxocotlán (OAX). Así puedes llegar desde diferentes partes del mundo:',
+      flights: {
+        title: 'Vuelos',
+        regions: [
+          {
+            name: 'Desde EE.UU. y Canadá',
+            description: 'La mayoría de los vuelos conectan a través de Ciudad de México (MEX) o Guadalajara (GDL). Vuelos directos disponibles desde algunas ciudades de EE.UU.',
+            searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca',
+          },
+          {
+            name: 'Desde Europa',
+            description: 'Vuela a Ciudad de México (MEX) y conecta a Oaxaca. El vuelo de MEX a OAX dura aproximadamente 1 hora.',
+            searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca%20desde%20Europa',
+          },
+          {
+            name: 'Desde Latinoamérica',
+            description: 'Vuelos directos o con una escala vía Ciudad de México. Varias aerolíneas cubren esta ruta.',
+            searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca',
+          },
+          {
+            name: 'Desde México',
+            description: 'Vuelos directos desde Ciudad de México, Guadalajara, Monterrey y otras ciudades importantes.',
+            searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca%20desde%20Ciudad%20de%20Mexico',
+          },
+        ],
+        cta: 'Buscar Vuelos',
+      },
+      accommodations: {
+        title: 'Dónde Hospedarse',
+        description: 'Recomendamos hospedarse en el Centro Histórico para tener fácil acceso a pie al recinto y las atracciones de la ciudad.',
+        options: [
+          {
+            name: 'Hoteles Boutique',
+            description: 'Encantadores hoteles de estilo colonial con patios. Prueba Hotel Quinta Real, Casa Oaxaca o Hotel Los Amantes.',
+          },
+          {
+            name: 'Airbnb y Alquileres',
+            description: 'Muchos hermosos departamentos y casas disponibles en el centro histórico. Ideales para grupos o estancias largas.',
+          },
+          {
+            name: 'Opciones Económicas',
+            description: 'Hostales y casas de huéspedes ofrecen estadías cómodas. Casa Angel y Hostal de la Noria son opciones populares.',
+          },
+        ],
+      },
+      tips: {
+        title: 'Tips Locales',
+        items: [
+          'El mejor momento para reservar vuelos es 2-3 meses antes.',
+          'El clima en noviembre es agradable—días cálidos (24°C) y noches frescas.',
+          'Uber y taxis están disponibles. El aeropuerto está a 15 minutos del Centro.',
+          'Se prefieren pesos mexicanos, pero algunos lugares turísticos aceptan dólares.',
+          '¡Trae zapatos cómodos para caminar—la ciudad se explora mejor a pie!',
+        ],
+      },
+    },
+    recommendations: {
+      title: 'Recomendaciones',
+      subtitle: 'Nuestros Lugares Favoritos',
+      intro: 'Oaxaca es un festín para todos los sentidos. Aquí hay algunos lugares que amamos y creemos que disfrutarán:',
+      categories: [
+        {
+          name: 'Comida y Bebida',
+          items: [
+            { name: 'Mercado 20 de Noviembre', description: 'Mercado icónico con increíbles tlayudas y carnes asadas.' },
+            { name: 'Los Danzantes', description: 'Cocina oaxaqueña de alta gama con extenso menú de mezcal.' },
+            { name: 'Mezcaloteca', description: 'Experiencia íntima de degustación de mezcal con guías expertos.' },
+            { name: 'Café Brújula', description: 'El mejor café de la ciudad con varias ubicaciones.' },
+          ],
+        },
+        {
+          name: 'Cultura e Historia',
+          items: [
+            { name: 'Monte Albán', description: 'Ruinas zapotecas antiguas con vistas impresionantes del valle.' },
+            { name: 'Museo de las Culturas', description: 'Impresionante museo dentro del complejo de Santo Domingo.' },
+            { name: 'Hierve el Agua', description: 'Cascadas petrificadas y albercas naturales infinitas (excursión de día).' },
+          ],
+        },
+        {
+          name: 'Compras y Artesanías',
+          items: [
+            { name: 'Mercado de Artesanías', description: 'Artesanías tradicionales, textiles y barro negro.' },
+            { name: 'Teotitlán del Valle', description: 'Pueblo famoso por tapetes tejidos a mano (30 min en auto).' },
+            { name: 'MARO', description: 'Cooperativa curada con artistas y diseñadores locales.' },
+          ],
+        },
+      ],
     },
   },
 } as const;
