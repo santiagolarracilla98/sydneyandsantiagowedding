@@ -3,6 +3,8 @@ import { LanguageModal } from '@/components/LanguageModal';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
+import { PlanYourTrip } from '@/components/PlanYourTrip';
+import { Recommendations } from '@/components/Recommendations';
 import { Footer } from '@/components/Footer';
 
 const Index = () => {
@@ -53,6 +55,12 @@ const Index = () => {
                   <p key={index}>{paragraph}</p>
                 ))}
               </Section>
+
+              {/* Plan Your Trip Section */}
+              <PlanYourTrip t={t} />
+
+              {/* Recommendations Section */}
+              <Recommendations t={t} />
             </main>
 
             <Footer language={language} onLanguageChange={setLanguage} t={t} />
