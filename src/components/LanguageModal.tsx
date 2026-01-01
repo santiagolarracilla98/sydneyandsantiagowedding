@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Language } from '@/lib/translations';
+import heroImage from '@/assets/hero-illustration.png';
 
 interface LanguageModalProps {
   onSelect: (lang: Language) => void;
@@ -56,8 +57,15 @@ export function LanguageModal({ onSelect }: LanguageModalProps) {
       {/* Modal */}
       <div 
         ref={modalRef}
-        className="relative z-10 bg-card rounded-lg shadow-modal p-10 md:p-14 max-w-md w-[90%] text-center animate-modal-in"
+        className="relative z-10 bg-card rounded-lg shadow-modal p-8 md:p-12 max-w-md w-[90%] text-center animate-modal-in"
       >
+        {/* Hero illustration */}
+        <img
+          src={heroImage}
+          alt="Illustrated scene of a couple in the Jardín Etnobotánico surrounded by cacti"
+          className="w-full max-w-xs mx-auto mb-6 grayscale"
+        />
+
         <h2 
           id="language-modal-title" 
           className="font-serif text-2xl md:text-3xl mb-2 text-foreground"
