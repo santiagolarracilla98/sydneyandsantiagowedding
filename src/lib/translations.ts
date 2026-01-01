@@ -7,6 +7,8 @@ export const translations = {
       intro: 'Intro',
       oaxaca: 'Oaxaca',
       venue: 'Venue',
+      planYourTrip: 'Plan Your Trip',
+      recommendations: 'Recommendations',
     },
     hero: {
       title: "Sydney & Santiago's Wedding",
@@ -60,6 +62,8 @@ export const translations = {
       intro: 'Intro',
       oaxaca: 'Oaxaca',
       venue: 'Recinto',
+      planYourTrip: 'Planifica tu Viaje',
+      recommendations: 'Recomendaciones',
     },
     hero: {
       title: 'La Boda de Sydney & Santiago',
