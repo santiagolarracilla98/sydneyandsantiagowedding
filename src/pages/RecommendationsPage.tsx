@@ -4,7 +4,6 @@ import { Header } from '@/components/Header';
 import { Recommendations } from '@/components/Recommendations';
 import { Footer } from '@/components/Footer';
 import { FloralBorder } from '@/components/FloralBorder';
-import { FallingFlowers } from '@/components/FallingFlowers';
 
 const RecommendationsPage = () => {
   const { language, setLanguage, t, isLoading, needsSelection } = useLanguage();
@@ -25,7 +24,6 @@ const RecommendationsPage = () => {
         {language && (
           <>
             <FloralBorder position="top" />
-            <FallingFlowers />
             <Header language={language} onLanguageChange={setLanguage} t={t} />
             
             <main className="pt-12">
