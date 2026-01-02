@@ -49,7 +49,7 @@ export default function AgendaPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header language={language} onLanguageChange={setLanguage} t={t} />
-      <FloralBorder position="top" />
+      <FloralBorder position="top" variant="greenery" />
 
       <main className="flex-1">
         {/* Hero Section */}

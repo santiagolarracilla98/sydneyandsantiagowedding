@@ -1,13 +1,28 @@
 import footerCactus from '@/assets/footer-cactus.png';
 import headerFloral from '@/assets/header-floral.png';
+import headerGreenery from '@/assets/header-greenery.png';
 
 interface FloralBorderProps {
   position: 'top' | 'bottom';
+  variant?: 'default' | 'greenery';
 }
 
-export function FloralBorder({ position }: FloralBorderProps) {
+export function FloralBorder({ position, variant = 'default' }: FloralBorderProps) {
   if (position === 'top') {
-    // Top border - larger centered image
+    if (variant === 'greenery') {
+      // Greenery header for inner pages
+      return (
+        <div className="w-full pointer-events-none bg-background">
+          <img 
+            src={headerGreenery} 
+            alt="" 
+            className="w-full h-auto max-h-32 md:max-h-40 object-cover object-bottom"
+          />
+        </div>
+      );
+    }
+    
+    // Default floral header for home page
     return (
       <div className="w-full pt-6 flex items-center justify-center pointer-events-none bg-background">
         <img 
