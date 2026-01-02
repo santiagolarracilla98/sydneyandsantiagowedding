@@ -1,4 +1,5 @@
-import { Star } from 'lucide-react';
+import { Star, Lightbulb } from 'lucide-react';
+import { RestaurantSection } from './RestaurantSection';
 
 interface RecommendationItem {
   readonly name: string;
@@ -18,11 +19,18 @@ interface RecommendationsProps {
       readonly intro: string;
       readonly categories: readonly Category[];
     };
+    planYourTrip: {
+      readonly tips: {
+        readonly title: string;
+        readonly items: readonly string[];
+      };
+    };
   };
+  language: 'en' | 'es';
 }
 
-export function Recommendations({ t }: RecommendationsProps) {
-  const { recommendations } = t;
+export function Recommendations({ t, language }: RecommendationsProps) {
+  const { recommendations, planYourTrip } = t;
 
   return (
     <section id="recommendations" className="py-16 md:py-24">
@@ -70,6 +78,31 @@ export function Recommendations({ t }: RecommendationsProps) {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Restaurants */}
+          <RestaurantSection language={language} />
+
+          {/* Local Tips */}
+          <div className="mt-12">
+            <div className="flex items-center gap-3 mb-6">
+              <Lightbulb className="w-5 h-5 text-foreground" />
+              <h3 className="font-serif text-xl text-foreground">
+                {planYourTrip.tips.title}
+              </h3>
+            </div>
+
+            <ul className="space-y-3">
+              {planYourTrip.tips.items.map((tip, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-muted-foreground font-sans leading-relaxed"
+                >
+                  <span className="text-wedding-coral mt-1">•</span>
+                  {tip}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
