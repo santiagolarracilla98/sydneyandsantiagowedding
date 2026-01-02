@@ -69,7 +69,7 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
       </div>
 
       {/* Expand indicator */}
-      <div className="flex justify-center py-2 border-t border-border bg-muted/30">
+      <div className="flex justify-center py-2 border-t border-border bg-background">
         <ChevronDown
           className={cn(
             'w-4 h-4 text-muted-foreground transition-transform duration-300',
