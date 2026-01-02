@@ -13,6 +13,7 @@ interface HeaderProps {
       oaxaca: string;
       venue: string;
       planYourTrip: string;
+      agenda: string;
       recommendations: string;
     };
   };
@@ -95,6 +96,17 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             }`}
           >
             {t.nav.planYourTrip}
+          </Link>
+
+          <Link
+            to="/agenda"
+            className={`text-sm font-sans transition-colors duration-200 ${
+              location.pathname === '/agenda' 
+                ? 'text-foreground font-medium' 
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {t.nav.agenda}
           </Link>
           
           <Link
