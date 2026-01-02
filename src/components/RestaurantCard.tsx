@@ -23,18 +23,18 @@ export function RestaurantCard({ restaurant }: RestaurantCardProps) {
       onClick={() => setIsOpen(!isOpen)}
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-32 overflow-hidden">
         <img
           src={restaurant.image}
           alt={restaurant.name}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-        <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
-          <h4 className="font-serif text-lg text-white drop-shadow-md">
+        <div className="absolute bottom-2 left-2 right-2 flex items-end justify-between">
+          <h4 className="font-serif text-sm text-white drop-shadow-md leading-tight">
             {restaurant.name}
           </h4>
-          <span className="text-white/90 font-sans text-sm font-medium bg-black/40 px-2 py-1 rounded">
+          <span className="text-white/90 font-sans text-xs font-medium bg-black/40 px-1.5 py-0.5 rounded">
             {restaurant.price}
           </span>
         </div>
