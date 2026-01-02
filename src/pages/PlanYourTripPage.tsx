@@ -24,7 +24,7 @@ const PlanYourTripPage = () => {
         {language && (
           <>
             <Header language={language} onLanguageChange={setLanguage} t={t} />
-            <FloralBorder position="top" />
+            <FloralBorder position="top" variant="greenery" />
             
             <main className="pt-12">
               <PlanYourTrip t={t} />
