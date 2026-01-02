@@ -33,7 +33,7 @@ export function Section({ id, title, subtitle, children }: SectionProps) {
     <section
       id={id}
       ref={sectionRef}
-      className="py-16 md:py-24"
+      className="py-8 md:py-12"
     >
       <div className="container">
         <div 
@@ -42,7 +42,7 @@ export function Section({ id, title, subtitle, children }: SectionProps) {
           }`}
         >
           {/* Decorative divider */}
-          <div className="w-12 h-px bg-border mx-auto mb-10" />
+          <div className="w-12 h-px bg-border mx-auto mb-6" />
           
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-foreground mb-2">
             {title}

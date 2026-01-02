@@ -17,7 +17,7 @@ export function Hero({ t }: HeroProps) {
             {t.hero.title}
           </h1>
           
-          <p className="font-sans text-sm md:text-base tracking-widest text-muted-foreground uppercase">
+          <p className="font-serif text-xs md:text-sm tracking-widest text-muted-foreground uppercase">
             {t.hero.date} <span className="mx-2">•</span> {t.hero.location}
           </p>
         </div>
