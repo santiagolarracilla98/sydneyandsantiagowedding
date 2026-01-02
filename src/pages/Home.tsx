@@ -5,7 +5,6 @@ import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { Footer } from '@/components/Footer';
 import { FloralBorder } from '@/components/FloralBorder';
-import { FallingFlowers } from '@/components/FallingFlowers';
 
 const Home = () => {
   const { language, setLanguage, t, isLoading, needsSelection } = useLanguage();
@@ -26,7 +25,6 @@ const Home = () => {
         {language && (
           <>
             <FloralBorder position="top" />
-            <FallingFlowers />
             <Header language={language} onLanguageChange={setLanguage} t={t} />
             
             <main>
