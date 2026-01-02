@@ -19,7 +19,7 @@ interface RestaurantSectionProps {
 
 const restaurantData = {
   en: {
-    title: 'Restaurants',
+    title: "Restaurants (Sydney's Recommendations)",
     categories: [
       {
         name: 'High-End / Special Occasion',
@@ -108,7 +108,7 @@ const restaurantData = {
     ],
   },
   es: {
-    title: 'Restaurantes',
+    title: 'Restaurantes (Recomendaciones de Sydney)',
     categories: [
       {
         name: 'Alta Cocina / Ocasiones Especiales',
