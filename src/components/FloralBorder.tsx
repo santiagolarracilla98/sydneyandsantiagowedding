@@ -7,13 +7,13 @@ interface FloralBorderProps {
 
 export function FloralBorder({ position }: FloralBorderProps) {
   if (position === 'top') {
-    // Top border - scrolls with page, not fixed
+    // Top border - long rectangle with centered smaller image
     return (
-      <div className="w-full pointer-events-none">
+      <div className="w-full h-24 sm:h-32 flex items-center justify-center pointer-events-none bg-background">
         <img 
           src={headerFloral} 
           alt="" 
-          className="w-full h-auto object-cover"
+          className="h-full max-w-xs sm:max-w-sm md:max-w-md object-contain"
         />
       </div>
     );
