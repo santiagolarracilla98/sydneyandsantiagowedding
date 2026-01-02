@@ -35,7 +35,7 @@ export function PlanYourTrip({ t }: PlanYourTripProps) {
   const { planYourTrip } = t;
 
   return (
-    <section id="plan-your-trip" className="py-16 md:py-24 bg-muted/30">
+    <section id="plan-your-trip" className="py-16 md:py-24 bg-background">
       <div className="container">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
