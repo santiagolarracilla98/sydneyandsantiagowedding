@@ -9,11 +9,11 @@ export function FloralBorder({ position }: FloralBorderProps) {
   if (position === 'top') {
     // Top border - long rectangle with centered smaller image
     return (
-      <div className="w-full h-24 sm:h-32 flex items-center justify-center pointer-events-none bg-background">
+      <div className="w-full h-32 sm:h-40 flex items-center justify-center pointer-events-none bg-background">
         <img 
           src={headerFloral} 
           alt="" 
-          className="h-full max-w-xs sm:max-w-sm md:max-w-md object-contain"
+          className="h-full max-w-sm sm:max-w-md md:max-w-lg object-contain"
         />
       </div>
     );
