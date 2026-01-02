@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Language } from '@/lib/translations';
 import { ChevronDown } from 'lucide-react';
 
@@ -19,6 +20,8 @@ interface HeaderProps {
 
 export function Header({ language, onLanguageChange, t }: HeaderProps) {
   const [homeOpen, setHomeOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   const homeSubItems = [
     { href: '#intro', label: t.nav.intro },
@@ -27,7 +30,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border/50">
+    <header className="sticky top-16 z-40 bg-background/90 backdrop-blur-sm border-b border-border/50">
       <div className="container flex items-center justify-between py-4">
         <nav className="flex items-center gap-6 md:gap-8">
           {/* Home dropdown */}
@@ -36,44 +39,74 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             onMouseEnter={() => setHomeOpen(true)}
             onMouseLeave={() => setHomeOpen(false)}
           >
-            <a
-              href="#home"
-              className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
-            >
-              {t.nav.home}
-              <ChevronDown className="w-3 h-3" />
-            </a>
+            {isHome ? (
+              <a
+                href="#home"
+                className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+              >
+                {t.nav.home}
+                <ChevronDown className="w-3 h-3" />
+              </a>
+            ) : (
+              <Link
+                to="/"
+                className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+              >
+                {t.nav.home}
+                <ChevronDown className="w-3 h-3" />
+              </Link>
+            )}
             
             {homeOpen && (
               <div className="absolute top-full left-0 pt-2">
                 <div className="bg-card border border-border rounded-md shadow-md py-2 min-w-[140px]">
-                  {homeSubItems.map((item) => (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
-                    >
-                      {item.label}
-                    </a>
-                  ))}
+                  {isHome ? (
+                    homeSubItems.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                      >
+                        {item.label}
+                      </a>
+                    ))
+                  ) : (
+                    homeSubItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={`/${item.href}`}
+                        className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                      >
+                        {item.label}
+                      </Link>
+                    ))
+                  )}
                 </div>
               </div>
             )}
           </div>
 
-          <a
-            href="#plan-your-trip"
-            className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200"
+          <Link
+            to="/plan-your-trip"
+            className={`text-sm font-sans transition-colors duration-200 ${
+              location.pathname === '/plan-your-trip' 
+                ? 'text-foreground font-medium' 
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
           >
             {t.nav.planYourTrip}
-          </a>
+          </Link>
           
-          <a
-            href="#recommendations"
-            className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200"
+          <Link
+            to="/recommendations"
+            className={`text-sm font-sans transition-colors duration-200 ${
+              location.pathname === '/recommendations' 
+                ? 'text-foreground font-medium' 
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
           >
             {t.nav.recommendations}
-          </a>
+          </Link>
         </nav>
 
         <button

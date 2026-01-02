@@ -3,11 +3,11 @@ import { LanguageModal } from '@/components/LanguageModal';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
-import { PlanYourTrip } from '@/components/PlanYourTrip';
-import { Recommendations } from '@/components/Recommendations';
 import { Footer } from '@/components/Footer';
+import { FloralBorder } from '@/components/FloralBorder';
+import { FallingFlowers } from '@/components/FallingFlowers';
 
-const Index = () => {
+const Home = () => {
   const { language, setLanguage, t, isLoading, needsSelection } = useLanguage();
 
   if (isLoading) {
@@ -20,19 +20,18 @@ const Index = () => {
 
   return (
     <>
-      {/* Language selection modal */}
       {needsSelection && <LanguageModal onSelect={setLanguage} />}
 
-      {/* Main content */}
       <div className={needsSelection ? 'blur-md pointer-events-none' : ''}>
         {language && (
           <>
+            <FloralBorder position="top" />
+            <FallingFlowers />
             <Header language={language} onLanguageChange={setLanguage} t={t} />
             
             <main>
               <Hero t={t} />
 
-              {/* Intro Section */}
               <Section id="intro" title={t.intro.title}>
                 {t.intro.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -42,28 +41,21 @@ const Index = () => {
                 </p>
               </Section>
 
-              {/* Oaxaca Section */}
               <Section id="oaxaca" title={t.oaxaca.title}>
                 {t.oaxaca.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </Section>
 
-              {/* Venue Section */}
               <Section id="venue" title={t.venue.title} subtitle={t.venue.subtitle}>
                 {t.venue.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </Section>
-
-              {/* Plan Your Trip Section */}
-              <PlanYourTrip t={t} />
-
-              {/* Recommendations Section */}
-              <Recommendations t={t} />
             </main>
 
             <Footer language={language} onLanguageChange={setLanguage} t={t} />
+            <FloralBorder position="bottom" />
           </>
         )}
       </div>
@@ -71,4 +63,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;
