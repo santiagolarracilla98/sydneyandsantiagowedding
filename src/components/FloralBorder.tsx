@@ -9,7 +9,7 @@ export function FloralBorder({ position }: FloralBorderProps) {
   if (position === 'top') {
     // Top border - larger centered image
     return (
-      <div className="w-full pt-8 pb-2 flex items-center justify-center pointer-events-none bg-background">
+      <div className="w-full pt-6 flex items-center justify-center pointer-events-none bg-background">
         <img 
           src={headerFloral} 
           alt="" 

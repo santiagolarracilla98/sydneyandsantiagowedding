@@ -10,7 +10,7 @@ interface HeroProps {
 
 export function Hero({ t }: HeroProps) {
   return (
-    <section id="home" className="py-4 md:py-6">
+    <section id="home" className="pt-0 pb-4">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center animate-fade-in">
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4 text-balance">
