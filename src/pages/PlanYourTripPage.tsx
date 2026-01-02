@@ -29,7 +29,7 @@ const PlanYourTripPage = () => {
             <Header language={language} onLanguageChange={setLanguage} t={t} />
             
             <main className="pt-12">
-              <PlanYourTrip t={t} />
+              <PlanYourTrip t={t} language={language} />
             </main>
 
             <Footer language={language} onLanguageChange={setLanguage} t={t} />

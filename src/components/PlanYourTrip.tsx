@@ -1,4 +1,5 @@
 import { Plane, Hotel, Lightbulb, ExternalLink } from 'lucide-react';
+import { RestaurantSection } from './RestaurantSection';
 
 interface FlightRegion {
   readonly name: string;
@@ -33,9 +34,10 @@ interface PlanYourTripProps {
       };
     };
   };
+  language: 'en' | 'es';
 }
 
-export function PlanYourTrip({ t }: PlanYourTripProps) {
+export function PlanYourTrip({ t, language }: PlanYourTripProps) {
   const { planYourTrip } = t;
 
   return (
@@ -124,6 +126,9 @@ export function PlanYourTrip({ t }: PlanYourTripProps) {
               ))}
             </div>
           </div>
+
+          {/* Restaurants */}
+          <RestaurantSection language={language} />
 
           {/* Tips */}
           <div>
