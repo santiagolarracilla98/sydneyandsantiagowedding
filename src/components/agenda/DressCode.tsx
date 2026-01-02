@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import dressCodeImage from '@/assets/dress-code.jpeg';
 
 interface DressCodeProps {
   t: {
@@ -17,9 +18,6 @@ interface DressCodeProps {
 
 export function DressCode({ t }: DressCodeProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  
-  // Placeholder image - replace with actual dress code image
-  const dressCodeImage = '/placeholder.svg';
 
   return (
     <>
