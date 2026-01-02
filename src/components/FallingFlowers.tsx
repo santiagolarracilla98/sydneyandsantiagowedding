@@ -43,37 +43,47 @@ const createFlower = (id: number, startY: number = -50): Flower => {
 
 function FlowerSVG({ color, size }: { color: string; size: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24">
-      {/* Flower petals */}
-      <ellipse cx="12" cy="5" rx="3" ry="5" fill={color} opacity="0.9" />
-      <ellipse cx="12" cy="19" rx="3" ry="5" fill={color} opacity="0.9" />
-      <ellipse cx="5" cy="12" rx="5" ry="3" fill={color} opacity="0.9" />
-      <ellipse cx="19" cy="12" rx="5" ry="3" fill={color} opacity="0.9" />
+    <svg width={size} height={size} viewBox="0 0 24 24" opacity="0.35">
+      {/* Soft flower petals with gradient effect */}
+      <defs>
+        <radialGradient id={`flowerGrad-${color.replace('#', '')}`} cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor={color} stopOpacity="0.6" />
+          <stop offset="100%" stopColor={color} stopOpacity="0.2" />
+        </radialGradient>
+      </defs>
+      <ellipse cx="12" cy="5" rx="3.5" ry="5.5" fill={`url(#flowerGrad-${color.replace('#', '')})`} />
+      <ellipse cx="12" cy="19" rx="3.5" ry="5.5" fill={`url(#flowerGrad-${color.replace('#', '')})`} />
+      <ellipse cx="5" cy="12" rx="5.5" ry="3.5" fill={`url(#flowerGrad-${color.replace('#', '')})`} />
+      <ellipse cx="19" cy="12" rx="5.5" ry="3.5" fill={`url(#flowerGrad-${color.replace('#', '')})`} />
       {/* Diagonal petals */}
-      <ellipse cx="7" cy="7" rx="2.5" ry="4" fill={color} opacity="0.8" transform="rotate(-45 7 7)" />
-      <ellipse cx="17" cy="7" rx="2.5" ry="4" fill={color} opacity="0.8" transform="rotate(45 17 7)" />
-      <ellipse cx="7" cy="17" rx="2.5" ry="4" fill={color} opacity="0.8" transform="rotate(45 7 17)" />
-      <ellipse cx="17" cy="17" rx="2.5" ry="4" fill={color} opacity="0.8" transform="rotate(-45 17 17)" />
-      {/* Center */}
-      <circle cx="12" cy="12" r="3" fill="#2d3436" />
-      <circle cx="12" cy="12" r="1.5" fill="#636e72" />
+      <ellipse cx="7" cy="7" rx="3" ry="4.5" fill={color} opacity="0.3" transform="rotate(-45 7 7)" />
+      <ellipse cx="17" cy="7" rx="3" ry="4.5" fill={color} opacity="0.3" transform="rotate(45 17 7)" />
+      <ellipse cx="7" cy="17" rx="3" ry="4.5" fill={color} opacity="0.3" transform="rotate(45 7 17)" />
+      <ellipse cx="17" cy="17" rx="3" ry="4.5" fill={color} opacity="0.3" transform="rotate(-45 17 17)" />
+      {/* Soft center */}
+      <circle cx="12" cy="12" r="2.5" fill="#d4a574" opacity="0.5" />
     </svg>
   );
 }
 
 function LeafSVG({ color, size }: { color: string; size: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24">
+    <svg width={size} height={size} viewBox="0 0 24 24" opacity="0.3">
+      <defs>
+        <linearGradient id={`leafGrad-${color.replace('#', '')}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={color} stopOpacity="0.5" />
+          <stop offset="100%" stopColor={color} stopOpacity="0.15" />
+        </linearGradient>
+      </defs>
       <path
         d="M12 2C8 6 6 10 6 14c0 4 2 6 6 8 4-2 6-4 6-8 0-4-2-8-6-12z"
-        fill={color}
-        opacity="0.85"
+        fill={`url(#leafGrad-${color.replace('#', '')})`}
       />
       <path
         d="M12 6v12"
-        stroke="#5a7a5a"
-        strokeWidth="1"
-        opacity="0.5"
+        stroke={color}
+        strokeWidth="0.5"
+        opacity="0.3"
       />
     </svg>
   );
@@ -81,8 +91,14 @@ function LeafSVG({ color, size }: { color: string; size: number }) {
 
 function PetalSVG({ color, size }: { color: string; size: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24">
-      <ellipse cx="12" cy="12" rx="5" ry="10" fill={color} opacity="0.85" />
+    <svg width={size} height={size} viewBox="0 0 24 24" opacity="0.3">
+      <defs>
+        <radialGradient id={`petalGrad-${color.replace('#', '')}`} cx="50%" cy="30%" r="70%">
+          <stop offset="0%" stopColor={color} stopOpacity="0.5" />
+          <stop offset="100%" stopColor={color} stopOpacity="0.1" />
+        </radialGradient>
+      </defs>
+      <ellipse cx="12" cy="12" rx="5" ry="10" fill={`url(#petalGrad-${color.replace('#', '')})`} />
     </svg>
   );
 }
@@ -155,7 +171,7 @@ export function FallingFlowers() {
   }, [updateFlowersOnScroll]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-30 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {flowers.map(flower => (
         <div
           key={flower.id}
