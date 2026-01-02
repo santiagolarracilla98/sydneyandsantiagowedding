@@ -27,7 +27,7 @@ const RecommendationsPage = () => {
             <FloralBorder position="top" />
             
             <main className="pt-12">
-              <Recommendations t={t} />
+              <Recommendations t={t} language={language} />
             </main>
 
             <Footer language={language} onLanguageChange={setLanguage} t={t} />

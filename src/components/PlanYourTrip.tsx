@@ -1,5 +1,4 @@
-import { Plane, Hotel, Lightbulb, ExternalLink } from 'lucide-react';
-import { RestaurantSection } from './RestaurantSection';
+import { Plane, Hotel, ExternalLink } from 'lucide-react';
 
 interface FlightRegion {
   readonly name: string;
@@ -28,16 +27,11 @@ interface PlanYourTripProps {
         readonly description: string;
         readonly options: readonly AccommodationOption[];
       };
-      readonly tips: {
-        readonly title: string;
-        readonly items: readonly string[];
-      };
     };
   };
-  language: 'en' | 'es';
 }
 
-export function PlanYourTrip({ t, language }: PlanYourTripProps) {
+export function PlanYourTrip({ t }: PlanYourTripProps) {
   const { planYourTrip } = t;
 
   return (
@@ -125,31 +119,6 @@ export function PlanYourTrip({ t, language }: PlanYourTripProps) {
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Restaurants */}
-          <RestaurantSection language={language} />
-
-          {/* Tips */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <Lightbulb className="w-5 h-5 text-foreground" />
-              <h3 className="font-serif text-xl text-foreground">
-                {planYourTrip.tips.title}
-              </h3>
-            </div>
-
-            <ul className="space-y-3">
-              {planYourTrip.tips.items.map((tip, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-3 text-muted-foreground font-sans leading-relaxed"
-                >
-                  <span className="text-wedding-coral mt-1">•</span>
-                  {tip}
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </div>
