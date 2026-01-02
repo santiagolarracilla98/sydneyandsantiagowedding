@@ -7,14 +7,17 @@ interface FloralBorderProps {
 
 export function FloralBorder({ position }: FloralBorderProps) {
   if (position === 'top') {
-    // Top border - long rectangle with centered smaller image
+    // Top border - long rectangle with centered image and title
     return (
-      <div className="w-full h-32 sm:h-40 flex items-center justify-center pointer-events-none bg-background">
+      <div className="w-full py-8 flex flex-col items-center justify-center pointer-events-none bg-background">
         <img 
           src={headerFloral} 
           alt="" 
-          className="h-full max-w-sm sm:max-w-md md:max-w-lg object-contain"
+          className="h-32 sm:h-40 max-w-sm sm:max-w-md md:max-w-lg object-contain"
         />
+        <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mt-4">
+          Sydney & Santiago
+        </h1>
       </div>
     );
   }
