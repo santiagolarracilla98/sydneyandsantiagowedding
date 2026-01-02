@@ -56,7 +56,7 @@ export function Section({ id, title, subtitle, children }: SectionProps) {
           
           {!subtitle && <div className="mb-8" />}
           
-          <div className="prose-wedding font-sans text-base md:text-lg">
+          <div className="prose-wedding font-serif text-sm md:text-base">
             {children}
           </div>
         </div>
