@@ -72,13 +72,13 @@ export function FloralBorder({ position }: FloralBorderProps) {
     );
   }
 
-  // Bottom border - Using the cactus garden image
+  // Bottom border - Using the cactus garden image (not fixed, flows with content)
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none">
+    <div className="w-full pointer-events-none">
       <img 
         src={footerCactus} 
         alt="" 
-        className="w-full h-auto max-h-32 md:max-h-40 lg:max-h-48 object-cover object-top"
+        className="w-full h-auto object-contain"
       />
     </div>
   );
