@@ -1,5 +1,3 @@
-import heroCouple from '@/assets/hero-couple.png';
-
 interface HeroProps {
   t: {
     hero: {
@@ -19,17 +17,9 @@ export function Hero({ t }: HeroProps) {
             {t.hero.title}
           </h1>
           
-          <p className="font-sans text-sm md:text-base tracking-widest text-muted-foreground uppercase mb-8">
+          <p className="font-sans text-sm md:text-base tracking-widest text-muted-foreground uppercase">
             {t.hero.date} <span className="mx-2">•</span> {t.hero.location}
           </p>
-          
-          <div className="mt-6">
-            <img 
-              src={heroCouple} 
-              alt="Sydney & Santiago" 
-              className="w-full max-w-4xl mx-auto rounded-lg shadow-lg"
-            />
-          </div>
         </div>
       </div>
     </section>
