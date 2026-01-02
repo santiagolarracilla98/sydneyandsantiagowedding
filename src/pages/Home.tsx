@@ -24,8 +24,8 @@ const Home = () => {
       <div className={needsSelection ? 'blur-md pointer-events-none' : ''}>
         {language && (
           <>
-            <FloralBorder position="top" />
             <Header language={language} onLanguageChange={setLanguage} t={t} />
+            <FloralBorder position="top" />
             
             <main>
               <Hero t={t} />
