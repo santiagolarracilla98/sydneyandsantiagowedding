@@ -8,6 +8,7 @@ export const translations = {
       oaxaca: 'Oaxaca',
       venue: 'Venue',
       planYourTrip: 'Plan Your Trip',
+      agenda: 'Agenda',
       recommendations: 'Recommendations',
     },
     hero: {
@@ -54,6 +55,63 @@ export const translations = {
     footer: {
       message: 'With love,',
       names: 'Sydney & Santiago',
+    },
+    agenda: {
+      title: 'Agenda',
+      subtitle: 'A simple overview of the weekend.',
+      anchors: {
+        weather: 'Weather',
+        schedule: 'Schedule',
+        map: 'Map',
+        dressCode: 'Dress Code',
+      },
+      weather: {
+        label: 'Expected weather in Oaxaca (mid-November)',
+        day: 'Day: ~24–28°C (75–82°F), sunny / dry',
+        night: 'Night: ~10–14°C (50–57°F), cooler',
+        note: 'Pack a light layer for evenings.',
+      },
+      schedule: {
+        thursday: {
+          day: 'Thursday',
+          title: 'Free Time',
+          description: 'Arrive, settle in, explore the city, mezcal tastings, markets, and food.',
+        },
+        friday: {
+          day: 'Friday',
+          title: 'Welcome Party',
+          description: 'Join us for drinks, music, and a relaxed welcome celebration.',
+        },
+        saturday: {
+          day: 'Saturday',
+          title: 'Wedding (Jardín Etnobotánico)',
+          description: 'Ceremony and celebration at the Jardín Etnobotánico de Oaxaca.',
+        },
+      },
+      map: {
+        title: 'Locations',
+        locations: {
+          welcomeParty: {
+            name: 'Welcome Party',
+            address: '[ADD ADDRESS]',
+          },
+          wedding: {
+            name: 'Jardín Etnobotánico de Oaxaca',
+            address: 'Reforma S/N, Centro, 68000 Oaxaca de Juárez, Oax.',
+          },
+        },
+      },
+      dressCode: {
+        title: 'Dress Code',
+        men: {
+          label: 'Men',
+          description: 'Suit and tie. Prefer classic colors like navy or gray. No black and no unusual/flashy colors.',
+        },
+        women: {
+          label: 'Women',
+          description: 'Colorful long dresses. Heels optional (comfortable shoes encouraged).',
+        },
+      },
     },
     planYourTrip: {
       title: 'Plan Your Trip',
@@ -154,6 +212,7 @@ export const translations = {
       oaxaca: 'Oaxaca',
       venue: 'Recinto',
       planYourTrip: 'Planifica tu Viaje',
+      agenda: 'Agenda',
       recommendations: 'Recomendaciones',
     },
     hero: {
@@ -200,6 +259,63 @@ export const translations = {
     footer: {
       message: 'Con amor,',
       names: 'Sydney & Santiago',
+    },
+    agenda: {
+      title: 'Agenda',
+      subtitle: 'Un resumen sencillo del fin de semana.',
+      anchors: {
+        weather: 'Clima',
+        schedule: 'Programa',
+        map: 'Mapa',
+        dressCode: 'Código de Vestimenta',
+      },
+      weather: {
+        label: 'Clima esperado en Oaxaca (mediados de noviembre)',
+        day: 'Día: ~24–28°C (75–82°F), soleado / seco',
+        night: 'Noche: ~10–14°C (50–57°F), más fresco',
+        note: 'Trae una capa ligera para las noches.',
+      },
+      schedule: {
+        thursday: {
+          day: 'Jueves',
+          title: 'Tiempo Libre',
+          description: 'Llega, instálate, explora la ciudad, catas de mezcal, mercados y comida.',
+        },
+        friday: {
+          day: 'Viernes',
+          title: 'Fiesta de Bienvenida',
+          description: 'Acompáñanos para bebidas, música y una celebración de bienvenida relajada.',
+        },
+        saturday: {
+          day: 'Sábado',
+          title: 'Boda (Jardín Etnobotánico)',
+          description: 'Ceremonia y celebración en el Jardín Etnobotánico de Oaxaca.',
+        },
+      },
+      map: {
+        title: 'Ubicaciones',
+        locations: {
+          welcomeParty: {
+            name: 'Fiesta de Bienvenida',
+            address: '[AGREGAR DIRECCIÓN]',
+          },
+          wedding: {
+            name: 'Jardín Etnobotánico de Oaxaca',
+            address: 'Reforma S/N, Centro, 68000 Oaxaca de Juárez, Oax.',
+          },
+        },
+      },
+      dressCode: {
+        title: 'Código de Vestimenta',
+        men: {
+          label: 'Hombres',
+          description: 'Traje y corbata. Preferir colores clásicos como azul marino o gris. No negro ni colores inusuales/llamativos.',
+        },
+        women: {
+          label: 'Mujeres',
+          description: 'Vestidos largos y coloridos. Tacones opcionales (se recomiendan zapatos cómodos).',
+        },
+      },
     },
     planYourTrip: {
       title: 'Planifica tu Viaje',
