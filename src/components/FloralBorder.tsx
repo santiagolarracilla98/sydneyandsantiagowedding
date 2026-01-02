@@ -1,3 +1,5 @@
+import footerCactus from '@/assets/footer-cactus.png';
+
 interface FloralBorderProps {
   position: 'top' | 'bottom';
 }
@@ -18,14 +20,14 @@ export function FloralBorder({ position }: FloralBorderProps) {
               
               {/* Hanging vines */}
               <path 
-                d={`M${15 + Math.random() * 10},25 Q${10 + Math.random() * 15},${40 + Math.random() * 15} ${20 + Math.random() * 10},${55 + Math.random() * 20}`}
+                d={`M${15 + (i % 5) * 2},25 Q${10 + (i % 3) * 5},${40 + (i % 4) * 4} ${20 + (i % 6) * 2},${55 + (i % 5) * 4}`}
                 stroke="#6b8e6b"
                 strokeWidth="1.5"
                 fill="none"
                 opacity="0.7"
               />
               <path 
-                d={`M${25 + Math.random() * 10},22 Q${30 + Math.random() * 10},${35 + Math.random() * 10} ${25 + Math.random() * 15},${50 + Math.random() * 15}`}
+                d={`M${25 + (i % 4) * 2},22 Q${30 + (i % 3) * 3},${35 + (i % 4) * 2} ${25 + (i % 5) * 3},${50 + (i % 3) * 4}`}
                 stroke="#7a9e7a"
                 strokeWidth="1"
                 fill="none"
@@ -56,7 +58,7 @@ export function FloralBorder({ position }: FloralBorderProps) {
           {[...Array(8)].map((_, i) => (
             <g key={`cascade-${i}`} transform={`translate(${80 + i * 140}, 0)`}>
               <path 
-                d={`M40,18 Q50,45 ${35 + Math.random() * 20},${65 + Math.random() * 10}`}
+                d={`M40,18 Q50,45 ${35 + (i % 4) * 5},${65 + (i % 3) * 3}`}
                 stroke="#88aa88"
                 strokeWidth="1"
                 fill="none"
@@ -70,92 +72,14 @@ export function FloralBorder({ position }: FloralBorderProps) {
     );
   }
 
-  // Bottom border - Oaxacan cactus garden style
+  // Bottom border - Using the cactus garden image
   return (
-    <div className="fixed bottom-0 left-0 right-0 h-24 z-50 pointer-events-none overflow-hidden">
-      <svg viewBox="0 0 1200 96" className="w-full h-full" preserveAspectRatio="xMidYMax slice">
-        {/* Ground line */}
-        <rect x="0" y="90" width="1200" height="6" fill="#d4c4a8" opacity="0.4" />
-        
-        {/* Left cactus cluster */}
-        <g transform="translate(50, 0)">
-          {/* Prickly pear cactus */}
-          <ellipse cx="40" cy="70" rx="20" ry="15" fill="#8fbc8f" />
-          <ellipse cx="55" cy="55" rx="16" ry="12" fill="#9acd9a" />
-          <ellipse cx="25" cy="58" rx="14" ry="11" fill="#78a878" />
-          <ellipse cx="45" cy="42" rx="12" ry="10" fill="#a8d5a8" />
-          <ellipse cx="60" cy="38" rx="10" ry="8" fill="#8fbc8f" />
-          {/* Yellow flower on cactus */}
-          <circle cx="62" cy="30" r="4" fill="#e9c46a" />
-          <circle cx="62" cy="30" r="2" fill="#f4a261" />
-          
-          {/* Organ pipe cacti */}
-          <rect x="80" y="25" width="5" height="65" rx="2" fill="#7a9e7a" />
-          <rect x="88" y="35" width="4" height="55" rx="2" fill="#8fbc8f" />
-          <rect x="95" y="20" width="5" height="70" rx="2" fill="#6b8e6b" />
-          <rect x="103" y="40" width="4" height="50" rx="2" fill="#88aa88" />
-        </g>
-        
-        {/* Center cactus arrangement */}
-        <g transform="translate(500, 0)">
-          {/* Tall organ pipe cacti */}
-          <rect x="80" y="15" width="6" height="75" rx="3" fill="#7a9e7a" />
-          <rect x="90" y="25" width="5" height="65" rx="2" fill="#8fbc8f" />
-          <rect x="98" y="10" width="7" height="80" rx="3" fill="#6b8e6b" />
-          <rect x="108" y="20" width="5" height="70" rx="2" fill="#88aa88" />
-          <rect x="116" y="30" width="4" height="60" rx="2" fill="#9acd9a" />
-          
-          {/* Prickly pear on sides */}
-          <ellipse cx="50" cy="70" rx="18" ry="13" fill="#8fbc8f" />
-          <ellipse cx="40" cy="58" rx="14" ry="11" fill="#9acd9a" />
-          <ellipse cx="60" cy="55" rx="12" ry="9" fill="#78a878" />
-          <circle cx="42" cy="48" r="3" fill="#f4a261" />
-          
-          <ellipse cx="150" cy="72" rx="16" ry="12" fill="#8fbc8f" />
-          <ellipse cx="160" cy="60" rx="13" ry="10" fill="#9acd9a" />
-          <ellipse cx="145" cy="56" rx="11" ry="9" fill="#78a878" />
-          <circle cx="163" cy="50" r="3.5" fill="#e9c46a" />
-        </g>
-        
-        {/* Right cactus cluster */}
-        <g transform="translate(950, 0)">
-          {/* Organ pipes */}
-          <rect x="50" y="20" width="5" height="70" rx="2" fill="#7a9e7a" />
-          <rect x="58" y="30" width="4" height="60" rx="2" fill="#8fbc8f" />
-          <rect x="65" y="15" width="6" height="75" rx="3" fill="#6b8e6b" />
-          
-          {/* Prickly pear */}
-          <ellipse cx="100" cy="68" rx="22" ry="16" fill="#8fbc8f" />
-          <ellipse cx="85" cy="55" rx="16" ry="12" fill="#9acd9a" />
-          <ellipse cx="115" cy="52" rx="14" ry="10" fill="#78a878" />
-          <ellipse cx="95" cy="42" rx="12" ry="9" fill="#a8d5a8" />
-          {/* Orange flower */}
-          <circle cx="118" cy="42" r="4" fill="#e76f51" />
-          <circle cx="118" cy="42" r="1.5" fill="#fcbf49" />
-          
-          {/* Wild grasses */}
-          <path d="M140,90 Q145,70 142,50" stroke="#b8c8a8" strokeWidth="1" fill="none" />
-          <path d="M145,90 Q148,65 150,45" stroke="#a8b898" strokeWidth="1" fill="none" />
-          <path d="M150,90 Q152,72 148,55" stroke="#c8d8b8" strokeWidth="1" fill="none" />
-        </g>
-        
-        {/* Scattered small plants */}
-        {[200, 350, 750, 880].map((x, i) => (
-          <g key={`small-${i}`} transform={`translate(${x}, 0)`}>
-            <ellipse cx="0" cy="78" rx="10" ry="8" fill="#8fbc8f" opacity="0.8" />
-            <ellipse cx="8" cy="72" rx="8" ry="6" fill="#9acd9a" opacity="0.75" />
-            {i % 2 === 0 && <circle cx="10" cy="66" r="2.5" fill="#e9c46a" opacity="0.85" />}
-          </g>
-        ))}
-        
-        {/* Small grasses throughout */}
-        {[150, 300, 450, 650, 800, 1050].map((x, i) => (
-          <g key={`grass-${i}`} transform={`translate(${x}, 0)`}>
-            <path d={`M0,90 Q${2 + i % 3},${75 - i % 5} ${-2 + i % 4},${60 + i % 8}`} stroke="#b8c8a8" strokeWidth="0.8" fill="none" opacity="0.6" />
-            <path d={`M4,90 Q${5 + i % 2},${78 - i % 4} ${3 + i % 3},${65 + i % 6}`} stroke="#a8b898" strokeWidth="0.8" fill="none" opacity="0.5" />
-          </g>
-        ))}
-      </svg>
+    <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none">
+      <img 
+        src={footerCactus} 
+        alt="" 
+        className="w-full h-auto max-h-32 md:max-h-40 lg:max-h-48 object-cover object-top"
+      />
     </div>
   );
 }
