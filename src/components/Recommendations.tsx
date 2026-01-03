@@ -50,9 +50,14 @@ export function Recommendations({ t, language }: RecommendationsProps) {
             {recommendations.intro}
           </p>
 
-          {/* Categories */}
-          <div className="space-y-12">
-            {recommendations.categories.map((category, categoryIndex) => (
+          {/* Restaurants */}
+          <RestaurantSection language={language} />
+
+          {/* Categories (excluding Food & Drink since it's replaced by RestaurantSection) */}
+          <div className="space-y-12 mt-12">
+            {recommendations.categories
+              .filter((category) => category.name !== 'Food & Drink' && category.name !== 'Comida y Bebida')
+              .map((category, categoryIndex) => (
               <div key={categoryIndex}>
                 <div className="flex items-center gap-3 mb-6">
                   <Star className="w-4 h-4 text-wedding-coral" />
@@ -79,9 +84,6 @@ export function Recommendations({ t, language }: RecommendationsProps) {
               </div>
             ))}
           </div>
-
-          {/* Restaurants */}
-          <RestaurantSection language={language} />
 
           {/* Local Tips */}
           <div className="mt-12">
