@@ -12,7 +12,7 @@ export function FloralBorder({ position, variant = 'default' }: FloralBorderProp
     if (variant === 'greenery') {
       // Greenery header for inner pages - full width, no gap
       return (
-        <div className="w-full pointer-events-none bg-background -mt-4">
+        <div className="w-full pointer-events-none bg-background -mt-[1px]">
           <img 
             src={headerGreenery} 
             alt="" 
