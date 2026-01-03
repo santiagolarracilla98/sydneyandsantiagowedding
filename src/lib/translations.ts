@@ -10,6 +10,7 @@ export const translations = {
       planYourTrip: 'Plan Your Trip',
       agenda: 'Agenda',
       recommendations: 'Recommendations',
+      giftRegistry: 'Gift Registry',
     },
     hero: {
       title: "Sydney & Santiago's Wedding",
@@ -204,6 +205,10 @@ export const translations = {
         },
       ],
     },
+    giftRegistry: {
+      title: 'Gift Registry',
+      linkPlaceholder: 'Link to be added',
+    },
   },
   es: {
     nav: {
@@ -214,6 +219,7 @@ export const translations = {
       planYourTrip: 'Planifica tu Viaje',
       agenda: 'Agenda',
       recommendations: 'Recomendaciones',
+      giftRegistry: 'Mesa de Regalos',
     },
     hero: {
       title: 'La Boda de Sydney & Santiago',
@@ -407,6 +413,10 @@ export const translations = {
           ],
         },
       ],
+    },
+    giftRegistry: {
+      title: 'Mesa de Regalos',
+      linkPlaceholder: 'Link por agregar',
     },
   },
 } as const;
