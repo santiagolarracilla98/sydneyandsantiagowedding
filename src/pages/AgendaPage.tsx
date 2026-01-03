@@ -55,7 +55,7 @@ export default function AgendaPage() {
         {/* Hero Section */}
         <section className="pt-0 pb-8">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <div className="max-w-4xl lg:max-w-5xl mx-auto text-center animate-fade-in">
               <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
                 {t.agenda.title}
               </h1>
@@ -82,7 +82,7 @@ export default function AgendaPage() {
         {/* Weather Section */}
         <section id="weather" className="py-8 md:py-12">
           <div className="container">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-3xl lg:max-w-4xl mx-auto">
               <WeatherBox t={t.agenda.weather} />
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function AgendaPage() {
         {/* Schedule Section */}
         <section id="schedule" className="py-8 md:py-12">
           <div className="container">
-            <div className="max-w-2xl mx-auto space-y-6">
+            <div className="max-w-3xl lg:max-w-4xl mx-auto space-y-6">
               {scheduleItems.map((item, index) => (
                 <ScheduleBlock
                   key={index}
@@ -108,7 +108,7 @@ export default function AgendaPage() {
         {/* Map Section */}
         <section id="map" className="py-8 md:py-12">
           <div className="container">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl lg:max-w-5xl mx-auto">
               <h2 className="font-serif text-xl md:text-2xl text-foreground mb-6 text-center">
                 {t.agenda.map.title}
               </h2>
@@ -120,7 +120,7 @@ export default function AgendaPage() {
         {/* Dress Code Section */}
         <section id="dress-code" className="py-8 md:py-12">
           <div className="container">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl lg:max-w-5xl mx-auto">
               <h2 className="font-serif text-xl md:text-2xl text-foreground mb-6 text-center">
                 {t.agenda.dressCode.title}
               </h2>

@@ -37,7 +37,7 @@ export function PlanYourTrip({ t }: PlanYourTripProps) {
   return (
     <section id="plan-your-trip" className="py-16 md:py-24 bg-background">
       <div className="container">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl lg:max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">

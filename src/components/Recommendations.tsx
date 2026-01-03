@@ -35,7 +35,7 @@ export function Recommendations({ t, language }: RecommendationsProps) {
   return (
     <section id="recommendations" className="py-16 md:py-24">
       <div className="container">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl lg:max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-2">
@@ -61,7 +61,7 @@ export function Recommendations({ t, language }: RecommendationsProps) {
                   </h3>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {category.items.map((item, itemIndex) => (
                     <div
                       key={itemIndex}

@@ -26,7 +26,7 @@ const GiftRegistryPage = () => {
             <FloralBorder position="top" variant="greenery" />
             
             <main className="pt-12 pb-24">
-              <div className="container max-w-2xl text-center">
+              <div className="container max-w-4xl lg:max-w-5xl text-center">
                 <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
                   {t.giftRegistry.title}
                 </h1>
