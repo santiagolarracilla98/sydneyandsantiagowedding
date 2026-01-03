@@ -32,7 +32,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
   ];
 
   return (
-    <header className={`sticky top-0 z-40 bg-background/90 backdrop-blur-sm ${isHome ? 'border-b border-border/50' : ''}`}>
+    <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border/50">
       <div className="container flex items-center justify-between py-4">
         <nav className="flex items-center gap-6 md:gap-8">
           {/* Home dropdown */}
