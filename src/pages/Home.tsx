@@ -6,6 +6,7 @@ import { Section } from '@/components/Section';
 import { Footer } from '@/components/Footer';
 import { FloralBorder } from '@/components/FloralBorder';
 import oaxacaStreet from '@/assets/oaxaca-street.png';
+import venueGarden from '@/assets/venue-garden.png';
 
 const Home = () => {
   const { language, setLanguage, t, isLoading, needsSelection } = useLanguage();
@@ -46,7 +47,7 @@ const Home = () => {
                 ))}
               </Section>
 
-              <Section id="venue" title={t.venue.title} subtitle={t.venue.subtitle}>
+              <Section id="venue" title={t.venue.title} subtitle={t.venue.subtitle} image={venueGarden}>
                 {t.venue.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
