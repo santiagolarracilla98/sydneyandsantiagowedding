@@ -33,7 +33,7 @@ export function Recommendations({ t, language }: RecommendationsProps) {
   const { recommendations, planYourTrip } = t;
 
   return (
-    <section id="recommendations" className="py-16 md:py-24">
+    <section id="recommendations" className="pt-6 pb-16 md:pt-8 md:pb-24">
       <div className="container">
         <div className="max-w-4xl lg:max-w-5xl mx-auto">
           {/* Header */}
