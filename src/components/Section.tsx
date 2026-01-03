@@ -38,7 +38,7 @@ export function Section({ id, title, subtitle, image, children }: SectionProps) 
     >
       <div className="container">
         <div 
-          className={`max-w-2xl mx-auto text-center transition-all duration-700 ease-out ${
+          className={`max-w-3xl lg:max-w-4xl mx-auto text-center transition-all duration-700 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -62,7 +62,7 @@ export function Section({ id, title, subtitle, image, children }: SectionProps) 
               <img 
                 src={image} 
                 alt="" 
-                className="w-full max-w-xl mx-auto"
+                className="w-full max-w-2xl lg:max-w-3xl mx-auto"
               />
             </div>
           )}

@@ -117,7 +117,7 @@
   }
 
   .prose-wedding {
-    @apply max-w-2xl mx-auto text-center leading-relaxed;
+    @apply max-w-3xl lg:max-w-4xl mx-auto text-center leading-relaxed;
   }
 
   .prose-wedding p {
