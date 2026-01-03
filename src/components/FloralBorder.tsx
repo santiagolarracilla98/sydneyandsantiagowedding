@@ -10,13 +10,13 @@ interface FloralBorderProps {
 export function FloralBorder({ position, variant = 'default' }: FloralBorderProps) {
   if (position === 'top') {
     if (variant === 'greenery') {
-      // Greenery header for inner pages
+      // Greenery header for inner pages - full width, no gap
       return (
-        <div className="w-full pointer-events-none bg-background">
+        <div className="w-full pointer-events-none bg-background -mt-4">
           <img 
             src={headerGreenery} 
             alt="" 
-            className="w-full h-auto max-h-48 md:max-h-56 object-contain object-top"
+            className="w-full h-auto object-cover object-top"
           />
         </div>
       );
