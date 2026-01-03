@@ -4,10 +4,11 @@ interface SectionProps {
   id: string;
   title: string;
   subtitle?: string;
+  image?: string;
   children: ReactNode;
 }
 
-export function Section({ id, title, subtitle, children }: SectionProps) {
+export function Section({ id, title, subtitle, image, children }: SectionProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -55,6 +56,16 @@ export function Section({ id, title, subtitle, children }: SectionProps) {
           )}
           
           {!subtitle && <div className="mb-8" />}
+          
+          {image && (
+            <div className="mb-8">
+              <img 
+                src={image} 
+                alt="" 
+                className="w-full max-w-xl mx-auto"
+              />
+            </div>
+          )}
           
           <div className="prose-wedding font-serif text-sm md:text-base">
             {children}

@@ -5,6 +5,7 @@ import { Hero } from '@/components/Hero';
 import { Section } from '@/components/Section';
 import { Footer } from '@/components/Footer';
 import { FloralBorder } from '@/components/FloralBorder';
+import oaxacaStreet from '@/assets/oaxaca-street.png';
 
 const Home = () => {
   const { language, setLanguage, t, isLoading, needsSelection } = useLanguage();
@@ -39,7 +40,7 @@ const Home = () => {
                 </p>
               </Section>
 
-              <Section id="oaxaca" title={t.oaxaca.title}>
+              <Section id="oaxaca" title={t.oaxaca.title} image={oaxacaStreet}>
                 {t.oaxaca.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
