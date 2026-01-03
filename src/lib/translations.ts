@@ -120,6 +120,7 @@ export const translations = {
       intro: "Oaxaca City is served by Xoxocotlán International Airport (OAX). Here's how to get here from different parts of the world:",
       flights: {
         title: 'Flights',
+        directFlightsTitle: 'Direct Flights to Oaxaca',
         regions: [
           {
             name: 'From USA & Canada',
@@ -329,6 +330,7 @@ export const translations = {
       intro: 'La ciudad de Oaxaca cuenta con el Aeropuerto Internacional de Xoxocotlán (OAX). Así puedes llegar desde diferentes partes del mundo:',
       flights: {
         title: 'Vuelos',
+        directFlightsTitle: 'Vuelos Directos a Oaxaca',
         regions: [
           {
             name: 'Desde EE.UU. y Canadá',

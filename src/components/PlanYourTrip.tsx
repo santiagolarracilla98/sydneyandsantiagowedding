@@ -1,4 +1,5 @@
 import { Plane, Hotel, ExternalLink } from 'lucide-react';
+import directFlightsMap from '@/assets/direct-flights-map.png';
 
 interface FlightRegion {
   readonly name: string;
@@ -19,6 +20,7 @@ interface PlanYourTripProps {
       readonly intro: string;
       readonly flights: {
         readonly title: string;
+        readonly directFlightsTitle: string;
         readonly regions: readonly FlightRegion[];
         readonly cta: string;
       };
@@ -61,6 +63,19 @@ export function PlanYourTrip({ t }: PlanYourTripProps) {
               </h3>
             </div>
 
+            {/* Direct Flights Map */}
+            <div className="mb-8">
+              <h4 className="font-sans font-medium text-foreground mb-4 text-center">
+                {planYourTrip.flights.directFlightsTitle}
+              </h4>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src={directFlightsMap}
+                  alt="Map showing direct flight routes to Oaxaca"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
             <div className="grid gap-4">
               {planYourTrip.flights.regions.map((region, index) => (
                 <div
