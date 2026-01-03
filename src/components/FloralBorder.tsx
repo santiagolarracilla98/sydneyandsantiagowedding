@@ -16,7 +16,7 @@ export function FloralBorder({ position, variant = 'default' }: FloralBorderProp
           <img 
             src={headerGreenery} 
             alt="" 
-            className="w-full h-auto max-h-32 md:max-h-40 object-cover object-bottom"
+            className="w-full h-auto max-h-48 md:max-h-56 object-contain object-top"
           />
         </div>
       );
