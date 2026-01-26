@@ -17,19 +17,17 @@ interface AgendaMapProps {
 }
 
 export function AgendaMap({ t }: AgendaMapProps) {
-  // Jardín Etnobotánico de Oaxaca coordinates
-  const centerLat = 17.0647;
-  const centerLng = -96.7236;
-  
-  // Google Maps embed URL centered on Oaxaca Centro
-  const mapEmbedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3814.1234567890!2d${centerLng}!3d${centerLat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c7223b89e0f6d1%3A0x4d4e9b8f8c8e8f8e!2sJard%C3%ADn%20Etnobot%C3%A1nico%20de%20Oaxaca!5e0!3m2!1sen!2smx!4v1234567890123!5m2!1sen!2smx`;
+  // Google Maps embed with both locations pinned
+  // Copal Restaurant: C. Macedonio Alcalá 803, Oaxaca
+  // Jardín Etnobotánico: Reforma S/N, Centro, 68000 Oaxaca de Juárez
+  const mapEmbedUrl = `https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3814.2!2d-96.726!3d17.064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sCopal%20Restaurant%2C%20Macedonio%20Alcala%2C%20Oaxaca!5e0!3m2!1sen!2smx!4v1234567890123!5m2!1sen!2smx`;
 
   return (
     <div className="space-y-6">
       {/* Map Container */}
       <div className="rounded-lg overflow-hidden shadow-md border border-border/50">
         <iframe
-          src={mapEmbedUrl}
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1907.0621138850845!2d-96.72506!3d17.0650!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c7223c89e8e8e5%3A0x1234567890abcdef!2sJard%C3%ADn%20Etnobot%C3%A1nico%20de%20Oaxaca!5e0!3m2!1sen!2smx!4v1706000000000"
           width="100%"
           height="400"
           style={{ border: 0 }}
@@ -43,8 +41,13 @@ export function AgendaMap({ t }: AgendaMapProps) {
 
       {/* Location Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Welcome Party */}
-        <div className="bg-card border border-border/50 rounded-lg p-4 shadow-sm">
+        {/* Welcome Party - Copal Restaurant */}
+        <a 
+          href="https://maps.google.com/?q=Copal+Restaurant,+C.+Macedonio+Alcalá+803,+Oaxaca"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+        >
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
             <div>
@@ -59,10 +62,15 @@ export function AgendaMap({ t }: AgendaMapProps) {
               </p>
             </div>
           </div>
-        </div>
+        </a>
 
-        {/* Wedding */}
-        <div className="bg-card border border-border/50 rounded-lg p-4 shadow-sm">
+        {/* Wedding - Jardín Etnobotánico */}
+        <a 
+          href="https://maps.google.com/?q=Jardín+Etnobotánico+de+Oaxaca,+Reforma+S/N,+Centro,+68000+Oaxaca+de+Juárez"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+        >
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
             <div>
@@ -77,7 +85,7 @@ export function AgendaMap({ t }: AgendaMapProps) {
               </p>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   );

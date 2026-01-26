@@ -127,8 +127,8 @@ export const translations = {
         title: 'Locations',
         locations: {
           welcomeParty: {
-            name: 'Welcome Party',
-            address: '[ADD ADDRESS]',
+            name: 'Copal Restaurant',
+            address: 'C. Macedonio Alcalá 803',
           },
           wedding: {
             name: 'Jardín Etnobotánico de Oaxaca',
@@ -371,8 +371,8 @@ export const translations = {
         title: 'Ubicaciones',
         locations: {
           welcomeParty: {
-            name: 'Fiesta de Bienvenida',
-            address: '[AGREGAR DIRECCIÓN]',
+            name: 'Restaurante Copal',
+            address: 'C. Macedonio Alcalá 803',
           },
           wedding: {
             name: 'Jardín Etnobotánico de Oaxaca',
