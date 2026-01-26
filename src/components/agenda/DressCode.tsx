@@ -1,46 +1,65 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import dressCodeImage from '@/assets/dress-code.jpeg';
+import dressCodeWeddingImage from '@/assets/dress-code.jpeg';
+import dressCodeWelcomeImage from '@/assets/dress-code-welcome.png';
+
+interface DressCodeSection {
+  subtitle: string;
+  men: {
+    label: string;
+    description: string;
+  };
+  women: {
+    label: string;
+    description: string;
+  };
+}
 
 interface DressCodeProps {
   t: {
     title: string;
-    men: {
-      label: string;
-      description: string;
-    };
-    women: {
-      label: string;
-      description: string;
-    };
+    weddingDay: DressCodeSection;
+    welcomeParty: DressCodeSection;
   };
 }
 
 export function DressCode({ t }: DressCodeProps) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
-  return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+  const DressCodeBlock = ({ 
+    section, 
+    image, 
+    imageAlt 
+  }: { 
+    section: DressCodeSection; 
+    image: string; 
+    imageAlt: string;
+  }) => (
+    <div className="space-y-4">
+      <h4 className="font-sans text-xs md:text-sm uppercase tracking-wider text-muted-foreground">
+        {section.subtitle}
+      </h4>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
         {/* Text Column */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {/* Men */}
           <div>
-            <h4 className="font-serif text-sm md:text-base text-foreground mb-2">
-              {t.men.label}
-            </h4>
+            <h5 className="font-serif text-sm md:text-base text-foreground mb-1">
+              {section.men.label}
+            </h5>
             <p className="font-serif text-sm text-muted-foreground">
-              {t.men.description}
+              {section.men.description}
             </p>
           </div>
 
           {/* Women */}
           <div>
-            <h4 className="font-serif text-sm md:text-base text-foreground mb-2">
-              {t.women.label}
-            </h4>
+            <h5 className="font-serif text-sm md:text-base text-foreground mb-1">
+              {section.women.label}
+            </h5>
             <p className="font-serif text-sm text-muted-foreground">
-              {t.women.description}
+              {section.women.description}
             </p>
           </div>
         </div>
@@ -48,12 +67,12 @@ export function DressCode({ t }: DressCodeProps) {
         {/* Image Column */}
         <div>
           <button
-            onClick={() => setLightboxOpen(true)}
+            onClick={() => setLightboxImage(image)}
             className="w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-lg"
           >
             <img
-              src={dressCodeImage}
-              alt="Dress code reference"
+              src={image}
+              alt={imageAlt}
               className="w-full h-auto rounded-lg shadow-md border border-border/50 hover:shadow-lg transition-shadow duration-200"
             />
           </button>
@@ -62,22 +81,42 @@ export function DressCode({ t }: DressCodeProps) {
           </p>
         </div>
       </div>
+    </div>
+  );
+
+  return (
+    <>
+      <div className="space-y-10">
+        {/* Wedding Day Dress Code */}
+        <DressCodeBlock 
+          section={t.weddingDay} 
+          image={dressCodeWeddingImage} 
+          imageAlt="Wedding day dress code reference" 
+        />
+
+        {/* Welcome Party Dress Code */}
+        <DressCodeBlock 
+          section={t.welcomeParty} 
+          image={dressCodeWelcomeImage} 
+          imageAlt="Welcome party dress code reference" 
+        />
+      </div>
 
       {/* Lightbox */}
-      {lightboxOpen && (
+      {lightboxImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-          onClick={() => setLightboxOpen(false)}
+          onClick={() => setLightboxImage(null)}
         >
           <button
-            onClick={() => setLightboxOpen(false)}
+            onClick={() => setLightboxImage(null)}
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
             aria-label="Close lightbox"
           >
             <X className="w-8 h-8" />
           </button>
           <img
-            src={dressCodeImage}
+            src={lightboxImage}
             alt="Dress code reference"
             className="max-w-full max-h-[90vh] rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}

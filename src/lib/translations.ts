@@ -138,13 +138,27 @@ export const translations = {
       },
       dressCode: {
         title: 'Dress Code',
-        men: {
-          label: 'Men',
-          description: 'Suit and tie. Prefer classic colors like navy or gray. No black and no unusual/flashy colors.',
+        weddingDay: {
+          subtitle: 'Wedding Day',
+          men: {
+            label: 'Men',
+            description: 'Suit and tie. Prefer classic colors like navy or gray. No black, no unusual/flashy colors, and no sneakers.',
+          },
+          women: {
+            label: 'Women',
+            description: 'Colorful long dresses. Heels optional (comfortable shoes encouraged).',
+          },
         },
-        women: {
-          label: 'Women',
-          description: 'Colorful long dresses. Heels optional (comfortable shoes encouraged).',
+        welcomeParty: {
+          subtitle: 'Welcome Party',
+          men: {
+            label: 'Men',
+            description: 'Button-up shirts with dress pants or chinos. Smart casual and relaxed.',
+          },
+          women: {
+            label: 'Women',
+            description: 'Short or long dresses in colorful colors. Keep it festive and fun!',
+          },
         },
       },
     },
@@ -382,13 +396,27 @@ export const translations = {
       },
       dressCode: {
         title: 'Código de Vestimenta',
-        men: {
-          label: 'Hombres',
-          description: 'Traje y corbata. Preferir colores clásicos como azul marino o gris. No negro ni colores inusuales/llamativos.',
+        weddingDay: {
+          subtitle: 'Día de la Boda',
+          men: {
+            label: 'Hombres',
+            description: 'Traje y corbata. Preferir colores clásicos como azul marino o gris. No negro, no colores inusuales/llamativos, y no tenis.',
+          },
+          women: {
+            label: 'Mujeres',
+            description: 'Vestidos largos y coloridos. Tacones opcionales (se recomiendan zapatos cómodos).',
+          },
         },
-        women: {
-          label: 'Mujeres',
-          description: 'Vestidos largos y coloridos. Tacones opcionales (se recomiendan zapatos cómodos).',
+        welcomeParty: {
+          subtitle: 'Fiesta de Bienvenida',
+          men: {
+            label: 'Hombres',
+            description: 'Camisas de botón con pantalón de vestir o chinos. Smart casual y relajado.',
+          },
+          women: {
+            label: 'Mujeres',
+            description: 'Vestidos cortos o largos en colores vivos. ¡Mantén el look festivo y divertido!',
+          },
         },
       },
     },
