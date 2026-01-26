@@ -2,7 +2,7 @@ import 'leaflet/dist/leaflet.css';
 
 import L from 'leaflet';
 import { MapPin } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
@@ -35,53 +35,14 @@ interface AgendaMapProps {
 
 type LatLng = [number, number];
 
-async function geocode(address: string): Promise<LatLng | null> {
-  const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(
-    address,
-  )}`;
-  const res = await fetch(url, {
-    headers: {
-      // polite header; some endpoints use it for contact
-      'Accept-Language': 'en',
-    },
-  });
-  if (!res.ok) return null;
-  const data = (await res.json()) as Array<{ lat: string; lon: string }>;
-  const first = data?.[0];
-  if (!first) return null;
-  return [Number(first.lat), Number(first.lon)];
-}
-
 export function AgendaMap({ t }: AgendaMapProps) {
-  const [copal, setCopal] = useState<LatLng | null>(null);
-  const [jardin, setJardin] = useState<LatLng | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    async function load() {
-      const [copalResult, jardinResult] = await Promise.all([
-        geocode('Copal Restaurant, C. Macedonio Alcalá 803, Oaxaca de Juárez, Oax., Mexico'),
-        geocode('Jardín Etnobotánico de Oaxaca, Reforma S/N, Centro, 68000 Oaxaca de Juárez, Oax., Mexico'),
-      ]);
-
-      if (cancelled) return;
-      setCopal(copalResult);
-      setJardin(jardinResult);
-    }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const points = useMemo(() => {
-    return [copal, jardin].filter(Boolean) as LatLng[];
-  }, [copal, jardin]);
+  // Hardcoded coordinates to guarantee pins always appear
+  // Source: Copal (Postcard listing), Jardín (Wikipedia)
+  const copal: LatLng = [17.0693649, -96.7233629];
+  const jardin: LatLng = [17.0666, -96.7225];
+  const points: LatLng[] = [copal, jardin];
 
   const bounds = useMemo(() => {
-    if (points.length === 0) return null;
     // pad a bit so pins aren't on the edge
     return L.latLngBounds(points.map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
   }, [points]);
@@ -90,44 +51,29 @@ export function AgendaMap({ t }: AgendaMapProps) {
     <div className="space-y-6">
       {/* Map Container */}
       <div className="rounded-lg overflow-hidden shadow-md border border-border/50">
-        {bounds ? (
-          <MapContainer
-            bounds={bounds}
-            boundsOptions={{ padding: [40, 40] }}
-            scrollWheelZoom={false}
-            className="h-[400px] w-full"
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <MapContainer bounds={bounds} boundsOptions={{ padding: [40, 40] }} className="h-[400px] w-full">
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-            {copal && (
-              <Marker position={copal}>
-                <Popup>
-                  <div className="space-y-1">
-                    <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">Friday</div>
-                    <div className="font-serif text-sm text-foreground">{t.locations.welcomeParty.name}</div>
-                    <div className="font-serif text-xs text-muted-foreground">{t.locations.welcomeParty.address}</div>
-                  </div>
-                </Popup>
-              </Marker>
-            )}
+          <Marker position={copal}>
+            <Popup>
+              <div className="space-y-1">
+                <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">Friday</div>
+                <div className="font-serif text-sm text-foreground">{t.locations.welcomeParty.name}</div>
+                <div className="font-serif text-xs text-muted-foreground">{t.locations.welcomeParty.address}</div>
+              </div>
+            </Popup>
+          </Marker>
 
-            {jardin && (
-              <Marker position={jardin}>
-                <Popup>
-                  <div className="space-y-1">
-                    <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">Saturday</div>
-                    <div className="font-serif text-sm text-foreground">{t.locations.wedding.name}</div>
-                    <div className="font-serif text-xs text-muted-foreground">{t.locations.wedding.address}</div>
-                  </div>
-                </Popup>
-              </Marker>
-            )}
-          </MapContainer>
-        ) : (
-          <div className="h-[400px] w-full grid place-items-center">
-            <p className="font-sans text-sm text-muted-foreground">Loading map…</p>
-          </div>
-        )}
+          <Marker position={jardin}>
+            <Popup>
+              <div className="space-y-1">
+                <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">Saturday</div>
+                <div className="font-serif text-sm text-foreground">{t.locations.wedding.name}</div>
+                <div className="font-serif text-xs text-muted-foreground">{t.locations.wedding.address}</div>
+              </div>
+            </Popup>
+          </Marker>
+        </MapContainer>
       </div>
 
       {/* Location Cards */}
