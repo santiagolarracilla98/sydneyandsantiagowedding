@@ -89,7 +89,7 @@ export const translations = {
               time: '5:00 PM',
               description: "A Calenda is a traditional Oaxacan street parade. We'll walk through the streets with a brass band, giant puppets (monos de calenda), and plenty of mezcal. It's festive, lively, and uniquely Oaxacan!",
               meetingPoint: 'Meet at Santo Domingo Church at 4:55 PM',
-              address: 'Templo de Santo Domingo, Calle 5 de Mayo',
+              address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax.',
             },
             {
               name: 'Welcome Party Drinks',
@@ -345,7 +345,7 @@ export const translations = {
               time: '5:00 PM',
               description: 'Una Calenda es un desfile callejero tradicional oaxaqueño. Caminaremos por las calles con una banda de música, muñecos gigantes (monos de calenda) y mucho mezcal. ¡Es festivo, animado y únicamente oaxaqueño!',
               meetingPoint: 'Punto de encuentro: Iglesia de Santo Domingo a las 4:55 PM',
-              address: 'Templo de Santo Domingo, Calle 5 de Mayo',
+              address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax.',
             },
             {
               name: 'Bebidas de Bienvenida',
