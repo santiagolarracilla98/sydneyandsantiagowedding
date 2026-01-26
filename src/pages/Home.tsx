@@ -27,7 +27,6 @@ const Home = () => {
         {language && (
           <>
             <Header language={language} onLanguageChange={setLanguage} t={t} />
-            <FloralBorder position="top" />
             
             <main>
               <Hero t={t} />
