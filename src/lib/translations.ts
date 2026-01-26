@@ -189,7 +189,7 @@ export const translations = {
         cta: 'Search Flights',
       },
       accommodations: {
-        title: 'Where to Stay',
+        title: 'Hotels',
         description: 'We recommend staying in the Centro Histórico for easy walking access to the venue and city attractions.',
         options: [
           {
@@ -442,7 +442,7 @@ export const translations = {
         cta: 'Buscar Vuelos',
       },
       accommodations: {
-        title: 'Dónde Hospedarse',
+        title: 'Hoteles',
         description: 'Recomendamos hospedarse en el Centro Histórico para tener fácil acceso a pie al recinto y las atracciones de la ciudad.',
         options: [
           {
