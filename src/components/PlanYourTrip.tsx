@@ -1,17 +1,14 @@
 import { Plane, Hotel, ExternalLink } from 'lucide-react';
 import directFlightsMap from '@/assets/direct-flights-map.png';
-
 interface FlightRegion {
   readonly name: string;
   readonly description: string;
   readonly searchUrl: string;
 }
-
 interface AccommodationOption {
   readonly name: string;
   readonly description: string;
 }
-
 interface PlanYourTripProps {
   t: {
     planYourTrip: {
@@ -32,12 +29,13 @@ interface PlanYourTripProps {
     };
   };
 }
-
-export function PlanYourTrip({ t }: PlanYourTripProps) {
-  const { planYourTrip } = t;
-
-  return (
-    <section id="plan-your-trip" className="pt-6 pb-16 md:pt-8 md:pb-24 bg-background">
+export function PlanYourTrip({
+  t
+}: PlanYourTripProps) {
+  const {
+    planYourTrip
+  } = t;
+  return <section id="plan-your-trip" className="pt-6 pb-16 md:pt-8 md:pb-24 bg-background">
       <div className="container">
         <div className="max-w-4xl lg:max-w-5xl mx-auto">
           {/* Header */}
@@ -69,40 +67,11 @@ export function PlanYourTrip({ t }: PlanYourTripProps) {
                 {planYourTrip.flights.directFlightsTitle}
               </h4>
               <div className="rounded-lg overflow-hidden">
-                <img
-                  src={directFlightsMap}
-                  alt="Map showing direct flight routes to Oaxaca"
-                  className="w-full h-auto"
-                />
+                <img src={directFlightsMap} alt="Map showing direct flight routes to Oaxaca" className="w-full h-auto" />
               </div>
             </div>
             <div className="grid gap-4">
-              {planYourTrip.flights.regions.map((region, index) => (
-                <div
-                  key={index}
-                  className="bg-card border border-border rounded-lg p-5 hover:shadow-soft transition-shadow duration-300"
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                    <div className="flex-1">
-                      <h4 className="font-sans font-medium text-foreground mb-1">
-                        {region.name}
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {region.description}
-                      </p>
-                    </div>
-                    <a
-                      href={region.searchUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-sans border border-foreground text-foreground hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm whitespace-nowrap"
-                    >
-                      {planYourTrip.flights.cta}
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-                </div>
-              ))}
+              {planYourTrip.flights.regions.map((region, index) => {})}
             </div>
           </div>
 
@@ -120,23 +89,17 @@ export function PlanYourTrip({ t }: PlanYourTripProps) {
             </p>
 
             <div className="grid gap-4 sm:grid-cols-3">
-              {planYourTrip.accommodations.options.map((option, index) => (
-                <div
-                  key={index}
-                  className="bg-card border border-border rounded-lg p-5"
-                >
+              {planYourTrip.accommodations.options.map((option, index) => <div key={index} className="bg-card border border-border rounded-lg p-5">
                   <h4 className="font-sans font-medium text-foreground mb-2">
                     {option.name}
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {option.description}
                   </p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
