@@ -28,6 +28,10 @@ interface AgendaMapProps {
         name: string;
         address: string;
       };
+      patioHuaje: {
+        name: string;
+        address: string;
+      };
       wedding: {
         name: string;
         address: string;
@@ -40,15 +44,16 @@ type LatLng = [number, number];
 
 export function AgendaMap({ t }: AgendaMapProps) {
   // Hardcoded coordinates to guarantee pins always appear
-  // Source: Copal (Postcard listing), Santo Domingo & Jardín (Wikipedia)
+  // Source: Copal (Postcard listing), Santo Domingo & Jardín (Wikipedia), Patio del Huaje (entrance on Alcalá)
   const copal: LatLng = [17.0693649, -96.7233629];
   const santoDomingo: LatLng = [17.06556, -96.72306];
+  const patioHuaje: LatLng = [17.0670, -96.7228];
   const jardin: LatLng = [17.0666, -96.7225];
   const mapElRef = useRef<HTMLDivElement | null>(null);
 
   const bounds = useMemo(() => {
-    return L.latLngBounds([copal, santoDomingo, jardin].map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
-  }, [copal, jardin, santoDomingo]);
+    return L.latLngBounds([copal, santoDomingo, patioHuaje, jardin].map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
+  }, [copal, jardin, patioHuaje, santoDomingo]);
 
   useEffect(() => {
     if (!mapElRef.current) return;
@@ -81,6 +86,14 @@ export function AgendaMap({ t }: AgendaMapProps) {
       </div>
     `;
 
+    const patioHuajePopup = `
+      <div style="line-height:1.2">
+        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
+        <div style="font-size:14px; margin-top:4px">${t.locations.patioHuaje.name}</div>
+        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.patioHuaje.address}</div>
+      </div>
+    `;
+
     const jardinPopup = `
       <div style="line-height:1.2">
         <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
@@ -91,6 +104,7 @@ export function AgendaMap({ t }: AgendaMapProps) {
 
     L.marker(copal).addTo(map).bindPopup(copalPopup);
     L.marker(santoDomingo).addTo(map).bindPopup(santoDomingoPopup);
+    L.marker(patioHuaje).addTo(map).bindPopup(patioHuajePopup);
     L.marker(jardin).addTo(map).bindPopup(jardinPopup);
 
     // Ensure proper sizing if the map container is rendered after layout
@@ -103,7 +117,10 @@ export function AgendaMap({ t }: AgendaMapProps) {
     bounds,
     copal,
     jardin,
+    patioHuaje,
     santoDomingo,
+    t.locations.patioHuaje.address,
+    t.locations.patioHuaje.name,
     t.locations.santoDomingo.address,
     t.locations.santoDomingo.name,
     t.locations.wedding.address,
@@ -120,7 +137,7 @@ export function AgendaMap({ t }: AgendaMapProps) {
       </div>
 
       {/* Location Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <a
           href="https://maps.google.com/?q=Templo+de+Santo+Domingo+de+Guzmán,+Oaxaca"
           target="_blank"
@@ -149,6 +166,22 @@ export function AgendaMap({ t }: AgendaMapProps) {
               <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">Friday</p>
               <h4 className="font-serif text-sm text-foreground mb-1">{t.locations.welcomeParty.name}</h4>
               <p className="font-serif text-xs text-muted-foreground">{t.locations.welcomeParty.address}</p>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href="https://maps.google.com/?q=C.+Macedonio+Alcalá+507,+Oaxaca"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+        >
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">Saturday</p>
+              <h4 className="font-serif text-sm text-foreground mb-1">{t.locations.patioHuaje.name}</h4>
+              <p className="font-serif text-xs text-muted-foreground">{t.locations.patioHuaje.address}</p>
             </div>
           </div>
         </a>
