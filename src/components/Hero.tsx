@@ -24,7 +24,7 @@ export function Hero({ t }: HeroProps) {
           </p>
         </div>
 
-        <div className="px-4 md:px-8 lg:px-16">
+        <div className="px-2 md:px-4">
           <img 
             src={heroImage} 
             alt="Sydney and Santiago walking through colorful Oaxaca streets" 
