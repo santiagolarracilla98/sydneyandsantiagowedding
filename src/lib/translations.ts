@@ -181,11 +181,6 @@ export const translations = {
             searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca%20from%20Europe',
           },
           {
-            name: 'From Latin America',
-            description: 'Direct or one-stop flights via Mexico City. Many carriers serve this route.',
-            searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca',
-          },
-          {
             name: 'From Mexico',
             description: 'Direct flights from Mexico City, Guadalajara, Monterrey, and other major cities.',
             searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca%20from%20Mexico%20City',
@@ -437,11 +432,6 @@ export const translations = {
             name: 'Desde Europa',
             description: 'Vuela a Ciudad de México (MEX) y conecta a Oaxaca. El vuelo de MEX a OAX dura aproximadamente 1 hora.',
             searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca%20desde%20Europa',
-          },
-          {
-            name: 'Desde Latinoamérica',
-            description: 'Vuelos directos o con una escala vía Ciudad de México. Varias aerolíneas cubren esta ruta.',
-            searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca',
           },
           {
             name: 'Desde México',
