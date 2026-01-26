@@ -137,6 +137,10 @@ export const translations = {
             name: 'Copal Restaurant',
             address: 'C. Macedonio Alcalá 803',
           },
+          patioHuaje: {
+            name: 'Patio del Huaje (Entrance)',
+            address: 'C. Macedonio Alcalá 507, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
+          },
           wedding: {
             name: 'Jardín Etnobotánico de Oaxaca',
             address: 'Reforma S/N, Centro, 68000 Oaxaca de Juárez, Oax.',
@@ -396,6 +400,10 @@ export const translations = {
           welcomeParty: {
             name: 'Restaurante Copal',
             address: 'C. Macedonio Alcalá 803',
+          },
+          patioHuaje: {
+            name: 'Patio del Huaje (Entrada)',
+            address: 'C. Macedonio Alcalá 507, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
           },
           wedding: {
             name: 'Jardín Etnobotánico de Oaxaca',
