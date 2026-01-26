@@ -2,7 +2,6 @@ import 'leaflet/dist/leaflet.css';
 
 import L from 'leaflet';
 import { MapPin } from 'lucide-react';
-import { useMemo } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
@@ -40,19 +39,24 @@ export function AgendaMap({ t }: AgendaMapProps) {
   // Source: Copal (Postcard listing), Jardín (Wikipedia)
   const copal: LatLng = [17.0693649, -96.7233629];
   const jardin: LatLng = [17.0666, -96.7225];
-  const points: LatLng[] = [copal, jardin];
-
-  const bounds = useMemo(() => {
-    // pad a bit so pins aren't on the edge
-    return L.latLngBounds(points.map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
-  }, [points]);
+  
+  // Center point between both locations
+  const center: LatLng = [(copal[0] + jardin[0]) / 2, (copal[1] + jardin[1]) / 2];
 
   return (
     <div className="space-y-6">
       {/* Map Container */}
       <div className="rounded-lg overflow-hidden shadow-md border border-border/50">
-        <MapContainer bounds={bounds} boundsOptions={{ padding: [40, 40] }} className="h-[400px] w-full">
-          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <MapContainer 
+          center={center} 
+          zoom={16} 
+          scrollWheelZoom={false}
+          className="h-[400px] w-full"
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
 
           <Marker position={copal}>
             <Popup>
