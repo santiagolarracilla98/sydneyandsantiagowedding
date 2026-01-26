@@ -177,7 +177,7 @@ export const translations = {
           },
           {
             name: 'From Europe',
-            description: 'Fly to Mexico City (MEX), then connect to Oaxaca. Flight time from MEX to OAX is about 1 hour.',
+            description: "Fly to Mexico City (MEX) or connect through a US hub, then on to Oaxaca. We recommend spending a night or two in Mexico City—it's well worth the visit!",
             searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca%20from%20Europe',
           },
           {
@@ -430,7 +430,7 @@ export const translations = {
           },
           {
             name: 'Desde Europa',
-            description: 'Vuela a Ciudad de México (MEX) y conecta a Oaxaca. El vuelo de MEX a OAX dura aproximadamente 1 hora.',
+            description: 'Vuela a Ciudad de México (MEX) o conecta a través de EE.UU., y luego a Oaxaca. Recomendamos pasar una o dos noches en Ciudad de México—¡vale mucho la pena!',
             searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca%20desde%20Europa',
           },
           {
