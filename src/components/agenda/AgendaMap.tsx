@@ -9,6 +9,7 @@ import iconUrl from 'leaflet/dist/images/marker-icon.png';
 import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 import santoDomingoImage from '@/assets/santo-domingo.png';
 import copalImage from '@/assets/copal-restaurant.png';
+import patioHuajeImage from '@/assets/patio-huaje.png';
 
 // Fix default marker icons for Vite builds
 delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: unknown })._getIconUrl;
@@ -208,6 +209,13 @@ export function AgendaMap({ t }: AgendaMapProps) {
                 <img 
                   src={copalImage} 
                   alt="Copal Restaurant" 
+                  className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                />
+              )}
+              {key === 'patioHuaje' && (
+                <img 
+                  src={patioHuajeImage} 
+                  alt="Patio del Huaje Entrance" 
                   className="w-16 h-16 object-cover rounded-md flex-shrink-0"
                 />
               )}
