@@ -172,7 +172,7 @@ export const translations = {
         regions: [
           {
             name: 'From USA & Canada',
-            description: 'Most flights connect through Mexico City (MEX) or Guadalajara (GDL). Direct flights available from some US cities.',
+            description: 'Direct flights available from Dallas, Houston, and Los Angeles. Other cities connect through Mexico City (MEX) or Guadalajara (GDL).',
             searchUrl: 'https://www.google.com/travel/flights?q=flights%20to%20OAX%20Oaxaca',
           },
           {
@@ -425,7 +425,7 @@ export const translations = {
         regions: [
           {
             name: 'Desde EE.UU. y Canadá',
-            description: 'La mayoría de los vuelos conectan a través de Ciudad de México (MEX) o Guadalajara (GDL). Vuelos directos disponibles desde algunas ciudades de EE.UU.',
+            description: 'Vuelos directos disponibles desde Dallas, Houston y Los Ángeles. Otras ciudades conectan a través de Ciudad de México (MEX) o Guadalajara (GDL).',
             searchUrl: 'https://www.google.com/travel/flights?q=vuelos%20a%20OAX%20Oaxaca',
           },
           {
