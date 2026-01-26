@@ -27,7 +27,7 @@ const PlanYourTripPage = () => {
             <FloralBorder position="top" variant="greenery" />
             
             <main className="pt-0">
-              <PlanYourTrip t={t} />
+              <PlanYourTrip t={t} language={language} />
             </main>
 
             <Footer language={language} onLanguageChange={setLanguage} t={t} />
