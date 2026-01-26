@@ -41,11 +41,11 @@ export default function AgendaPage() {
   ];
 
   const anchorLinks = [
-    { href: '#weather', label: t.agenda.anchors.weather },
     { href: '#schedule', label: t.agenda.anchors.schedule },
     { href: '#details', label: language === 'en' ? 'Details' : 'Detalles' },
     { href: '#map', label: t.agenda.anchors.map },
     { href: '#dress-code', label: t.agenda.anchors.dressCode },
+    { href: '#weather', label: t.agenda.anchors.weather },
   ];
 
   return (
@@ -77,15 +77,6 @@ export default function AgendaPage() {
                   </a>
                 ))}
               </nav>
-            </div>
-          </div>
-        </section>
-
-        {/* Weather Section */}
-        <section id="weather" className="py-8 md:py-12">
-          <div className="container">
-            <div className="max-w-3xl lg:max-w-4xl mx-auto">
-              <WeatherBox t={t.agenda.weather} />
             </div>
           </div>
         </section>
@@ -139,6 +130,15 @@ export default function AgendaPage() {
                 {t.agenda.dressCode.title}
               </h2>
               <DressCode t={t.agenda.dressCode} />
+            </div>
+          </div>
+        </section>
+
+        {/* Weather Section */}
+        <section id="weather" className="py-8 md:py-12">
+          <div className="container">
+            <div className="max-w-3xl lg:max-w-4xl mx-auto">
+              <WeatherBox t={t.agenda.weather} />
             </div>
           </div>
         </section>
