@@ -22,13 +22,13 @@ export function FloralBorder({ position, variant = 'default' }: FloralBorderProp
       );
     }
     
-    // Default floral header for home page
+    // Default floral header for home page - full width rectangular
     return (
-      <div className="w-full pt-6 flex items-center justify-center pointer-events-none bg-background">
+      <div className="w-full pointer-events-none bg-background">
         <img 
           src={headerFloral} 
           alt="" 
-          className="h-48 sm:h-56 md:h-64 max-w-md sm:max-w-lg md:max-w-xl object-contain"
+          className="w-full h-auto object-cover"
         />
       </div>
     );
