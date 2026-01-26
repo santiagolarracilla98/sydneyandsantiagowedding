@@ -2,7 +2,7 @@ import 'leaflet/dist/leaflet.css';
 
 import L from 'leaflet';
 import { MapPin } from 'lucide-react';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { useEffect, useMemo, useRef } from 'react';
 
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
 import iconUrl from 'leaflet/dist/images/marker-icon.png';
@@ -39,45 +39,59 @@ export function AgendaMap({ t }: AgendaMapProps) {
   // Source: Copal (Postcard listing), Jardín (Wikipedia)
   const copal: LatLng = [17.0693649, -96.7233629];
   const jardin: LatLng = [17.0666, -96.7225];
-  
-  // Center point between both locations
-  const center: LatLng = [(copal[0] + jardin[0]) / 2, (copal[1] + jardin[1]) / 2];
+  const mapElRef = useRef<HTMLDivElement | null>(null);
+
+  const bounds = useMemo(() => {
+    return L.latLngBounds([copal, jardin].map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
+  }, [copal, jardin]);
+
+  useEffect(() => {
+    if (!mapElRef.current) return;
+
+    const map = L.map(mapElRef.current, {
+      zoomControl: true,
+      scrollWheelZoom: false,
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19,
+    }).addTo(map);
+
+    map.fitBounds(bounds, { padding: [40, 40] });
+
+    const copalPopup = `
+      <div style="line-height:1.2">
+        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Friday</div>
+        <div style="font-size:14px; margin-top:4px">${t.locations.welcomeParty.name}</div>
+        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.welcomeParty.address}</div>
+      </div>
+    `;
+
+    const jardinPopup = `
+      <div style="line-height:1.2">
+        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
+        <div style="font-size:14px; margin-top:4px">${t.locations.wedding.name}</div>
+        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.wedding.address}</div>
+      </div>
+    `;
+
+    L.marker(copal).addTo(map).bindPopup(copalPopup);
+    L.marker(jardin).addTo(map).bindPopup(jardinPopup);
+
+    // Ensure proper sizing if the map container is rendered after layout
+    setTimeout(() => map.invalidateSize(), 50);
+
+    return () => {
+      map.remove();
+    };
+  }, [bounds, copal, jardin, t.locations.wedding.address, t.locations.wedding.name, t.locations.welcomeParty.address, t.locations.welcomeParty.name]);
 
   return (
     <div className="space-y-6">
       {/* Map Container */}
       <div className="rounded-lg overflow-hidden shadow-md border border-border/50">
-        <MapContainer 
-          center={center} 
-          zoom={16} 
-          scrollWheelZoom={false}
-          className="h-[400px] w-full"
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-
-          <Marker position={copal}>
-            <Popup>
-              <div className="space-y-1">
-                <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">Friday</div>
-                <div className="font-serif text-sm text-foreground">{t.locations.welcomeParty.name}</div>
-                <div className="font-serif text-xs text-muted-foreground">{t.locations.welcomeParty.address}</div>
-              </div>
-            </Popup>
-          </Marker>
-
-          <Marker position={jardin}>
-            <Popup>
-              <div className="space-y-1">
-                <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">Saturday</div>
-                <div className="font-serif text-sm text-foreground">{t.locations.wedding.name}</div>
-                <div className="font-serif text-xs text-muted-foreground">{t.locations.wedding.address}</div>
-              </div>
-            </Popup>
-          </Marker>
-        </MapContainer>
+        <div ref={mapElRef} className="h-[400px] w-full" />
       </div>
 
       {/* Location Cards */}
