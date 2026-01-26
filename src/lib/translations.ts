@@ -82,7 +82,7 @@ export const translations = {
         friday: {
           day: 'Friday, November 13th',
           title: 'Parade & Welcome Party',
-          description: 'We kick off the celebrations with a traditional Oaxacan Calenda—a joyful street parade with live music, dancing, and shots of mezcal as we walk through the historic streets of Oaxaca.',
+          description: 'We kick off the celebrations with a traditional Oaxacan Calenda—a joyful street parade with live music, dancing, and shots of mezcal as we walk through the historic streets of Oaxaca. The parade ends at Copal Restaurant for welcome drinks and light snacks—a taste of what\'s to come on the big day!',
           details: [
             {
               name: 'Calenda',
@@ -346,7 +346,7 @@ export const translations = {
         friday: {
           day: 'Viernes, 13 de Noviembre',
           title: 'Desfile y Fiesta de Bienvenida',
-          description: 'Comenzamos las celebraciones con una tradicional Calenda Oaxaqueña—un alegre desfile callejero con música en vivo, baile y shots de mezcal mientras caminamos por las calles históricas de Oaxaca.',
+          description: 'Comenzamos las celebraciones con una tradicional Calenda Oaxaqueña—un alegre desfile callejero con música en vivo, baile y shots de mezcal mientras caminamos por las calles históricas de Oaxaca. El desfile termina en Restaurante Copal para bebidas de bienvenida y bocadillos—¡una probadita de lo que vendrá el gran día!',
           details: [
             {
               name: 'Calenda',
