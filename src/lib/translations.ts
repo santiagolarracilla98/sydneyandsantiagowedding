@@ -81,7 +81,7 @@ export const translations = {
         },
         friday: {
           day: 'Friday, November 13th',
-          title: 'Welcome Party',
+          title: 'Parade & Welcome Party',
           description: 'We kick off the celebrations with a traditional Oaxacan Calenda—a joyful street parade with live music, dancing, and shots of mezcal as we walk through the historic streets of Oaxaca.',
           details: [
             {
@@ -345,7 +345,7 @@ export const translations = {
         },
         friday: {
           day: 'Viernes, 13 de Noviembre',
-          title: 'Fiesta de Bienvenida',
+          title: 'Desfile y Fiesta de Bienvenida',
           description: 'Comenzamos las celebraciones con una tradicional Calenda Oaxaqueña—un alegre desfile callejero con música en vivo, baile y shots de mezcal mientras caminamos por las calles históricas de Oaxaca.',
           details: [
             {
