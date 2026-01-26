@@ -89,6 +89,40 @@ export const translations = {
           description: 'Ceremony and celebration at the Jardín Etnobotánico de Oaxaca.',
         },
       },
+      detailedSchedule: {
+        friday: {
+          date: 'Friday, November 13th',
+          title: 'Welcome Party',
+          events: [
+            {
+              name: 'Calenda (Oaxacan Parade)',
+              time: '5:00 PM - 6:00 PM',
+              venue: 'Templo Santo Domingo',
+              address: 'Calle 5 de Mayo 413',
+            },
+            {
+              name: 'Welcome Party Drinks',
+              time: '6:00 PM - 9:00 PM',
+              venue: 'Copal Restaurant',
+              address: 'C. Macedonio Alcalá 803',
+            },
+          ],
+        },
+        saturday: {
+          date: 'Saturday, November 14th',
+          title: 'Wedding Day',
+          events: [
+            { name: 'Ceremony', time: '2:30 PM - 3:30 PM' },
+            { name: 'Cocktails', time: '3:30 PM - 4:30 PM' },
+            { name: 'Reception', time: '4:30 PM - 2:00 AM' },
+          ],
+          venue: {
+            name: 'Patio el Huaje Entrance',
+            location: 'Jardín Etnobotánico',
+            address: 'Calle Macedonio Alcalá 505',
+          },
+        },
+      },
       map: {
         title: 'Locations',
         locations: {
@@ -297,6 +331,40 @@ export const translations = {
           day: 'Sábado',
           title: 'Boda (Jardín Etnobotánico)',
           description: 'Ceremonia y celebración en el Jardín Etnobotánico de Oaxaca.',
+        },
+      },
+      detailedSchedule: {
+        friday: {
+          date: 'Viernes, 13 de Noviembre',
+          title: 'Fiesta de Bienvenida',
+          events: [
+            {
+              name: 'Calenda (Desfile Oaxaqueño)',
+              time: '5:00 PM - 6:00 PM',
+              venue: 'Templo Santo Domingo',
+              address: 'Calle 5 de Mayo 413',
+            },
+            {
+              name: 'Bebidas de Bienvenida',
+              time: '6:00 PM - 9:00 PM',
+              venue: 'Restaurante Copal',
+              address: 'C. Macedonio Alcalá 803',
+            },
+          ],
+        },
+        saturday: {
+          date: 'Sábado, 14 de Noviembre',
+          title: 'Día de la Boda',
+          events: [
+            { name: 'Ceremonia', time: '2:30 PM - 3:30 PM' },
+            { name: 'Cóctel', time: '3:30 PM - 4:30 PM' },
+            { name: 'Recepción', time: '4:30 PM - 2:00 AM' },
+          ],
+          venue: {
+            name: 'Entrada Patio el Huaje',
+            location: 'Jardín Etnobotánico',
+            address: 'Calle Macedonio Alcalá 505',
+          },
         },
       },
       map: {
