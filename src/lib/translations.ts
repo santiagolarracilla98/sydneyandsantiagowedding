@@ -72,55 +72,58 @@ export const translations = {
         night: 'Night: ~10–14°C (50–57°F), cooler',
         note: 'Pack a light layer for evenings.',
       },
-      schedule: {
+      weekendSchedule: {
         thursday: {
-          day: 'Thursday',
-          title: 'Free Time',
-          description: 'Arrive, settle in, explore the city, mezcal tastings, markets, and food.',
+          day: 'Thursday, November 12th',
+          title: 'Free Day',
+          description: 'This is your day to explore Oaxaca at your own pace. Wander the cobblestone streets, visit the markets, try some mezcal tastings, discover incredible food, and soak in the vibrant culture of the city.',
+          details: [],
         },
         friday: {
-          day: 'Friday',
+          day: 'Friday, November 13th',
           title: 'Welcome Party',
-          description: 'Join us for drinks, music, and a relaxed welcome celebration.',
-        },
-        saturday: {
-          day: 'Saturday',
-          title: 'Wedding (Jardín Etnobotánico)',
-          description: 'Ceremony and celebration at the Jardín Etnobotánico de Oaxaca.',
-        },
-      },
-      detailedSchedule: {
-        friday: {
-          date: 'Friday, November 13th',
-          title: 'Welcome Party',
-          events: [
+          description: 'We kick off the celebrations with a traditional Oaxacan Calenda—a joyful street parade with live music, dancing, and shots of mezcal as we walk through the historic streets of Oaxaca.',
+          details: [
             {
-              name: 'Calenda (Oaxacan Parade)',
-              time: '5:00 PM - 6:00 PM',
-              venue: 'Templo Santo Domingo',
-              address: 'Calle 5 de Mayo 413',
+              name: 'Calenda',
+              time: '5:00 PM',
+              description: "A Calenda is a traditional Oaxacan street parade. We'll walk through the streets with a brass band, giant puppets (monos de calenda), and plenty of mezcal. It's festive, lively, and uniquely Oaxacan!",
+              meetingPoint: 'Meet at Santo Domingo Church at 4:55 PM',
+              address: 'Templo de Santo Domingo, Calle 5 de Mayo',
             },
             {
               name: 'Welcome Party Drinks',
-              time: '6:00 PM - 9:00 PM',
+              time: '6:00 PM – 9:00 PM',
+              description: 'The Calenda ends at the welcome party venue. This is a drop-in event—come anytime during this window to enjoy drinks, light snacks, and good company.',
               venue: 'Copal Restaurant',
               address: 'C. Macedonio Alcalá 803',
             },
           ],
         },
         saturday: {
-          date: 'Saturday, November 14th',
+          day: 'Saturday, November 14th',
           title: 'Wedding Day',
-          events: [
-            { name: 'Ceremony', time: '2:30 PM - 3:30 PM' },
-            { name: 'Cocktails', time: '3:30 PM - 4:30 PM' },
-            { name: 'Reception', time: '4:30 PM - 2:00 AM' },
+          description: 'The big day! Join us for our ceremony and celebration at the beautiful Jardín Etnobotánico de Oaxaca.',
+          details: [
+            {
+              name: 'Ceremony',
+              time: '2:30 PM – 3:30 PM',
+              description: 'The ceremony will take place in El Patio del Huaje, a stunning courtyard within the Jardín Etnobotánico.',
+              venue: 'El Patio del Huaje',
+              address: 'Entrance on Calle Macedonio Alcalá 505 (across from El Otro Oaxaca hotel)',
+              note: 'Please arrive by 2:15 PM.',
+            },
+            {
+              name: 'Cocktails',
+              time: '3:30 PM – 4:30 PM',
+              description: 'After the ceremony, enjoy cocktails and canapés in the garden.',
+            },
+            {
+              name: 'Reception',
+              time: '4:30 PM – 2:00 AM',
+              description: 'Dinner, dancing, and celebration—all within the Jardín Etnobotánico. No need to move venues!',
+            },
           ],
-          venue: {
-            name: 'Patio el Huaje Entrance',
-            location: 'Jardín Etnobotánico',
-            address: 'Calle Macedonio Alcalá 505',
-          },
         },
       },
       map: {
@@ -146,7 +149,7 @@ export const translations = {
           },
           women: {
             label: 'Women',
-            description: 'Colorful long dresses. Heels optional (comfortable shoes encouraged).',
+            description: 'Colorful long dresses. Heels optional (comfortable shoes encouraged). Bring a light jacket or shawl for the evening—it gets cooler after dark.',
           },
         },
         welcomeParty: {
@@ -325,55 +328,58 @@ export const translations = {
         night: 'Noche: ~10–14°C (50–57°F), más fresco',
         note: 'Trae una capa ligera para las noches.',
       },
-      schedule: {
+      weekendSchedule: {
         thursday: {
-          day: 'Jueves',
-          title: 'Tiempo Libre',
-          description: 'Llega, instálate, explora la ciudad, catas de mezcal, mercados y comida.',
+          day: 'Jueves, 12 de Noviembre',
+          title: 'Día Libre',
+          description: 'Este es tu día para explorar Oaxaca a tu ritmo. Pasea por las calles empedradas, visita los mercados, prueba catas de mezcal, descubre comida increíble y sumérgete en la vibrante cultura de la ciudad.',
+          details: [],
         },
         friday: {
-          day: 'Viernes',
+          day: 'Viernes, 13 de Noviembre',
           title: 'Fiesta de Bienvenida',
-          description: 'Acompáñanos para bebidas, música y una celebración de bienvenida relajada.',
-        },
-        saturday: {
-          day: 'Sábado',
-          title: 'Boda (Jardín Etnobotánico)',
-          description: 'Ceremonia y celebración en el Jardín Etnobotánico de Oaxaca.',
-        },
-      },
-      detailedSchedule: {
-        friday: {
-          date: 'Viernes, 13 de Noviembre',
-          title: 'Fiesta de Bienvenida',
-          events: [
+          description: 'Comenzamos las celebraciones con una tradicional Calenda Oaxaqueña—un alegre desfile callejero con música en vivo, baile y shots de mezcal mientras caminamos por las calles históricas de Oaxaca.',
+          details: [
             {
-              name: 'Calenda (Desfile Oaxaqueño)',
-              time: '5:00 PM - 6:00 PM',
-              venue: 'Templo Santo Domingo',
-              address: 'Calle 5 de Mayo 413',
+              name: 'Calenda',
+              time: '5:00 PM',
+              description: 'Una Calenda es un desfile callejero tradicional oaxaqueño. Caminaremos por las calles con una banda de música, muñecos gigantes (monos de calenda) y mucho mezcal. ¡Es festivo, animado y únicamente oaxaqueño!',
+              meetingPoint: 'Punto de encuentro: Iglesia de Santo Domingo a las 4:55 PM',
+              address: 'Templo de Santo Domingo, Calle 5 de Mayo',
             },
             {
               name: 'Bebidas de Bienvenida',
-              time: '6:00 PM - 9:00 PM',
+              time: '6:00 PM – 9:00 PM',
+              description: 'La Calenda termina en el lugar de la fiesta de bienvenida. Este es un evento de llegada libre—ven en cualquier momento durante este horario para disfrutar de bebidas, bocadillos y buena compañía.',
               venue: 'Restaurante Copal',
               address: 'C. Macedonio Alcalá 803',
             },
           ],
         },
         saturday: {
-          date: 'Sábado, 14 de Noviembre',
+          day: 'Sábado, 14 de Noviembre',
           title: 'Día de la Boda',
-          events: [
-            { name: 'Ceremonia', time: '2:30 PM - 3:30 PM' },
-            { name: 'Cóctel', time: '3:30 PM - 4:30 PM' },
-            { name: 'Recepción', time: '4:30 PM - 2:00 AM' },
+          description: '¡El gran día! Acompáñanos en nuestra ceremonia y celebración en el hermoso Jardín Etnobotánico de Oaxaca.',
+          details: [
+            {
+              name: 'Ceremonia',
+              time: '2:30 PM – 3:30 PM',
+              description: 'La ceremonia se llevará a cabo en El Patio del Huaje, un hermoso patio dentro del Jardín Etnobotánico.',
+              venue: 'El Patio del Huaje',
+              address: 'Entrada en Calle Macedonio Alcalá 505 (frente al hotel El Otro Oaxaca)',
+              note: 'Por favor llega a las 2:15 PM.',
+            },
+            {
+              name: 'Cóctel',
+              time: '3:30 PM – 4:30 PM',
+              description: 'Después de la ceremonia, disfruta de cócteles y canapés en el jardín.',
+            },
+            {
+              name: 'Recepción',
+              time: '4:30 PM – 2:00 AM',
+              description: 'Cena, baile y celebración—todo dentro del Jardín Etnobotánico. ¡No hay necesidad de cambiar de lugar!',
+            },
           ],
-          venue: {
-            name: 'Entrada Patio el Huaje',
-            location: 'Jardín Etnobotánico',
-            address: 'Calle Macedonio Alcalá 505',
-          },
         },
       },
       map: {
@@ -399,7 +405,7 @@ export const translations = {
           },
           women: {
             label: 'Mujeres',
-            description: 'Vestidos largos y coloridos. Tacones opcionales (se recomiendan zapatos cómodos).',
+            description: 'Vestidos largos y coloridos. Tacones opcionales (se recomiendan zapatos cómodos). Trae una chaqueta ligera o chal para la noche—refresca después del atardecer.',
           },
         },
         welcomeParty: {
