@@ -203,28 +203,28 @@ export function AgendaMap({ t }: AgendaMapProps) {
                 <img 
                   src={santoDomingoImage} 
                   alt="Templo de Santo Domingo" 
-                  className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                  className="w-20 h-20 object-cover rounded-md flex-shrink-0"
                 />
               )}
               {key === 'welcomeParty' && (
                 <img 
                   src={copalImage} 
                   alt="Copal Restaurant" 
-                  className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                  className="w-20 h-20 object-cover rounded-md flex-shrink-0"
                 />
               )}
               {key === 'patioHuaje' && (
                 <img 
                   src={patioHuajeImage} 
                   alt="Patio del Huaje Entrance" 
-                  className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                  className="w-20 h-20 object-cover rounded-md flex-shrink-0"
                 />
               )}
               {key === 'wedding' && (
                 <img 
                   src={jardinImage} 
                   alt="Jardín Etnobotánico" 
-                  className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                  className="w-20 h-20 object-cover rounded-md flex-shrink-0"
                 />
               )}
             </div>
