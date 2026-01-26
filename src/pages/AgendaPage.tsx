@@ -4,11 +4,9 @@ import { Footer } from '@/components/Footer';
 import { FloralBorder } from '@/components/FloralBorder';
 import { LanguageModal } from '@/components/LanguageModal';
 import { WeatherBox } from '@/components/agenda/WeatherBox';
-import { ScheduleBlock } from '@/components/agenda/ScheduleBlock';
-import { DetailedSchedule } from '@/components/agenda/DetailedSchedule';
+import { WeekendSchedule } from '@/components/agenda/WeekendSchedule';
 import { AgendaMap } from '@/components/agenda/AgendaMap';
 import { DressCode } from '@/components/agenda/DressCode';
-import { Calendar, PartyPopper, Heart } from 'lucide-react';
 
 export default function AgendaPage() {
   const { language, setLanguage, t, needsSelection } = useLanguage();
@@ -19,30 +17,8 @@ export default function AgendaPage() {
 
   if (!language) return null;
 
-  const scheduleItems = [
-    {
-      day: t.agenda.schedule.thursday.day,
-      title: t.agenda.schedule.thursday.title,
-      description: t.agenda.schedule.thursday.description,
-      icon: Calendar,
-    },
-    {
-      day: t.agenda.schedule.friday.day,
-      title: t.agenda.schedule.friday.title,
-      description: t.agenda.schedule.friday.description,
-      icon: PartyPopper,
-    },
-    {
-      day: t.agenda.schedule.saturday.day,
-      title: t.agenda.schedule.saturday.title,
-      description: t.agenda.schedule.saturday.description,
-      icon: Heart,
-    },
-  ];
-
   const anchorLinks = [
     { href: '#schedule', label: t.agenda.anchors.schedule },
-    { href: '#details', label: language === 'en' ? 'Details' : 'Detalles' },
     { href: '#map', label: t.agenda.anchors.map },
     { href: '#dress-code', label: t.agenda.anchors.dressCode },
     { href: '#weather', label: t.agenda.anchors.weather },
@@ -81,31 +57,11 @@ export default function AgendaPage() {
           </div>
         </section>
 
-        {/* Schedule Section */}
+        {/* Weekend Schedule Section */}
         <section id="schedule" className="py-8 md:py-12">
           <div className="container">
-            <div className="max-w-3xl lg:max-w-4xl mx-auto space-y-6">
-              {scheduleItems.map((item, index) => (
-                <ScheduleBlock
-                  key={index}
-                  day={item.day}
-                  title={item.title}
-                  description={item.description}
-                  icon={item.icon}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Detailed Schedule Section */}
-        <section id="details" className="py-8 md:py-12">
-          <div className="container">
-            <div className="max-w-4xl lg:max-w-5xl mx-auto">
-              <h2 className="font-serif text-xl md:text-2xl text-foreground mb-8 text-center">
-                {language === 'en' ? 'Details' : 'Detalles'}
-              </h2>
-              <DetailedSchedule t={t.agenda.detailedSchedule} />
+            <div className="max-w-3xl lg:max-w-4xl mx-auto">
+              <WeekendSchedule t={t.agenda.weekendSchedule} />
             </div>
           </div>
         </section>
