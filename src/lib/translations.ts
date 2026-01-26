@@ -103,7 +103,7 @@ export const translations = {
         saturday: {
           day: 'Saturday, November 14th',
           title: 'Wedding Day',
-          description: 'The big day! Join us for our ceremony and celebration at the beautiful Jardín Etnobotánico de Oaxaca.',
+          description: "The big day! We'll begin with a spiritual ceremony, followed by cocktail hour, then move into the botanical garden for dinner and dancing—all within the same stunning venue.",
           details: [
             {
               name: 'Ceremony',
@@ -367,7 +367,7 @@ export const translations = {
         saturday: {
           day: 'Sábado, 14 de Noviembre',
           title: 'Día de la Boda',
-          description: '¡El gran día! Acompáñanos en nuestra ceremonia y celebración en el hermoso Jardín Etnobotánico de Oaxaca.',
+          description: '¡El gran día! Comenzaremos con una ceremonia espiritual, seguida de la hora del cóctel, y luego nos moveremos al jardín botánico para la cena y el baile—todo dentro del mismo hermoso lugar.',
           details: [
             {
               name: 'Ceremonia',
