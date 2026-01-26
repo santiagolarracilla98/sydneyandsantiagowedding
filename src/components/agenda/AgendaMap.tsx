@@ -2,7 +2,7 @@ import 'leaflet/dist/leaflet.css';
 
 import L from 'leaflet';
 import { MapPin } from 'lucide-react';
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
 import iconUrl from 'leaflet/dist/images/marker-icon.png';
@@ -14,6 +14,27 @@ L.Icon.Default.mergeOptions({
   iconRetinaUrl,
   iconUrl,
   shadowUrl,
+});
+
+// Create normal and large icons
+const normalIcon = new L.Icon({
+  iconUrl,
+  iconRetinaUrl,
+  shadowUrl,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41],
+});
+
+const largeIcon = new L.Icon({
+  iconUrl,
+  iconRetinaUrl,
+  shadowUrl,
+  iconSize: [38, 62],
+  iconAnchor: [19, 62],
+  popupAnchor: [1, -50],
+  shadowSize: [62, 62],
 });
 
 interface AgendaMapProps {
@@ -41,19 +62,41 @@ interface AgendaMapProps {
 }
 
 type LatLng = [number, number];
+type LocationKey = 'santoDomingo' | 'welcomeParty' | 'patioHuaje' | 'wedding';
 
 export function AgendaMap({ t }: AgendaMapProps) {
+  const [hoveredLocation, setHoveredLocation] = useState<LocationKey | null>(null);
+  
   // Hardcoded coordinates to guarantee pins always appear
-  // Source: Copal (Postcard listing), Santo Domingo & Jardín (Wikipedia), Patio del Huaje (entrance on Alcalá)
-  const copal: LatLng = [17.0693649, -96.7233629];
-  const santoDomingo: LatLng = [17.06556, -96.72306];
-  const patioHuaje: LatLng = [17.0670, -96.7228];
-  const jardin: LatLng = [17.0666, -96.7225];
+  const coordinates: Record<LocationKey, LatLng> = {
+    santoDomingo: [17.06556, -96.72306],
+    welcomeParty: [17.0693649, -96.7233629],
+    patioHuaje: [17.0670, -96.7228],
+    wedding: [17.0666, -96.7225],
+  };
+
   const mapElRef = useRef<HTMLDivElement | null>(null);
+  const markersRef = useRef<Record<LocationKey, L.Marker | null>>({
+    santoDomingo: null,
+    welcomeParty: null,
+    patioHuaje: null,
+    wedding: null,
+  });
 
   const bounds = useMemo(() => {
-    return L.latLngBounds([copal, santoDomingo, patioHuaje, jardin].map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
-  }, [copal, jardin, patioHuaje, santoDomingo]);
+    return L.latLngBounds(
+      Object.values(coordinates).map(([lat, lng]) => L.latLng(lat, lng))
+    ).pad(0.18);
+  }, []);
+
+  // Update marker icons when hover state changes
+  useEffect(() => {
+    Object.entries(markersRef.current).forEach(([key, marker]) => {
+      if (marker) {
+        marker.setIcon(key === hoveredLocation ? largeIcon : normalIcon);
+      }
+    });
+  }, [hoveredLocation]);
 
   useEffect(() => {
     if (!mapElRef.current) return;
@@ -70,64 +113,64 @@ export function AgendaMap({ t }: AgendaMapProps) {
 
     map.fitBounds(bounds, { padding: [40, 40] });
 
-    const copalPopup = `
-      <div style="line-height:1.2">
-        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Friday</div>
-        <div style="font-size:14px; margin-top:4px">${t.locations.welcomeParty.name}</div>
-        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.welcomeParty.address}</div>
-      </div>
-    `;
+    const popups: Record<LocationKey, string> = {
+      santoDomingo: `
+        <div style="line-height:1.2">
+          <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Friday</div>
+          <div style="font-size:14px; margin-top:4px">${t.locations.santoDomingo.name}</div>
+          <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.santoDomingo.address}</div>
+        </div>
+      `,
+      welcomeParty: `
+        <div style="line-height:1.2">
+          <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Friday</div>
+          <div style="font-size:14px; margin-top:4px">${t.locations.welcomeParty.name}</div>
+          <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.welcomeParty.address}</div>
+        </div>
+      `,
+      patioHuaje: `
+        <div style="line-height:1.2">
+          <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
+          <div style="font-size:14px; margin-top:4px">${t.locations.patioHuaje.name}</div>
+          <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.patioHuaje.address}</div>
+        </div>
+      `,
+      wedding: `
+        <div style="line-height:1.2">
+          <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
+          <div style="font-size:14px; margin-top:4px">${t.locations.wedding.name}</div>
+          <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.wedding.address}</div>
+        </div>
+      `,
+    };
 
-    const santoDomingoPopup = `
-      <div style="line-height:1.2">
-        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Friday</div>
-        <div style="font-size:14px; margin-top:4px">${t.locations.santoDomingo.name}</div>
-        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.santoDomingo.address}</div>
-      </div>
-    `;
+    // Create markers and store refs
+    (Object.keys(coordinates) as LocationKey[]).forEach((key) => {
+      const marker = L.marker(coordinates[key], { icon: normalIcon })
+        .addTo(map)
+        .bindPopup(popups[key]);
+      markersRef.current[key] = marker;
+    });
 
-    const patioHuajePopup = `
-      <div style="line-height:1.2">
-        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
-        <div style="font-size:14px; margin-top:4px">${t.locations.patioHuaje.name}</div>
-        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.patioHuaje.address}</div>
-      </div>
-    `;
-
-    const jardinPopup = `
-      <div style="line-height:1.2">
-        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
-        <div style="font-size:14px; margin-top:4px">${t.locations.wedding.name}</div>
-        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.wedding.address}</div>
-      </div>
-    `;
-
-    L.marker(copal).addTo(map).bindPopup(copalPopup);
-    L.marker(santoDomingo).addTo(map).bindPopup(santoDomingoPopup);
-    L.marker(patioHuaje).addTo(map).bindPopup(patioHuajePopup);
-    L.marker(jardin).addTo(map).bindPopup(jardinPopup);
-
-    // Ensure proper sizing if the map container is rendered after layout
     setTimeout(() => map.invalidateSize(), 50);
 
     return () => {
       map.remove();
+      markersRef.current = {
+        santoDomingo: null,
+        welcomeParty: null,
+        patioHuaje: null,
+        wedding: null,
+      };
     };
-  }, [
-    bounds,
-    copal,
-    jardin,
-    patioHuaje,
-    santoDomingo,
-    t.locations.patioHuaje.address,
-    t.locations.patioHuaje.name,
-    t.locations.santoDomingo.address,
-    t.locations.santoDomingo.name,
-    t.locations.wedding.address,
-    t.locations.wedding.name,
-    t.locations.welcomeParty.address,
-    t.locations.welcomeParty.name,
-  ]);
+  }, [bounds, t]);
+
+  const locationCards: { key: LocationKey; day: string; name: string; address: string }[] = [
+    { key: 'santoDomingo', day: 'Friday', name: t.locations.santoDomingo.name, address: t.locations.santoDomingo.address },
+    { key: 'welcomeParty', day: 'Friday', name: t.locations.welcomeParty.name, address: t.locations.welcomeParty.address },
+    { key: 'patioHuaje', day: 'Saturday', name: t.locations.patioHuaje.name, address: t.locations.patioHuaje.address },
+    { key: 'wedding', day: 'Saturday', name: t.locations.wedding.name, address: t.locations.wedding.address },
+  ];
 
   return (
     <div className="space-y-6">
@@ -138,69 +181,23 @@ export function AgendaMap({ t }: AgendaMapProps) {
 
       {/* Location Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a
-          href="https://maps.google.com/?q=Templo+de+Santo+Domingo+de+Guzmán,+Oaxaca"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-        >
-          <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">Friday</p>
-              <h4 className="font-serif text-sm text-foreground mb-1">{t.locations.santoDomingo.name}</h4>
-              <p className="font-serif text-xs text-muted-foreground">{t.locations.santoDomingo.address}</p>
+        {locationCards.map(({ key, day, name, address }) => (
+          <div
+            key={key}
+            className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+            onMouseEnter={() => setHoveredLocation(key)}
+            onMouseLeave={() => setHoveredLocation(null)}
+          >
+            <div className="flex items-start gap-3">
+              <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
+              <div>
+                <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">{day}</p>
+                <h4 className="font-serif text-sm text-foreground mb-1">{name}</h4>
+                <p className="font-serif text-xs text-muted-foreground">{address}</p>
+              </div>
             </div>
           </div>
-        </a>
-
-        <a
-          href="https://maps.google.com/?q=Copal+Restaurant,+C.+Macedonio+Alcalá+803,+Oaxaca"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-        >
-          <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">Friday</p>
-              <h4 className="font-serif text-sm text-foreground mb-1">{t.locations.welcomeParty.name}</h4>
-              <p className="font-serif text-xs text-muted-foreground">{t.locations.welcomeParty.address}</p>
-            </div>
-          </div>
-        </a>
-
-        <a
-          href="https://maps.google.com/?q=C.+Macedonio+Alcalá+507,+Oaxaca"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-        >
-          <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">Saturday</p>
-              <h4 className="font-serif text-sm text-foreground mb-1">{t.locations.patioHuaje.name}</h4>
-              <p className="font-serif text-xs text-muted-foreground">{t.locations.patioHuaje.address}</p>
-            </div>
-          </div>
-        </a>
-
-        <a
-          href="https://maps.google.com/?q=Jardín+Etnobotánico+de+Oaxaca,+Reforma+S/N,+Centro,+68000+Oaxaca+de+Juárez"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-        >
-          <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">Saturday</p>
-              <h4 className="font-serif text-sm text-foreground mb-1">{t.locations.wedding.name}</h4>
-              <p className="font-serif text-xs text-muted-foreground">{t.locations.wedding.address}</p>
-            </div>
-          </div>
-        </a>
+        ))}
       </div>
     </div>
   );
