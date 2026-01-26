@@ -30,7 +30,7 @@ export function Section({
     }
     return () => observer.disconnect();
   }, []);
-  return <section id={id} ref={sectionRef} className="py-8 md:py-12 mx-px my-0">
+  return <section id={id} ref={sectionRef} className="py-4 md:py-6 mx-px my-0">
       <div className="container">
         <div className={`max-w-3xl lg:max-w-4xl mx-auto text-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           {/* Decorative divider */}
