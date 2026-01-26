@@ -264,6 +264,59 @@ export const translations = {
       title: 'Gift Registry',
       linkPlaceholder: 'Link to be added',
     },
+    qa: {
+      title: 'Q&A',
+      subtitle: 'Frequently asked questions about our wedding weekend.',
+      questions: [
+        {
+          question: 'Can I bring a plus one?',
+          answer: "Due to venue capacity, we can only accommodate guests named on the invitation. If you received a plus one, it will be noted on your invite. Please let us know if you have any questions!",
+        },
+        {
+          question: 'Are children welcome?',
+          answer: "We love your little ones, but we've decided to make this an adults-only celebration. We hope this gives you a chance to enjoy a fun weekend away!",
+        },
+        {
+          question: 'What should I wear?',
+          answer: 'For the wedding day: Men should wear suits with ties (classic colors like navy or gray preferred). Women should wear colorful long dresses. For the welcome party: Smart casual—button-up shirts for men, festive dresses for women.',
+        },
+        {
+          question: 'Is there parking at the venue?',
+          answer: "Street parking is available nearby, but we recommend taking an Uber or taxi since the venue is in the heart of the historic center. Walking is also a great option if you're staying in Centro!",
+        },
+        {
+          question: 'What time should I arrive for the ceremony?',
+          answer: 'Please arrive by 2:15 PM. The ceremony begins promptly at 2:30 PM at El Patio del Huaje within the Jardín Etnobotánico.',
+        },
+        {
+          question: 'Will there be vegetarian/vegan options?',
+          answer: "Yes! We'll have vegetarian and vegan options available. Please let us know about any dietary restrictions when you RSVP.",
+        },
+        {
+          question: 'Is the venue wheelchair accessible?',
+          answer: 'The venue has some accessibility accommodations. Please reach out to us directly so we can help make arrangements for your comfort.',
+        },
+        {
+          question: "What's the best way to get around Oaxaca?",
+          answer: 'Uber and taxis are readily available and affordable. The historic center is very walkable, and most hotels are within walking distance of the venue.',
+        },
+      ],
+      form: {
+        title: 'Any other questions?',
+        nameLabel: 'Name',
+        namePlaceholder: 'Your name',
+        emailLabel: 'Email',
+        emailPlaceholder: 'your@email.com',
+        questionLabel: 'Question',
+        questionPlaceholder: 'Type your question here...',
+        submit: 'Send Question',
+        submitting: 'Sending...',
+        successTitle: 'Question sent!',
+        successDescription: "We'll get back to you as soon as possible.",
+        errorTitle: 'Error',
+        errorDescription: 'Please fill in all fields.',
+      },
+    },
   },
   es: {
     nav: {
@@ -527,6 +580,59 @@ export const translations = {
     giftRegistry: {
       title: 'Mesa de Regalos',
       linkPlaceholder: 'Link por agregar',
+    },
+    qa: {
+      title: 'Preguntas Frecuentes',
+      subtitle: 'Preguntas frecuentes sobre nuestro fin de semana de boda.',
+      questions: [
+        {
+          question: '¿Puedo llevar acompañante?',
+          answer: 'Debido a la capacidad del lugar, solo podemos acomodar a los invitados nombrados en la invitación. Si recibiste un acompañante, estará indicado en tu invitación. ¡Por favor pregúntanos si tienes dudas!',
+        },
+        {
+          question: '¿Los niños son bienvenidos?',
+          answer: 'Amamos a sus pequeños, pero hemos decidido que esta sea una celebración solo para adultos. ¡Esperamos que esto les dé la oportunidad de disfrutar un fin de semana divertido!',
+        },
+        {
+          question: '¿Qué debo usar?',
+          answer: 'Para el día de la boda: Los hombres deben usar traje con corbata (colores clásicos como azul marino o gris preferidos). Las mujeres deben usar vestidos largos y coloridos. Para la fiesta de bienvenida: Smart casual—camisas de botón para hombres, vestidos festivos para mujeres.',
+        },
+        {
+          question: '¿Hay estacionamiento en el lugar?',
+          answer: 'Hay estacionamiento en la calle cerca, pero recomendamos tomar un Uber o taxi ya que el lugar está en el corazón del centro histórico. ¡Caminar también es una gran opción si te hospedas en el Centro!',
+        },
+        {
+          question: '¿A qué hora debo llegar para la ceremonia?',
+          answer: 'Por favor llega a las 2:15 PM. La ceremonia comienza puntualmente a las 2:30 PM en El Patio del Huaje dentro del Jardín Etnobotánico.',
+        },
+        {
+          question: '¿Habrá opciones vegetarianas/veganas?',
+          answer: '¡Sí! Tendremos opciones vegetarianas y veganas disponibles. Por favor haznos saber sobre cualquier restricción dietética cuando confirmes tu asistencia.',
+        },
+        {
+          question: '¿El lugar es accesible para sillas de ruedas?',
+          answer: 'El lugar tiene algunas adaptaciones de accesibilidad. Por favor contáctanos directamente para que podamos ayudar a hacer arreglos para tu comodidad.',
+        },
+        {
+          question: '¿Cuál es la mejor manera de moverse por Oaxaca?',
+          answer: 'Uber y taxis están disponibles y son accesibles. El centro histórico es muy caminable, y la mayoría de los hoteles están a poca distancia del lugar.',
+        },
+      ],
+      form: {
+        title: '¿Alguna otra pregunta?',
+        nameLabel: 'Nombre',
+        namePlaceholder: 'Tu nombre',
+        emailLabel: 'Correo electrónico',
+        emailPlaceholder: 'tu@correo.com',
+        questionLabel: 'Pregunta',
+        questionPlaceholder: 'Escribe tu pregunta aquí...',
+        submit: 'Enviar Pregunta',
+        submitting: 'Enviando...',
+        successTitle: '¡Pregunta enviada!',
+        successDescription: 'Te responderemos lo antes posible.',
+        errorTitle: 'Error',
+        errorDescription: 'Por favor completa todos los campos.',
+      },
     },
   },
 } as const;
