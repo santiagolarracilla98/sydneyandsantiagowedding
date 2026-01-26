@@ -20,6 +20,10 @@ interface AgendaMapProps {
   t: {
     title: string;
     locations: {
+      santoDomingo: {
+        name: string;
+        address: string;
+      };
       welcomeParty: {
         name: string;
         address: string;
@@ -36,14 +40,15 @@ type LatLng = [number, number];
 
 export function AgendaMap({ t }: AgendaMapProps) {
   // Hardcoded coordinates to guarantee pins always appear
-  // Source: Copal (Postcard listing), Jardín (Wikipedia)
+  // Source: Copal (Postcard listing), Santo Domingo & Jardín (Wikipedia)
   const copal: LatLng = [17.0693649, -96.7233629];
+  const santoDomingo: LatLng = [17.06556, -96.72306];
   const jardin: LatLng = [17.0666, -96.7225];
   const mapElRef = useRef<HTMLDivElement | null>(null);
 
   const bounds = useMemo(() => {
-    return L.latLngBounds([copal, jardin].map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
-  }, [copal, jardin]);
+    return L.latLngBounds([copal, santoDomingo, jardin].map(([lat, lng]) => L.latLng(lat, lng))).pad(0.18);
+  }, [copal, jardin, santoDomingo]);
 
   useEffect(() => {
     if (!mapElRef.current) return;
@@ -68,6 +73,14 @@ export function AgendaMap({ t }: AgendaMapProps) {
       </div>
     `;
 
+    const santoDomingoPopup = `
+      <div style="line-height:1.2">
+        <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Friday</div>
+        <div style="font-size:14px; margin-top:4px">${t.locations.santoDomingo.name}</div>
+        <div style="font-size:12px; opacity:.7; margin-top:2px">${t.locations.santoDomingo.address}</div>
+      </div>
+    `;
+
     const jardinPopup = `
       <div style="line-height:1.2">
         <div style="font-size:11px; letter-spacing:0.08em; text-transform:uppercase; opacity:.7">Saturday</div>
@@ -77,6 +90,7 @@ export function AgendaMap({ t }: AgendaMapProps) {
     `;
 
     L.marker(copal).addTo(map).bindPopup(copalPopup);
+    L.marker(santoDomingo).addTo(map).bindPopup(santoDomingoPopup);
     L.marker(jardin).addTo(map).bindPopup(jardinPopup);
 
     // Ensure proper sizing if the map container is rendered after layout
@@ -85,7 +99,18 @@ export function AgendaMap({ t }: AgendaMapProps) {
     return () => {
       map.remove();
     };
-  }, [bounds, copal, jardin, t.locations.wedding.address, t.locations.wedding.name, t.locations.welcomeParty.address, t.locations.welcomeParty.name]);
+  }, [
+    bounds,
+    copal,
+    jardin,
+    santoDomingo,
+    t.locations.santoDomingo.address,
+    t.locations.santoDomingo.name,
+    t.locations.wedding.address,
+    t.locations.wedding.name,
+    t.locations.welcomeParty.address,
+    t.locations.welcomeParty.name,
+  ]);
 
   return (
     <div className="space-y-6">
@@ -95,7 +120,23 @@ export function AgendaMap({ t }: AgendaMapProps) {
       </div>
 
       {/* Location Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a
+          href="https://maps.google.com/?q=Templo+de+Santo+Domingo+de+Guzmán,+Oaxaca"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-card border border-border/50 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+        >
+          <div className="flex items-start gap-3">
+            <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
+            <div>
+              <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">Friday</p>
+              <h4 className="font-serif text-sm text-foreground mb-1">{t.locations.santoDomingo.name}</h4>
+              <p className="font-serif text-xs text-muted-foreground">{t.locations.santoDomingo.address}</p>
+            </div>
+          </div>
+        </a>
+
         <a
           href="https://maps.google.com/?q=Copal+Restaurant,+C.+Macedonio+Alcalá+803,+Oaxaca"
           target="_blank"

@@ -89,7 +89,7 @@ export const translations = {
               time: '5:00 PM',
               description: "A Calenda is a traditional Oaxacan street parade. We'll walk through the streets with a brass band, giant puppets (monos de calenda), and plenty of mezcal. It's festive, lively, and uniquely Oaxacan!",
               meetingPoint: 'Meet at Santo Domingo Church at 4:55 PM',
-              address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax.',
+              address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
             },
             {
               name: 'Welcome Party Drinks',
@@ -129,6 +129,10 @@ export const translations = {
       map: {
         title: 'Locations',
         locations: {
+          santoDomingo: {
+            name: 'Templo de Santo Domingo',
+            address: 'C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
+          },
           welcomeParty: {
             name: 'Copal Restaurant',
             address: 'C. Macedonio Alcalá 803',
@@ -345,7 +349,7 @@ export const translations = {
               time: '5:00 PM',
               description: 'Una Calenda es un desfile callejero tradicional oaxaqueño. Caminaremos por las calles con una banda de música, muñecos gigantes (monos de calenda) y mucho mezcal. ¡Es festivo, animado y únicamente oaxaqueño!',
               meetingPoint: 'Punto de encuentro: Iglesia de Santo Domingo a las 4:55 PM',
-              address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax.',
+              address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
             },
             {
               name: 'Bebidas de Bienvenida',
@@ -385,6 +389,10 @@ export const translations = {
       map: {
         title: 'Ubicaciones',
         locations: {
+          santoDomingo: {
+            name: 'Templo de Santo Domingo',
+            address: 'C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
+          },
           welcomeParty: {
             name: 'Restaurante Copal',
             address: 'C. Macedonio Alcalá 803',
