@@ -16,6 +16,7 @@ interface HeaderProps {
       agenda: string;
       recommendations: string;
       giftRegistry: string;
+      qa: string;
     };
   };
 }
@@ -130,6 +131,17 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             }`}
           >
             {t.nav.giftRegistry}
+          </Link>
+
+          <Link
+            to="/qa"
+            className={`text-sm font-sans transition-colors duration-200 ${
+              location.pathname === '/qa' 
+                ? 'text-foreground font-medium' 
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {t.nav.qa}
           </Link>
         </nav>
 

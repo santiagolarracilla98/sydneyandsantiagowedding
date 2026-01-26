@@ -11,6 +11,7 @@ export const translations = {
       agenda: 'Agenda',
       recommendations: 'Recommendations',
       giftRegistry: 'Gift Registry',
+      qa: 'Q&A',
     },
     hero: {
       title: "Sydney & Santiago's Wedding",
@@ -380,6 +381,7 @@ export const translations = {
       agenda: 'Agenda',
       recommendations: 'Recomendaciones',
       giftRegistry: 'Mesa de Regalos',
+      qa: 'Preguntas',
     },
     hero: {
       title: 'La Boda de Sydney & Santiago',
