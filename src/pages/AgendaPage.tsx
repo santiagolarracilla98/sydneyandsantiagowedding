@@ -5,6 +5,7 @@ import { FloralBorder } from '@/components/FloralBorder';
 import { LanguageModal } from '@/components/LanguageModal';
 import { WeatherBox } from '@/components/agenda/WeatherBox';
 import { ScheduleBlock } from '@/components/agenda/ScheduleBlock';
+import { DetailedSchedule } from '@/components/agenda/DetailedSchedule';
 import { AgendaMap } from '@/components/agenda/AgendaMap';
 import { DressCode } from '@/components/agenda/DressCode';
 import { Calendar, PartyPopper, Heart } from 'lucide-react';
@@ -42,6 +43,7 @@ export default function AgendaPage() {
   const anchorLinks = [
     { href: '#weather', label: t.agenda.anchors.weather },
     { href: '#schedule', label: t.agenda.anchors.schedule },
+    { href: '#details', label: language === 'en' ? 'Details' : 'Detalles' },
     { href: '#map', label: t.agenda.anchors.map },
     { href: '#dress-code', label: t.agenda.anchors.dressCode },
   ];
@@ -101,6 +103,18 @@ export default function AgendaPage() {
                   icon={item.icon}
                 />
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Detailed Schedule Section */}
+        <section id="details" className="py-8 md:py-12">
+          <div className="container">
+            <div className="max-w-4xl lg:max-w-5xl mx-auto">
+              <h2 className="font-serif text-xl md:text-2xl text-foreground mb-8 text-center">
+                {language === 'en' ? 'Details' : 'Detalles'}
+              </h2>
+              <DetailedSchedule t={t.agenda.detailedSchedule} />
             </div>
           </div>
         </section>
