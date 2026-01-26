@@ -7,59 +7,47 @@ import { Footer } from '@/components/Footer';
 import { FloralBorder } from '@/components/FloralBorder';
 import oaxacaStreet from '@/assets/oaxaca-street.png';
 import venueGarden from '@/assets/venue-garden.png';
-
 const Home = () => {
-  const { language, setLanguage, t, isLoading, needsSelection } = useLanguage();
-
+  const {
+    language,
+    setLanguage,
+    t,
+    isLoading,
+    needsSelection
+  } = useLanguage();
   if (isLoading) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+    return <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="w-8 h-8 border-2 border-muted-foreground/30 border-t-muted-foreground rounded-full animate-spin" />
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <>
+  return <>
       {needsSelection && <LanguageModal onSelect={setLanguage} />}
 
       <div className={needsSelection ? 'blur-md pointer-events-none' : ''}>
-        {language && (
-          <>
+        {language && <>
             <Header language={language} onLanguageChange={setLanguage} t={t} />
             
             <main>
               <Hero t={t} />
 
               <Section id="intro" title={t.intro.title}>
-                {t.intro.paragraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-                <p className="font-serif text-foreground italic mt-8">
-                  {t.intro.signature}
-                </p>
+                {t.intro.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                
               </Section>
 
               <Section id="oaxaca" title={t.oaxaca.title} image={oaxacaStreet}>
-                {t.oaxaca.paragraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+                {t.oaxaca.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
               </Section>
 
               <Section id="venue" title={t.venue.title} subtitle={t.venue.subtitle} image={venueGarden}>
-                {t.venue.paragraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
+                {t.venue.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
               </Section>
             </main>
 
             <Footer language={language} onLanguageChange={setLanguage} t={t} />
             <FloralBorder position="bottom" />
-          </>
-        )}
+          </>}
       </div>
-    </>
-  );
+    </>;
 };
-
 export default Home;
