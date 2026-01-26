@@ -7,6 +7,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
 import iconUrl from 'leaflet/dist/images/marker-icon.png';
 import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
+import santoDomingoImage from '@/assets/santo-domingo.png';
 
 // Fix default marker icons for Vite builds
 delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: unknown })._getIconUrl;
@@ -190,11 +191,18 @@ export function AgendaMap({ t }: AgendaMapProps) {
           >
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" />
-              <div>
+              <div className="flex-1 min-w-0">
                 <p className="font-sans text-xs text-muted-foreground uppercase tracking-wider mb-1">{day}</p>
                 <h4 className="font-serif text-sm text-foreground mb-1">{name}</h4>
                 <p className="font-serif text-xs text-muted-foreground">{address}</p>
               </div>
+              {key === 'santoDomingo' && (
+                <img 
+                  src={santoDomingoImage} 
+                  alt="Templo de Santo Domingo" 
+                  className="w-16 h-16 object-cover rounded-md flex-shrink-0"
+                />
+              )}
             </div>
           </div>
         ))}
