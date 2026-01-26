@@ -1,6 +1,5 @@
 import { Star, Lightbulb } from 'lucide-react';
 import { RestaurantSection } from './RestaurantSection';
-import { HotelSection } from './HotelSection';
 
 interface RecommendationItem {
   readonly name: string;
@@ -50,9 +49,6 @@ export function Recommendations({ t, language }: RecommendationsProps) {
           <p className="text-muted-foreground font-sans leading-relaxed text-center mb-12">
             {recommendations.intro}
           </p>
-
-          {/* Hotels */}
-          <HotelSection language={language} />
 
           {/* Restaurants */}
           <RestaurantSection language={language} />

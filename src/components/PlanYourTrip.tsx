@@ -1,13 +1,10 @@
-import { Plane, Hotel, ExternalLink } from 'lucide-react';
+import { Plane, Hotel } from 'lucide-react';
 import directFlightsMap from '@/assets/direct-flights-map.png';
+import { HotelSection } from './HotelSection';
 interface FlightRegion {
   readonly name: string;
   readonly description: string;
   readonly searchUrl: string;
-}
-interface AccommodationOption {
-  readonly name: string;
-  readonly description: string;
 }
 interface PlanYourTripProps {
   t: {
@@ -23,14 +20,14 @@ interface PlanYourTripProps {
       };
       readonly accommodations: {
         readonly title: string;
-        readonly description: string;
-        readonly options: readonly AccommodationOption[];
       };
     };
   };
+  language: 'en' | 'es';
 }
 export function PlanYourTrip({
-  t
+  t,
+  language
 }: PlanYourTripProps) {
   const {
     planYourTrip
@@ -71,11 +68,20 @@ export function PlanYourTrip({
               </div>
             </div>
             <div className="grid gap-4">
-              {planYourTrip.flights.regions.map((region, index) => {})}
+              {planYourTrip.flights.regions.map((region, index) => (
+                <div key={index} className="bg-card border border-border rounded-lg p-5">
+                  <h4 className="font-sans font-medium text-foreground mb-2">
+                    {region.name}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {region.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Accommodations */}
+          {/* Accommodations - Hotels */}
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-6">
               <Hotel className="w-5 h-5 text-foreground" />
@@ -84,20 +90,7 @@ export function PlanYourTrip({
               </h3>
             </div>
 
-            <p className="text-muted-foreground font-sans leading-relaxed mb-6">
-              {planYourTrip.accommodations.description}
-            </p>
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              {planYourTrip.accommodations.options.map((option, index) => <div key={index} className="bg-card border border-border rounded-lg p-5">
-                  <h4 className="font-sans font-medium text-foreground mb-2">
-                    {option.name}
-                  </h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {option.description}
-                  </p>
-                </div>)}
-            </div>
+            <HotelSection language={language} />
           </div>
         </div>
       </div>
