@@ -33,7 +33,7 @@ export function PlanYourTrip({
   const {
     planYourTrip
   } = t;
-  return <section id="plan-your-trip" className="pt-6 pb-16 md:pt-8 md:pb-24 bg-background">
+  return <section id="plan-your-trip" className="pt-6 pb-8 md:pt-8 md:pb-12 bg-background">
       <div className="container">
         <div className="max-w-4xl lg:max-w-5xl mx-auto">
           {/* Header */}
