@@ -13,10 +13,10 @@ interface FooterProps {
 
 export function Footer({ language, onLanguageChange, t }: FooterProps) {
   return (
-    <footer className="py-16 md:py-24 border-t border-border/50">
+    <footer className="py-10 md:py-14 border-t border-border/50">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="w-12 h-px bg-border mx-auto mb-10" />
+          <div className="w-12 h-px bg-border mx-auto mb-8" />
           
           <p className="font-serif text-xl md:text-2xl text-muted-foreground mb-1">
             {t.footer.message}
