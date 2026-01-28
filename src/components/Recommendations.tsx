@@ -51,29 +51,44 @@ export function Recommendations({
           </p>
 
           {/* Restaurants */}
-          <RestaurantSection language={language} />
+          <div id="restaurants" className="scroll-mt-20">
+            <RestaurantSection language={language} />
+          </div>
 
           {/* Categories (excluding Food & Drink since it's replaced by RestaurantSection) */}
           <div className="space-y-12 mt-12">
-            {recommendations.categories.filter(category => category.name !== 'Food & Drink' && category.name !== 'Comida y Bebida').map((category, categoryIndex) => <div key={categoryIndex}>
-                <div className="flex items-center gap-3 mb-6">
-                  <Star className="w-4 h-4 text-wedding-coral" />
-                  <h3 className="font-serif text-xl text-foreground">
-                    {category.name}
-                  </h3>
-                </div>
+            {recommendations.categories.filter(category => category.name !== 'Food & Drink' && category.name !== 'Comida y Bebida').map((category, categoryIndex) => {
+              // Assign IDs based on category name
+              const categoryId = category.name.toLowerCase().includes('culture') || category.name.toLowerCase().includes('historia') 
+                ? 'culture' 
+                : category.name.toLowerCase().includes('shopping') || category.name.toLowerCase().includes('artisan') || category.name.toLowerCase().includes('compras')
+                ? 'shopping'
+                : undefined;
+              
+              return (
+                <div key={categoryIndex} id={categoryId} className={categoryId ? 'scroll-mt-20' : ''}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <Star className="w-4 h-4 text-wedding-coral" />
+                    <h3 className="font-serif text-xl text-foreground">
+                      {category.name}
+                    </h3>
+                  </div>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {category.items.map((item, itemIndex) => <div key={itemIndex} className="bg-card border border-border rounded-lg p-5 hover:shadow-soft transition-shadow duration-300">
-                      <h4 className="font-sans font-medium text-foreground mb-1">
-                        {item.name}
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>)}
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {category.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="bg-card border border-border rounded-lg p-5 hover:shadow-soft transition-shadow duration-300">
+                        <h4 className="font-sans font-medium text-foreground mb-1">
+                          {item.name}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>)}
+              );
+            })}
           </div>
 
           {/* Local Tips */}

@@ -21,6 +21,64 @@ interface HeaderProps {
   };
 }
 
+interface NavDropdownProps {
+  label: string;
+  to: string;
+  isActive: boolean;
+  subItems: { href: string; label: string }[];
+  isHomePage: boolean;
+}
+
+function NavDropdown({ label, to, isActive, subItems, isHomePage }: NavDropdownProps) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <Link
+        to={to}
+        className={`text-sm font-sans transition-colors duration-200 flex items-center gap-1 ${
+          isActive 
+            ? 'text-foreground font-medium' 
+            : 'text-muted-foreground hover:text-foreground'
+        }`}
+      >
+        {label}
+        <ChevronDown className="w-3 h-3" />
+      </Link>
+      
+      {open && subItems.length > 0 && (
+        <div className="absolute top-full left-0 pt-2">
+          <div className="bg-card border border-border rounded-md shadow-md py-2 min-w-[140px]">
+            {subItems.map((item) => (
+              isActive || isHomePage ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  to={`${to}${item.href}`}
+                  className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                >
+                  {item.label}
+                </Link>
+              )
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Header({ language, onLanguageChange, t }: HeaderProps) {
   const [homeOpen, setHomeOpen] = useState(false);
   const location = useLocation();
@@ -30,6 +88,24 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
     { href: '#intro', label: t.nav.intro },
     { href: '#oaxaca', label: t.nav.oaxaca },
     { href: '#venue', label: t.nav.venue },
+  ];
+
+  const planYourTripSubItems = [
+    { href: '#flights', label: language === 'en' ? 'Flights' : 'Vuelos' },
+    { href: '#hotels', label: language === 'en' ? 'Hotels' : 'Hoteles' },
+  ];
+
+  const agendaSubItems = [
+    { href: '#schedule', label: language === 'en' ? 'Schedule' : 'Horario' },
+    { href: '#map', label: language === 'en' ? 'Map' : 'Mapa' },
+    { href: '#dress-code', label: language === 'en' ? 'Dress Code' : 'Vestimenta' },
+    { href: '#weather', label: language === 'en' ? 'Weather' : 'Clima' },
+  ];
+
+  const recommendationsSubItems = [
+    { href: '#restaurants', label: language === 'en' ? 'Restaurants' : 'Restaurantes' },
+    { href: '#culture', label: language === 'en' ? 'Culture & History' : 'Cultura e Historia' },
+    { href: '#shopping', label: language === 'en' ? 'Shopping' : 'Compras' },
   ];
 
   return (
@@ -89,38 +165,29 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             )}
           </div>
 
-          <Link
+          <NavDropdown
+            label={t.nav.planYourTrip}
             to="/plan-your-trip"
-            className={`text-sm font-sans transition-colors duration-200 ${
-              location.pathname === '/plan-your-trip' 
-                ? 'text-foreground font-medium' 
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {t.nav.planYourTrip}
-          </Link>
+            isActive={location.pathname === '/plan-your-trip'}
+            subItems={planYourTripSubItems}
+            isHomePage={false}
+          />
 
-          <Link
+          <NavDropdown
+            label={t.nav.agenda}
             to="/agenda"
-            className={`text-sm font-sans transition-colors duration-200 ${
-              location.pathname === '/agenda' 
-                ? 'text-foreground font-medium' 
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {t.nav.agenda}
-          </Link>
+            isActive={location.pathname === '/agenda'}
+            subItems={agendaSubItems}
+            isHomePage={false}
+          />
           
-          <Link
+          <NavDropdown
+            label={t.nav.recommendations}
             to="/recommendations"
-            className={`text-sm font-sans transition-colors duration-200 ${
-              location.pathname === '/recommendations' 
-                ? 'text-foreground font-medium' 
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {t.nav.recommendations}
-          </Link>
+            isActive={location.pathname === '/recommendations'}
+            subItems={recommendationsSubItems}
+            isHomePage={false}
+          />
 
           <Link
             to="/gift-registry"

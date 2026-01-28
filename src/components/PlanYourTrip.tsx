@@ -51,7 +51,7 @@ export function PlanYourTrip({
           </p>
 
           {/* Flights */}
-          <div className="mb-16">
+          <div id="flights" className="mb-16 scroll-mt-20">
             <div className="flex items-center gap-3 mb-6">
               <Plane className="w-5 h-5 text-foreground" />
               <h3 className="font-serif text-xl text-foreground">
@@ -83,7 +83,7 @@ export function PlanYourTrip({
           </div>
 
           {/* Accommodations - Hotels */}
-          <div>
+          <div id="hotels" className="scroll-mt-20">
             <div className="flex items-center gap-3 mb-6">
               <Hotel className="w-5 h-5 text-foreground" />
               <h3 className="font-serif text-xl text-foreground">
