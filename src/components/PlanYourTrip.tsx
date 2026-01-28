@@ -20,6 +20,7 @@ interface PlanYourTripProps {
       };
       readonly accommodations: {
         readonly title: string;
+        readonly intro: string;
       };
     };
   };
@@ -89,6 +90,10 @@ export function PlanYourTrip({
                 {planYourTrip.accommodations.title}
               </h3>
             </div>
+
+            <p className="text-muted-foreground font-sans leading-relaxed mb-6">
+              {planYourTrip.accommodations.intro}
+            </p>
 
             <HotelSection language={language} />
           </div>
