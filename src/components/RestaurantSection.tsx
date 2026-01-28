@@ -20,6 +20,7 @@ interface RestaurantSectionProps {
 const restaurantData = {
   en: {
     title: "Restaurants (Sydney's Recommendations)",
+    intro: "Oaxaca is the culinary capital of Mexico—from vibrant markets to Michelin-starred restaurants, prepare for one of the most incredible food experiences of your life. But save some room for the big day, as we have a few culinary surprises planned!",
     categories: [
       {
         name: 'High-End / Special Occasion',
@@ -109,6 +110,7 @@ const restaurantData = {
   },
   es: {
     title: 'Restaurantes (Recomendaciones de Sydney)',
+    intro: "Oaxaca es la capital culinaria de México—desde mercados vibrantes hasta restaurantes con estrellas Michelin, prepárense para una de las experiencias gastronómicas más increíbles de su vida. ¡Pero guarden espacio para el gran día, ya que tenemos algunas sorpresas culinarias planeadas!",
     categories: [
       {
         name: 'Alta Cocina / Ocasiones Especiales',
@@ -203,12 +205,16 @@ export function RestaurantSection({ language }: RestaurantSectionProps) {
 
   return (
     <div className="mb-16">
-      <div className="flex items-center gap-3 mb-8">
+      <div className="flex items-center gap-3 mb-4">
         <Utensils className="w-5 h-5 text-foreground" />
         <h3 className="font-serif text-xl text-foreground">
           {data.title}
         </h3>
       </div>
+
+      <p className="text-muted-foreground font-sans leading-relaxed mb-8">
+        {data.intro}
+      </p>
 
       {data.categories.map((category, categoryIndex) => (
         <div key={categoryIndex} className="mb-10">
