@@ -83,7 +83,7 @@ export function PlanYourTrip({
           </div>
 
           {/* Accommodations - Hotels */}
-          <div className="mb-16">
+          <div>
             <div className="flex items-center gap-3 mb-6">
               <Hotel className="w-5 h-5 text-foreground" />
               <h3 className="font-serif text-xl text-foreground">
