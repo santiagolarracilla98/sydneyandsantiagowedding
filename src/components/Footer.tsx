@@ -1,4 +1,5 @@
 import { Language } from '@/lib/translations';
+import ssLogo from '@/assets/ss-logo.png';
 
 interface FooterProps {
   language: Language;
@@ -16,7 +17,11 @@ export function Footer({ language, onLanguageChange, t }: FooterProps) {
     <footer className="py-10 md:py-14 border-t border-border/50">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="w-12 h-px bg-border mx-auto mb-8" />
+          <img 
+            src={ssLogo} 
+            alt="S&S monogram" 
+            className="w-16 h-16 mx-auto mb-6 object-contain opacity-70"
+          />
           
           <p className="font-serif text-xl md:text-2xl text-muted-foreground mb-1">
             {t.footer.message}
