@@ -83,7 +83,8 @@ const hotelData: Record<'en' | 'es', {
         website: 'https://www.fiestamericanatravelty.com/en/grand-fiesta-americana/hotels/grand-fiesta-americana-oaxaca',
         address: '702 Calle de José María Pino Suárez, Centro Histórico, 68000 Oaxaca de Juárez, Oax., Mexico',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=702%20Calle%20de%20Jos%C3%A9%20Mar%C3%ADa%20Pino%20Su%C3%A1rez%2C%20Centro%20Hist%C3%B3rico%2C%2068000%20Oaxaca%20de%20Ju%C3%A1rez%2C%20Oax.%2C%20Mexico',
-        image: fiestaAmericanaImg
+        image: fiestaAmericanaImg,
+        discountCode: 'G1W3FX or BODA SYDNEY Y SANTIAGO'
       }, {
         name: 'Casa Oaxaca Hotel',
         price: '$$$$',
@@ -205,7 +206,8 @@ const hotelData: Record<'en' | 'es', {
         website: 'https://www.fiestamericanatravelty.com/en/grand-fiesta-americana/hotels/grand-fiesta-americana-oaxaca',
         address: '702 Calle de José María Pino Suárez, Centro Histórico, 68000 Oaxaca de Juárez, Oax., México',
         mapsUrl: 'https://www.google.com/maps/search/?api=1&query=702%20Calle%20de%20Jos%C3%A9%20Mar%C3%ADa%20Pino%20Su%C3%A1rez%2C%20Centro%20Hist%C3%B3rico%2C%2068000%20Oaxaca%20de%20Ju%C3%A1rez%2C%20Oax.%2C%20Mexico',
-        image: fiestaAmericanaImg
+        image: fiestaAmericanaImg,
+        discountCode: 'G1W3FX or BODA SYDNEY Y SANTIAGO'
       }, {
         name: 'Casa Oaxaca Hotel',
         price: '$$$$',
