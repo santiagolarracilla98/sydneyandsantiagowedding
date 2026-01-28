@@ -202,7 +202,7 @@ export const translations = {
       },
       accommodations: {
         title: 'Hotels',
-        description: 'We recommend staying in the Centro Histórico for easy walking access to the venue and city attractions.',
+        intro: "Here are some of our suggestions—a few even have discount codes! That said, we recommend exploring all available options near the city center, as there are plenty of great choices. There are also some really nice Airbnbs.",
         options: [
           {
             name: 'Boutique Hotels',
@@ -572,7 +572,7 @@ export const translations = {
       },
       accommodations: {
         title: 'Hoteles',
-        description: 'Recomendamos hospedarse en el Centro Histórico para tener fácil acceso a pie al recinto y las atracciones de la ciudad.',
+        intro: 'Aquí están algunas de nuestras sugerencias—¡algunas incluso tienen códigos de descuento! Dicho esto, recomendamos explorar todas las opciones disponibles cerca del centro de la ciudad, ya que hay muchas opciones excelentes. También hay Airbnbs muy bonitos.',
         options: [
           {
             name: 'Hoteles Boutique',
