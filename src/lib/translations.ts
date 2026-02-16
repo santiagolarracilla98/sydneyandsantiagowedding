@@ -157,7 +157,7 @@ export const translations = {
           },
           women: {
             label: 'Women',
-            description: 'Colorful long dresses. Heels optional (comfortable shoes encouraged). Bring a light jacket or shawl for the evening—it gets cooler after dark.',
+            description: 'Colorful long dresses. Heels optional (slippers will be provided). Bring a light jacket or shawl for the evening—it gets cooler after dark.',
           },
         },
         welcomeParty: {
@@ -526,7 +526,7 @@ export const translations = {
           },
           women: {
             label: 'Mujeres',
-            description: 'Vestidos largos y coloridos. Tacones opcionales (se recomiendan zapatos cómodos). Trae una chaqueta ligera o chal para la noche—refresca después del atardecer.',
+            description: 'Vestidos largos y coloridos. Tacones opcionales (se proporcionarán pantuflas). Trae una chaqueta ligera o chal para la noche—refresca después del atardecer.',
           },
         },
         welcomeParty: {
