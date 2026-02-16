@@ -38,10 +38,10 @@ export const translations = {
     oaxaca: {
       title: 'Oaxaca',
       paragraphs: [
-        "Oaxaca is a place where deep history and everyday joy live side by side. Long before the city existed, the Valley of Oaxaca was home to thriving Indigenous civilizations, most famously the Zapotecs, who founded Monte Albán (Pyramids) around 500 BCE on the hilltops just outside town.",
-        "Centuries later, the Spanish founded Oaxaca de Juárez (then called Antequera) in 1529, laying out the city in a colonial grid that still shapes its walkable streets and plazas today, so significant that the Historic Centre and Monte Albán are recognized together as a UNESCO World Heritage Site.",
-        "Set in a fertile valley about 1,550 metres above sea level, Oaxaca feels warm, colourful, and full of life; stone streets, open-air courtyards, lively markets, and a food culture that's as generous as it is unforgettable.",
-        "It's also a place built on community and celebration, from artisan traditions to festivals like the Guelaguetza, where music, dance, and regional pride take over the city.",
+        "Oaxaca is one of Mexico's most vibrant and captivating cities — a place where color, culture, and celebration fill the streets.",
+        "Widely known as the culinary capital of Mexico, it is famous for its rich moles, fresh tlayudas, smoky mezcal, and lively markets overflowing with local ingredients. Meals stretch long into the evening, and music drifts through open plazas.",
+        "Set in a mountain-ringed valley, Oaxaca is layered with history. Ancient Zapotec ruins at Monte Albán rise above the city, while colonial churches and stone streets reflect centuries of tradition and artistry.",
+        "Rooted in community, creativity, and joy, Oaxaca feels made for gathering — and we cannot imagine a more meaningful place to celebrate together.",
       ],
     },
     venue: {
@@ -407,10 +407,10 @@ export const translations = {
     oaxaca: {
       title: 'Oaxaca',
       paragraphs: [
-        'Oaxaca es un lugar donde la historia profunda y la alegría cotidiana conviven lado a lado. Mucho antes de que existiera la ciudad, el Valle de Oaxaca fue hogar de prósperas civilizaciones indígenas, sobre todo los zapotecas, quienes fundaron Monte Albán alrededor del 500 a. C. en las colinas a las afueras de la ciudad.',
-        'Siglos después, los españoles fundaron Oaxaca de Juárez (entonces llamada Antequera) en 1529, trazando la ciudad con una cuadrícula colonial que hasta hoy define sus calles caminables y sus plazas, tan significativa que el Centro Histórico y Monte Albán están reconocidos juntos como Patrimonio Mundial de la UNESCO.',
-        'Ubicada en un valle fértil a unos 1,550 metros sobre el nivel del mar, Oaxaca se siente cálida, colorida y llena de vida: calles de piedra, patios al aire libre, mercados vibrantes y una cultura gastronómica tan generosa como inolvidable.',
-        'También es un lugar construido sobre la comunidad y la celebración, desde sus tradiciones artesanales hasta festivales como la Guelaguetza, donde la música, el baile y el orgullo regional se apoderan de la ciudad.',
+        'Oaxaca es una de las ciudades más vibrantes y cautivadoras de México — un lugar donde el color, la cultura y la celebración llenan las calles.',
+        'Ampliamente conocida como la capital culinaria de México, es famosa por sus ricos moles, tlayudas frescas, mezcal ahumado y mercados rebosantes de ingredientes locales. Las comidas se extienden hasta bien entrada la noche, y la música se desliza por las plazas abiertas.',
+        'Enclavada en un valle rodeado de montañas, Oaxaca está llena de historia. Las antiguas ruinas zapotecas de Monte Albán se elevan sobre la ciudad, mientras que las iglesias coloniales y las calles empedradas reflejan siglos de tradición y arte.',
+        'Arraigada en la comunidad, la creatividad y la alegría, Oaxaca parece hecha para reunirse — y no podemos imaginar un lugar más significativo para celebrar juntos.',
       ],
     },
     venue: {
