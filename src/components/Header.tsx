@@ -16,6 +16,7 @@ interface HeaderProps {
       agenda: string;
       recommendations: string;
       giftRegistry: string;
+      rsvp: string;
       qa: string;
     };
   };
@@ -198,6 +199,17 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             }`}
           >
             {t.nav.giftRegistry}
+          </Link>
+
+          <Link
+            to="/rsvp"
+            className={`text-sm font-sans transition-colors duration-200 ${
+              location.pathname === '/rsvp'
+                ? 'text-foreground font-medium'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {t.nav.rsvp}
           </Link>
 
           <Link
