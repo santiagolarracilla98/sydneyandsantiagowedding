@@ -35,8 +35,12 @@ export default function QAPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!formData.name.trim() || !formData.email.trim() || !formData.question.trim()) {
+
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const question = formData.question.trim();
+
+    if (!name || !email || !question) {
       toast({
         title: t.qa.form.errorTitle,
         description: t.qa.form.errorDescription,
@@ -46,17 +50,29 @@ export default function QAPage() {
     }
 
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
+    const { supabase } = await import('@/integrations/supabase/client');
+    const { error } = await supabase
+      .from('guest_questions')
+      .insert({ name, email, question });
+
+    setIsSubmitting(false);
+
+    if (error) {
+      toast({
+        title: t.qa.form.errorTitle,
+        description: error.message,
+        variant: 'destructive',
+      });
+      return;
+    }
+
     toast({
       title: t.qa.form.successTitle,
       description: t.qa.form.successDescription,
     });
-    
+
     setFormData({ name: '', email: '', question: '' });
-    setIsSubmitting(false);
   };
 
   return (
