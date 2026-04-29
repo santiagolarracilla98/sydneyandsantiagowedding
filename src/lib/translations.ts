@@ -11,6 +11,7 @@ export const translations = {
       agenda: 'Agenda',
       recommendations: 'Recommendations',
       giftRegistry: 'Gift Registry',
+      rsvp: 'RSVP',
       qa: 'Q&A',
     },
     hero: {
@@ -264,6 +265,16 @@ export const translations = {
       title: 'Gift Registry',
       linkPlaceholder: 'Link to be added',
     },
+    rsvp: {
+      title: 'RSVP Confirmation',
+      paragraphs: [
+        'The most important step is confirming your attendance.',
+        'You will receive a WhatsApp message from Confirmare, the RSVP company helping us manage guest confirmations for Santiago and Sydney\u2019s wedding. Please reply to that message with the full name of each person RSVPing.',
+        'Confirmare will then confirm the number of tickets reserved for you, or any cancellation being made.',
+        'If you prefer, you may also send your RSVP directly to Confirmare by scanning the QR code below.',
+      ],
+      qrCaption: 'Scan to RSVP via WhatsApp',
+    },
     qa: {
       title: 'Q&A',
       subtitle: 'Frequently asked questions about our wedding weekend.',
@@ -380,6 +391,7 @@ export const translations = {
       agenda: 'Agenda',
       recommendations: 'Recomendaciones',
       giftRegistry: 'Mesa de Regalos',
+      rsvp: 'RSVP',
       qa: 'Preguntas',
     },
     hero: {
@@ -632,6 +644,16 @@ export const translations = {
     giftRegistry: {
       title: 'Mesa de Regalos',
       linkPlaceholder: 'Link por agregar',
+    },
+    rsvp: {
+      title: 'Confirmación de Asistencia',
+      paragraphs: [
+        'El paso más importante es confirmar tu asistencia.',
+        'Recibirás un mensaje de WhatsApp de Confirmare, la empresa de RSVP que nos está ayudando a gestionar las confirmaciones de los invitados para la boda de Santiago y Sydney. Por favor responde a ese mensaje con el nombre completo de cada persona que confirmará asistencia.',
+        'Confirmare te confirmará el número de lugares reservados para ti, o cualquier cancelación que se realice.',
+        'Si lo prefieres, también puedes enviar tu confirmación directamente a Confirmare escaneando el código QR a continuación.',
+      ],
+      qrCaption: 'Escanea para confirmar por WhatsApp',
     },
     qa: {
       title: 'Preguntas Frecuentes',
