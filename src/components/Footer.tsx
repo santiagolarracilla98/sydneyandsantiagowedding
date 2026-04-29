@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Language } from '@/lib/translations';
 import ssLogo from '@/assets/ss-logo.png';
 
@@ -13,16 +15,36 @@ interface FooterProps {
 }
 
 export function Footer({ language, onLanguageChange, t }: FooterProps) {
+  const navigate = useNavigate();
+  const clickCount = useRef(0);
+  const clickTimer = useRef<number | null>(null);
+
+  const handleLogoClick = () => {
+    clickCount.current += 1;
+    if (clickTimer.current) window.clearTimeout(clickTimer.current);
+    clickTimer.current = window.setTimeout(() => {
+      clickCount.current = 0;
+    }, 800);
+
+    if (clickCount.current >= 3) {
+      clickCount.current = 0;
+      if (clickTimer.current) window.clearTimeout(clickTimer.current);
+      navigate('/host');
+    }
+  };
+
   return (
     <footer className="py-10 md:py-14 border-t border-border/50">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center">
-          <img 
-            src={ssLogo} 
-            alt="S&S monogram" 
-            className="w-16 h-16 mx-auto mb-6 object-contain opacity-70"
+          <img
+            src={ssLogo}
+            alt="S&S monogram"
+            onClick={handleLogoClick}
+            className="w-16 h-16 mx-auto mb-6 object-contain opacity-70 cursor-pointer select-none"
+            draggable={false}
           />
-          
+
           <p className="font-serif text-xl md:text-2xl text-muted-foreground mb-1">
             {t.footer.message}
           </p>

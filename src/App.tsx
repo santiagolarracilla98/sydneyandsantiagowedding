@@ -10,6 +10,7 @@ import RecommendationsPage from "./pages/RecommendationsPage";
 import GiftRegistryPage from "./pages/GiftRegistryPage";
 import RSVPPage from "./pages/RSVPPage";
 import QAPage from "./pages/QAPage";
+import HostPage from "./pages/HostPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
