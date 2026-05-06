@@ -3,7 +3,8 @@ import { LanguageModal } from '@/components/LanguageModal';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FloralBorder } from '@/components/FloralBorder';
-import rsvpQr from '@/assets/rsvp-qr.png';
+import rsvpQrEn from '@/assets/rsvp-qr.png';
+import rsvpQrEs from '@/assets/rsvp-qr-es.png';
 
 const RSVPPage = () => {
   const { language, setLanguage, t, isLoading, needsSelection } = useLanguage();
@@ -41,7 +42,7 @@ const RSVPPage = () => {
 
                 <div className="flex flex-col items-center">
                   <img
-                    src={rsvpQr}
+                    src={language === 'es' ? rsvpQrEs : rsvpQrEn}
                     alt={t.rsvp.qrCaption}
                     className="w-56 h-56 md:w-64 md:h-64 object-contain"
                   />
