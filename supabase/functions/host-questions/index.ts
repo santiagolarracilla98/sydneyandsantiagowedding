@@ -31,18 +31,30 @@ Deno.serve(async (req) => {
     const SERVICE_ROLE = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const admin = createClient(SUPABASE_URL, SERVICE_ROLE);
 
-    const { data, error } = await admin
-      .from("guest_questions")
-      .select("id, name, email, question, created_at")
-      .order("created_at", { ascending: false })
-      .limit(1000);
+    const [{ data: questions, error: qErr }, { data: visits, error: vErr }] =
+      await Promise.all([
+        admin
+          .from("guest_questions")
+          .select("id, name, email, question, created_at")
+          .order("created_at", { ascending: false })
+          .limit(1000),
+        admin
+          .from("guest_visits")
+          .select("id, first_name, last_name, language, user_agent, created_at")
+          .order("created_at", { ascending: false })
+          .limit(2000),
+      ]);
 
-    if (error) throw error;
+    if (qErr) throw qErr;
+    if (vErr) throw vErr;
 
-    return new Response(JSON.stringify({ questions: data ?? [] }), {
-      status: 200,
-      headers: { ...corsHeaders, "Content-Type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ questions: questions ?? [], visits: visits ?? [] }),
+      {
+        status: 200,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
     return new Response(JSON.stringify({ error: message }), {

@@ -14,6 +14,17 @@ interface GuestQuestion {
   created_at: string;
 }
 
+interface GuestVisit {
+  id: string;
+  first_name: string;
+  last_name: string;
+  language: string | null;
+  user_agent: string | null;
+  created_at: string;
+}
+
+type Tab = 'questions' | 'visits';
+
 export default function HostPage() {
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -21,6 +32,8 @@ export default function HostPage() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<GuestQuestion[]>([]);
+  const [visits, setVisits] = useState<GuestVisit[]>([]);
+  const [tab, setTab] = useState<Tab>('questions');
   const passwordRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -46,6 +59,7 @@ export default function HostPage() {
     }
 
     setQuestions((data as any)?.questions ?? []);
+    setVisits((data as any)?.visits ?? []);
     setAuthed(true);
   };
 
@@ -53,6 +67,7 @@ export default function HostPage() {
     setAuthed(false);
     setPassword('');
     setQuestions([]);
+    setVisits([]);
     navigate('/');
   };
 
@@ -101,49 +116,122 @@ export default function HostPage() {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between py-4">
-          <h1 className="font-serif text-xl text-foreground">Host View — Guest Questions</h1>
+          <h1 className="font-serif text-xl text-foreground">Host View</h1>
           <Button variant="outline" size="sm" onClick={handleLogout}>
             Log out
           </Button>
         </div>
+        <div className="container flex gap-1 pb-3">
+          <button
+            onClick={() => setTab('questions')}
+            className={`px-4 py-2 text-sm font-sans border-b-2 transition-colors ${
+              tab === 'questions'
+                ? 'border-foreground text-foreground'
+                : 'border-transparent text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Questions ({questions.length})
+          </button>
+          <button
+            onClick={() => setTab('visits')}
+            className={`px-4 py-2 text-sm font-sans border-b-2 transition-colors ${
+              tab === 'visits'
+                ? 'border-foreground text-foreground'
+                : 'border-transparent text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            Visitors ({visits.length})
+          </button>
+        </div>
       </header>
 
       <main className="container py-10 max-w-4xl">
-        <p className="font-sans text-sm text-muted-foreground mb-6">
-          {questions.length} {questions.length === 1 ? 'question' : 'questions'} submitted.
-        </p>
+        {tab === 'questions' && (
+          <>
+            <p className="font-sans text-sm text-muted-foreground mb-6">
+              {questions.length} {questions.length === 1 ? 'question' : 'questions'} submitted.
+            </p>
 
-        {questions.length === 0 ? (
-          <div className="text-center py-16 text-muted-foreground font-sans">
-            No questions yet.
-          </div>
-        ) : (
-          <ul className="space-y-4">
-            {questions.map((q) => (
-              <li
-                key={q.id}
-                className="border border-border rounded-lg p-5 bg-card"
-              >
-                <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
-                  <div>
-                    <p className="font-serif text-lg text-foreground">{q.name}</p>
-                    <a
-                      href={`mailto:${q.email}`}
-                      className="font-sans text-sm text-muted-foreground hover:text-foreground underline"
-                    >
-                      {q.email}
-                    </a>
-                  </div>
-                  <time className="font-sans text-xs text-muted-foreground">
-                    {new Date(q.created_at).toLocaleString()}
-                  </time>
-                </div>
-                <p className="font-sans text-sm text-foreground whitespace-pre-wrap">
-                  {q.question}
-                </p>
-              </li>
-            ))}
-          </ul>
+            {questions.length === 0 ? (
+              <div className="text-center py-16 text-muted-foreground font-sans">
+                No questions yet.
+              </div>
+            ) : (
+              <ul className="space-y-4">
+                {questions.map((q) => (
+                  <li
+                    key={q.id}
+                    className="border border-border rounded-lg p-5 bg-card"
+                  >
+                    <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
+                      <div>
+                        <p className="font-serif text-lg text-foreground">{q.name}</p>
+                        <a
+                          href={`mailto:${q.email}`}
+                          className="font-sans text-sm text-muted-foreground hover:text-foreground underline"
+                        >
+                          {q.email}
+                        </a>
+                      </div>
+                      <time className="font-sans text-xs text-muted-foreground">
+                        {new Date(q.created_at).toLocaleString()}
+                      </time>
+                    </div>
+                    <p className="font-sans text-sm text-foreground whitespace-pre-wrap">
+                      {q.question}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </>
+        )}
+
+        {tab === 'visits' && (
+          <>
+            <p className="font-sans text-sm text-muted-foreground mb-6">
+              {visits.length} {visits.length === 1 ? 'visitor' : 'visitors'} have entered the site.
+            </p>
+
+            {visits.length === 0 ? (
+              <div className="text-center py-16 text-muted-foreground font-sans">
+                No visitors yet.
+              </div>
+            ) : (
+              <div className="border border-border rounded-lg overflow-hidden bg-card">
+                <table className="w-full text-left">
+                  <thead className="bg-muted/40">
+                    <tr>
+                      <th className="font-sans text-xs uppercase tracking-wide text-muted-foreground px-4 py-3">
+                        Name
+                      </th>
+                      <th className="font-sans text-xs uppercase tracking-wide text-muted-foreground px-4 py-3">
+                        Last name
+                      </th>
+                      <th className="font-sans text-xs uppercase tracking-wide text-muted-foreground px-4 py-3">
+                        Entered
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {visits.map((v) => (
+                      <tr key={v.id} className="border-t border-border">
+                        <td className="font-sans text-sm text-foreground px-4 py-3">
+                          {v.first_name}
+                        </td>
+                        <td className="font-sans text-sm text-foreground px-4 py-3">
+                          {v.last_name}
+                        </td>
+                        <td className="font-sans text-xs text-muted-foreground px-4 py-3">
+                          {new Date(v.created_at).toLocaleString()}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </>
         )}
       </main>
     </div>

@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Language } from '@/lib/translations';
+import { supabase } from '@/integrations/supabase/client';
 import heroImage from '@/assets/hero-illustration.png';
 
 interface LanguageModalProps {
@@ -8,11 +9,23 @@ interface LanguageModalProps {
 
 export function LanguageModal({ onSelect }: LanguageModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
+  const firstNameRef = useRef<HTMLInputElement>(null);
   const firstButtonRef = useRef<HTMLButtonElement>(null);
 
+  const [step, setStep] = useState<'name' | 'language'>('name');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [error, setError] = useState(false);
+  const [transitioning, setTransitioning] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
   useEffect(() => {
-    firstButtonRef.current?.focus();
-  }, []);
+    if (step === 'name') {
+      firstNameRef.current?.focus();
+    } else {
+      firstButtonRef.current?.focus();
+    }
+  }, [step]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -42,6 +55,47 @@ export function LanguageModal({ onSelect }: LanguageModalProps) {
     };
   }, []);
 
+  const handleNameSubmit = async () => {
+    const f = firstName.trim();
+    const l = lastName.trim();
+    if (!f || !l) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    setSubmitting(true);
+
+    try {
+      await supabase.from('guest_visits').insert({
+        first_name: f.slice(0, 100),
+        last_name: l.slice(0, 100),
+        user_agent: navigator.userAgent.slice(0, 500),
+      });
+    } catch (_) {
+      // Silently ignore — we don't want to block entry on logging failure.
+    }
+
+    setSubmitting(false);
+    setTransitioning(true);
+    setTimeout(() => {
+      setStep('language');
+      setTransitioning(false);
+    }, 500);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleNameSubmit();
+    }
+  };
+
+  const handleLanguageSelect = async (lang: Language) => {
+    // Best-effort update of language preference on the latest visit record.
+    // We don't have the inserted id handy; just call onSelect and rely on the
+    // initial insert. (Optional refinement could store the id.)
+    onSelect(lang);
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center animate-backdrop-in"
@@ -67,46 +121,122 @@ export function LanguageModal({ onSelect }: LanguageModalProps) {
           className="w-full max-w-xs mx-auto mb-6 grayscale"
         />
 
-        <h2
-          id="language-modal-title"
-          className="font-serif text-2xl md:text-3xl mb-2 text-foreground animate-fade-in"
-        >
-          Choose your language
-        </h2>
-        <p
-          className="font-serif text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in"
-          style={{ animationDelay: '100ms' }}
-        >
-          Elige tu idioma
-        </p>
-
+        {/* Name Step */}
         <div
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-6 animate-fade-in"
-          style={{ animationDelay: '200ms' }}
+          className={`transition-all duration-500 ease-in-out ${
+            step === 'name' && !transitioning
+              ? 'opacity-100 translate-y-0'
+              : step === 'name' && transitioning
+              ? 'opacity-0 -translate-y-6'
+              : 'hidden'
+          }`}
         >
-          <button
-            ref={firstButtonRef}
-            onClick={() => onSelect('en')}
-            className="px-8 py-3 border border-foreground text-foreground font-sans text-sm tracking-wide hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
-            aria-label="Select English"
+          <h2
+            id="language-modal-title"
+            className="font-serif text-2xl md:text-3xl mb-2 text-foreground"
           >
-            English
-          </button>
-          <button
-            onClick={() => onSelect('es')}
-            className="px-8 py-3 border border-foreground text-foreground font-sans text-sm tracking-wide hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
-            aria-label="Seleccionar Español"
-          >
-            Español
-          </button>
+            Welcome
+          </h2>
+          <p className="font-serif text-xl md:text-2xl text-muted-foreground mb-6">
+            Bienvenidos
+          </p>
+          <p className="text-sm text-muted-foreground font-sans mb-4">
+            Please enter your name to continue
+            <br />
+            <span className="italic">Por favor ingresa tu nombre para continuar</span>
+          </p>
+
+          <div className="flex flex-col items-center gap-3 mb-2">
+            <input
+              ref={firstNameRef}
+              type="text"
+              value={firstName}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+                if (error) setError(false);
+              }}
+              onKeyDown={handleKeyPress}
+              placeholder="Name / Nombre"
+              maxLength={100}
+              className={`w-full max-w-[260px] px-4 py-3 border rounded-sm bg-background text-foreground text-center font-sans text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background transition-colors ${
+                error ? 'border-destructive' : 'border-foreground/30'
+              }`}
+              aria-label="Enter your name"
+            />
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+                if (error) setError(false);
+              }}
+              onKeyDown={handleKeyPress}
+              placeholder="Last name / Apellido"
+              maxLength={100}
+              className={`w-full max-w-[260px] px-4 py-3 border rounded-sm bg-background text-foreground text-center font-sans text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background transition-colors ${
+                error ? 'border-destructive' : 'border-foreground/30'
+              }`}
+              aria-label="Enter your last name"
+            />
+            {error && (
+              <p className="text-sm text-destructive font-sans animate-fade-in">
+                Please enter both your name and last name.
+              </p>
+            )}
+            <button
+              onClick={handleNameSubmit}
+              disabled={submitting}
+              className="mt-2 px-8 py-3 border border-foreground text-foreground font-sans text-sm tracking-wide hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background disabled:opacity-60"
+            >
+              {submitting ? 'Entering…' : 'Enter'}
+            </button>
+          </div>
         </div>
 
-        <p
-          className="text-sm text-muted-foreground font-sans animate-fade-in"
-          style={{ animationDelay: '300ms' }}
+        {/* Language Step */}
+        <div
+          className={`transition-all duration-500 ease-in-out ${
+            step === 'language' ? 'opacity-100 translate-y-0' : 'hidden'
+          }`}
         >
-          You can change this anytime.
-        </p>
+          <h2 className="font-serif text-2xl md:text-3xl mb-2 text-foreground animate-fade-in">
+            Choose your language
+          </h2>
+          <p
+            className="font-serif text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in"
+            style={{ animationDelay: '100ms' }}
+          >
+            Elige tu idioma
+          </p>
+
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-6 animate-fade-in"
+            style={{ animationDelay: '200ms' }}
+          >
+            <button
+              ref={firstButtonRef}
+              onClick={() => handleLanguageSelect('en')}
+              className="px-8 py-3 border border-foreground text-foreground font-sans text-sm tracking-wide hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+              aria-label="Select English"
+            >
+              English
+            </button>
+            <button
+              onClick={() => handleLanguageSelect('es')}
+              className="px-8 py-3 border border-foreground text-foreground font-sans text-sm tracking-wide hover:bg-foreground hover:text-background transition-colors duration-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2 focus:ring-offset-background"
+              aria-label="Seleccionar Español"
+            >
+              Español
+            </button>
+          </div>
+
+          <p
+            className="text-sm text-muted-foreground font-sans animate-fade-in"
+            style={{ animationDelay: '300ms' }}
+          >
+            You can change this anytime.
+          </p>
+        </div>
       </div>
     </div>
   );
