@@ -269,7 +269,7 @@ export const translations = {
       title: 'RSVP Confirmation',
       paragraphs: [
         'The most important step is confirming your attendance.',
-        'You will receive a WhatsApp message from Confirmare, the RSVP company helping us manage guest confirmations for Santiago and Sydney\u2019s wedding. Please reply to that message with the full name of each person RSVPing.',
+        'You will receive a WhatsApp message from Confirmare, the RSVP company helping us manage guest confirmations for Santiago and Sydney\u2019s wedding. Please reply to that message with the full name of each person in your RSVP.',
         'Confirmare will then confirm the number of tickets reserved for you, or any cancellation being made.',
         'If you prefer, you may also send your RSVP directly to Confirmare by scanning the QR code below.',
       ],
