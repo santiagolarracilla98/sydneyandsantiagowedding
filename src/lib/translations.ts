@@ -108,7 +108,7 @@ export const translations = {
           details: [
             {
               name: 'Ceremony',
-              time: '2:30 PM – 3:30 PM',
+              time: '2:00 PM – 3:00 PM',
               description: 'The ceremony will take place in El Patio del Huaje, a stunning courtyard within the Jardín Etnobotánico.',
               venue: 'El Patio del Huaje',
               address: 'Entrance on Calle Macedonio Alcalá 505 (across from El Otro Oaxaca hotel)',
@@ -116,12 +116,12 @@ export const translations = {
             },
             {
               name: 'Cocktails',
-              time: '3:30 PM – 4:30 PM',
+              time: '3:00PM – 4:00 PM',
               description: 'After the ceremony, enjoy cocktails and canapés in the garden.',
             },
             {
               name: 'Reception',
-              time: '4:30 PM – 2:00 AM',
+              time: '4:00 PM – 2:00 AM',
               description: 'Dinner, dancing, and celebration—all within the Jardín Etnobotánico. No need to move venues!',
             },
           ],
@@ -489,7 +489,7 @@ export const translations = {
           details: [
             {
               name: 'Ceremonia',
-              time: '2:30 PM – 3:30 PM',
+              time: '2:00 PM – 3:00 PM',
               description: 'La ceremonia se llevará a cabo en El Patio del Huaje, un hermoso patio dentro del Jardín Etnobotánico.',
               venue: 'El Patio del Huaje',
               address: 'Entrada en Calle Macedonio Alcalá 505 (frente al hotel El Otro Oaxaca)',
@@ -497,12 +497,12 @@ export const translations = {
             },
             {
               name: 'Cóctel',
-              time: '3:30 PM – 4:30 PM',
+              time: '3:00PM – 4:00 PM',
               description: 'Después de la ceremonia, disfruta de cócteles y canapés en el jardín.',
             },
             {
               name: 'Recepción',
-              time: '4:30 PM – 2:00 AM',
+              time: '4:00 PM – 2:00 AM',
               description: 'Cena, baile y celebración—todo dentro del Jardín Etnobotánico. ¡No hay necesidad de cambiar de lugar!',
             },
           ],
