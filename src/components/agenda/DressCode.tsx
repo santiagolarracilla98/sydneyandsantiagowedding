@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import dressCodeWeddingImage from '@/assets/dress-code.jpeg';
-import dressCodeWelcomeImage from '@/assets/dress-code-welcome.png';
+import dressCodeWeddingImage from '@/assets/dress-code-illustration-edited.png';
+import dressCodeWelcomeImage from '@/assets/dress-code-illustration-edited-2.png';
 
 interface DressCodeSection {
   subtitle: string;
