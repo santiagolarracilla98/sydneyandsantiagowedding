@@ -263,7 +263,8 @@ export const translations = {
     },
     giftRegistry: {
       title: 'Gift Registry',
-      linkPlaceholder: 'Link to be added',
+      linkText: 'View our gift registry',
+      linkUrl: 'https://www.weddingpresentco.com/find-list/337217',
     },
     rsvp: {
       title: 'RSVP Confirmation',
@@ -643,7 +644,8 @@ export const translations = {
     },
     giftRegistry: {
       title: 'Mesa de Regalos',
-      linkPlaceholder: 'Link por agregar',
+      linkText: 'Ver nuestra mesa de regalos',
+      linkUrl: 'https://www.weddingpresentco.com/find-list/337217',
     },
     rsvp: {
       title: 'Confirmación de Asistencia',
