@@ -45,11 +45,13 @@ export function DressCode({ t }: DressCodeProps) {
         onClick={() => setLightboxImage(image)}
         className="w-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-lg"
       >
-        <img
-          src={image}
-          alt={imageAlt}
-          className="w-full h-auto rounded-lg shadow-md border border-border/50 hover:shadow-lg transition-shadow duration-200"
-        />
+        <div className="aspect-[3/4] w-full rounded-lg shadow-md border border-border/50 hover:shadow-lg transition-shadow duration-200 overflow-hidden bg-white flex items-center justify-center">
+          <img
+            src={image}
+            alt={imageAlt}
+            className="w-full h-full object-contain"
+          />
+        </div>
       </button>
       <p className="font-serif text-xs text-muted-foreground text-center italic">
         Click to enlarge
