@@ -30,9 +30,14 @@ const GiftRegistryPage = () => {
                 <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-8">
                   {t.giftRegistry.title}
                 </h1>
-                <p className="text-muted-foreground font-sans">
-                  {t.giftRegistry.linkPlaceholder}
-                </p>
+                <a
+                  href={t.giftRegistry.linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-3 border border-foreground/20 rounded-sm font-sans text-foreground hover:bg-foreground/5 transition-colors"
+                >
+                  {t.giftRegistry.linkText}
+                </a>
               </div>
             </main>
 
