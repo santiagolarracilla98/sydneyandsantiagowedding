@@ -112,7 +112,7 @@ export const translations = {
               description: 'The ceremony will take place in El Patio del Huaje, a stunning courtyard within the Jardín Etnobotánico.',
               venue: 'El Patio del Huaje',
               address: 'Entrance on Calle Macedonio Alcalá 505 (across from El Otro Oaxaca hotel)',
-              note: 'Please arrive by 2:15 PM.',
+              note: 'Please arrive by 1:45 PM.',
             },
             {
               name: 'Cocktails',
@@ -493,7 +493,7 @@ export const translations = {
               description: 'La ceremonia se llevará a cabo en El Patio del Huaje, un hermoso patio dentro del Jardín Etnobotánico.',
               venue: 'El Patio del Huaje',
               address: 'Entrada en Calle Macedonio Alcalá 505 (frente al hotel El Otro Oaxaca)',
-              note: 'Por favor llega a las 2:15 PM.',
+              note: 'Por favor llega a las 1:45 PM.',
             },
             {
               name: 'Cóctel',
