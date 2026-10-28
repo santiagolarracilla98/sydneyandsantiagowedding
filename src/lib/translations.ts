@@ -337,7 +337,7 @@ export const translations = {
           answer: 'Please arrive 30 minutes before the ceremony start time so you can settle in comfortably. Please enter via the Patio El Huaje entrance.',
         },
         {
-          question: 'Will there be an open bar?',
+          question: 'Will there be an open bar in the wedding reception?',
           answer: 'Yes, an open bar will be provided during the Cocktail & Reception. Mezcal is delicious but stronger than it looks, so pace yourself!',
         },
         {
