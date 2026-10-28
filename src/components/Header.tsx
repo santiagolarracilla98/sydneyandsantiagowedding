@@ -41,7 +41,7 @@ function NavDropdown({ label, to, isActive, subItems, isHomePage }: NavDropdownP
     >
       <Link
         to={to}
-        className={`text-sm font-sans whitespace-nowrap transition-colors duration-200 flex items-center gap-1 ${
+        className={`text-sm font-sans whitespace-nowrap transition-colors duration-200 flex items-center gap-1 shrink-0 ${
           isActive 
             ? 'text-foreground font-medium' 
             : 'text-muted-foreground hover:text-foreground'
@@ -122,7 +122,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             {isHome ? (
               <a
                 href="#home"
-                className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+                className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1 shrink-0"
               >
                 {t.nav.home}
                 <ChevronDown className="w-3 h-3" />
@@ -130,7 +130,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             ) : (
               <Link
                 to="/"
-                className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+                className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1 shrink-0"
               >
                 {t.nav.home}
                 <ChevronDown className="w-3 h-3" />
@@ -226,7 +226,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
 
         <button
           onClick={() => onLanguageChange(language === 'en' ? 'es' : 'en')}
-          className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+          className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1 shrink-0"
           aria-label={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
         >
           <span className={language === 'en' ? 'text-foreground font-medium' : ''}>EN</span>
