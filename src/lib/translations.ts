@@ -282,7 +282,7 @@ export const translations = {
       questions: [
         {
           question: 'What is the Welcome Party like?',
-          answer: 'It is a short and easy event. We will walk and dance in the Calenda parade for around 30 minutes, then head over for one or two drinks and some canapés. We wrap up at 8:00 PM, so we recommend booking an easy dinner afterwards — or simply resting up, because the next day is the big one and we want everyone ready for the fun. Think of it as a chance to say hi and kick off the weekend together.',
+          answer: 'It is a short and casual event. We will walk and dance in the Calenda parade for around 30 minutes, then head over for one or two drinks and some canapés. We wrap up at 8:00 PM, so we recommend booking an easy dinner afterwards — or simply resting up, because the next day is the big one and we want everyone ready for the fun. Think of it as a chance to say hi and kick off the weekend together.',
           },
         {
           question: 'When and where is the wedding?',
