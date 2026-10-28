@@ -112,7 +112,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border/50">
       <div className="container flex items-center justify-between py-4">
-        <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 md:gap-x-6 lg:gap-x-8">
+        <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 lg:gap-x-8">
           {/* Home dropdown */}
           <div 
             className="relative"
