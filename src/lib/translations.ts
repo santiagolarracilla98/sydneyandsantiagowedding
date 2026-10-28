@@ -86,10 +86,10 @@ export const translations = {
           description: 'We kick off the celebrations with a traditional Oaxacan Calenda—a joyful street parade with live music, dancing, and shots of mezcal as we walk through the historic streets of Oaxaca. The parade ends at Copal Restaurant for welcome drinks and light snacks—a taste of what\'s to come on the big day!',
           details: [
             {
-              name: 'Calenda',
-              time: '5:00 PM',
+              name: 'Calenda (Parade)',
+              time: '5:15 PM',
               description: "A Calenda is a traditional Oaxacan street parade. We'll walk through the streets with a brass band, giant puppets (monos de calenda), and plenty of mezcal. It's festive, lively, and uniquely Oaxacan!",
-              meetingPoint: 'Meet at Santo Domingo Church at 4:55 PM',
+              meetingPoint: 'Meet at Santo Domingo Church at 5:00 PM',
               address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
             },
             {
