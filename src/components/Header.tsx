@@ -167,39 +167,12 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
           </div>
 
           <NavDropdown
-            label={t.nav.planYourTrip}
-            to="/plan-your-trip"
-            isActive={location.pathname === '/plan-your-trip'}
-            subItems={planYourTripSubItems}
-            isHomePage={false}
-          />
-
-          <NavDropdown
             label={t.nav.agenda}
             to="/agenda"
             isActive={location.pathname === '/agenda'}
             subItems={agendaSubItems}
             isHomePage={false}
           />
-          
-          <NavDropdown
-            label={t.nav.recommendations}
-            to="/recommendations"
-            isActive={location.pathname === '/recommendations'}
-            subItems={recommendationsSubItems}
-            isHomePage={false}
-          />
-
-          <Link
-            to="/gift-registry"
-            className={`text-sm font-sans transition-colors duration-200 ${
-              location.pathname === '/gift-registry' 
-                ? 'text-foreground font-medium' 
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {t.nav.giftRegistry}
-          </Link>
 
           <Link
             to="/rsvp"
@@ -213,6 +186,17 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
           </Link>
 
           <Link
+            to="/gift-registry"
+            className={`text-sm font-sans transition-colors duration-200 ${
+              location.pathname === '/gift-registry' 
+                ? 'text-foreground font-medium' 
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {t.nav.giftRegistry}
+          </Link>
+
+          <Link
             to="/qa"
             className={`text-sm font-sans transition-colors duration-200 ${
               location.pathname === '/qa' 
@@ -222,6 +206,22 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
           >
             {t.nav.qa}
           </Link>
+
+          <NavDropdown
+            label={t.nav.recommendations}
+            to="/recommendations"
+            isActive={location.pathname === '/recommendations'}
+            subItems={recommendationsSubItems}
+            isHomePage={false}
+          />
+
+          <NavDropdown
+            label={t.nav.planYourTrip}
+            to="/plan-your-trip"
+            isActive={location.pathname === '/plan-your-trip'}
+            subItems={planYourTripSubItems}
+            isHomePage={false}
+          />
         </nav>
 
         <button

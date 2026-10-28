@@ -23,12 +23,12 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/plan-your-trip" element={<PlanYourTripPage />} />
           <Route path="/agenda" element={<AgendaPage />} />
-          <Route path="/recommendations" element={<RecommendationsPage />} />
-          <Route path="/gift-registry" element={<GiftRegistryPage />} />
           <Route path="/rsvp" element={<RSVPPage />} />
+          <Route path="/gift-registry" element={<GiftRegistryPage />} />
           <Route path="/qa" element={<QAPage />} />
+          <Route path="/recommendations" element={<RecommendationsPage />} />
+          <Route path="/plan-your-trip" element={<PlanYourTripPage />} />
           <Route path="/host" element={<HostPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
