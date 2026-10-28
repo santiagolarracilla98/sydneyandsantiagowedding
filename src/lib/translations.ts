@@ -281,95 +281,94 @@ export const translations = {
       subtitle: 'Frequently asked questions about our wedding weekend.',
       questions: [
         {
+          question: 'What is the Welcome Party like?',
+          answer: 'It is a short and easy event. We will walk and dance in the Calenda parade for around 30 minutes, and then head over for one or two drinks. We will wrap things up early so everyone can rest or enjoy a relaxed dinner, because the next day is the big one and we want everyone rested and ready for the fun. Think of it as a chance to say hi and kick off the weekend together.',
+          },
+        {
           question: 'When and where is the wedding?',
           answer: "We're getting married in Oaxaca City, Mexico on November 14, 2026, at El Jardín Etnobotánico de Oaxaca. The full weekend schedule and venue details are shared on this website (see \"Schedule\" and \"Venue\").",
-        },
+          },
         {
           question: 'Will the ceremony and reception be in the same place?',
           answer: "Yes, both take place within the Botanical Garden venue. The ceremony is a 2-minute walk from the garden area, and you'll enter through \"Patio El Huaje\" (across from \"Hotel OTRO\") — not the main Botanical Garden entrance.",
-        },
-        {
-          question: 'Is Oaxaca safe?',
-          answer: 'Yes, Oaxaca is generally considered a safe destination. As with any new place, we recommend staying aware of your surroundings, keeping valuables secure, and using trusted transportation at night.',
-        },
-        {
-          question: "What's the dress code?",
-          answer: 'Think festive & elegant. Warm weather-friendly fabrics are ideal. For the main celebration: formal. For daytime events: smart casual.',
-        },
-        {
-          question: 'Will it be outdoors?',
-          answer: 'Yes, the wedding will be outdoors. We recommend bringing a light layer for evenings.',
-        },
-        {
-          question: "What's the weather like in Oaxaca?",
-          answer: 'Oaxaca is typically warm during the day and cooler at night. Plan for sun + comfortable shoes for walking on cobblestones.',
-        },
-        {
-          question: 'How do I get to Oaxaca?',
-          answer: 'You can fly directly to Oaxaca (OAX) from select cities, or connect via Mexico City (MEX). Check our "Travel" section for routes and tips.',
-        },
-        {
-          question: "What's the best way to get from the airport to my hotel?",
-          answer: 'The easiest option is to hire a shuttle or private transfer inside the airport (official services), rather than arranging pickup once you are outside of the airport. We recommend the same approach in Mexico City as well; book your transport inside the airport (or prebook) for a smoother arrival.',
-        },
-        {
-          question: 'Where should I stay? (Hotels vs Airbnb)',
-          answer: "We recommend staying maximum 10-15 mins walk from Centro for the best walkability. We've shared a curated hotel list on the website, and we also highly recommend Airbnb—there are lots of affordable options, amazing design, and great variety. If you choose Airbnb, try to book as close to the center as possible so you can easily walk everywhere.",
-        },
-        {
-          question: 'How do I get around in Oaxaca?',
-          answer: "Oaxaca is very walkable, especially in Centro; walking is often the best way to explore. Uber isn't available, so transportation is mainly taxis (and walking).",
-        },
-        {
-          question: 'How do I know if I can bring a plus-one?',
-          answer: "All plus-ones are listed on your invitation. We've thoughtfully planned our guest list, so we kindly ask that you RSVP only for the names shown on the invitation.",
-        },
-        {
-          question: 'How do I confirm my attendance?',
-          answer: "Please confirm through the RSVP page on this website. We'll also send a WhatsApp message a couple of months before the wedding to double-confirm your attendance.",
-        },
-        {
-          question: 'Can I bring children?',
-          answer: 'As much as we love children, this will be an adults-only celebration.',
-        },
+          },
         {
           question: 'What time should I arrive to the wedding?',
           answer: 'Please arrive 30 minutes before the ceremony start time so you can settle in comfortably. Please enter via the Patio El Huaje entrance.',
-        },
+          },
         {
-          question: 'Will there be an open bar in the wedding reception?',
-          answer: 'Yes, an open bar will be provided during the Cocktail & Reception. Mezcal is delicious but stronger than it looks, so pace yourself!',
-        },
+          question: 'Will it be outdoors?',
+          answer: 'Yes, the wedding will be outdoors. We recommend bringing a light layer for evenings.',
+          },
         {
-          question: 'Is there parking available?',
-          answer: "There isn't designated wedding parking. Most guests won't need a car; Oaxaca is very walkable and taxis are easy. If you do rent a car, the typical option is street parking near your accommodation and then walking to the venue.",
-        },
-        {
-          question: 'Do I need to speak Spanish?',
-          answer: 'No; many tourist operators and hotels speak English. Everything wedding-related will be provided in English and Spanish, and we (and our Mexican crew) will be around all weekend to help with anything you need.',
-        },
-        {
-          question: "What's the best way to pay in Oaxaca?",
-          answer: 'Most places accept cards, but we recommend carrying some Mexican pesos for markets, small shops, and taxis. There are plenty of international ATMs in the city.',
-        },
+          question: "What's the dress code?",
+          answer: 'Think festive & elegant. Warm weather-friendly fabrics are ideal. For the main celebration: formal. For daytime events: smart casual.',
+          },
         {
           question: 'Are there any cultural traditions?',
           answer: 'Yes, there will be a few Mexican wedding traditions throughout the weekend like the Calenda parade. Come ready to celebrate, dance, and embrace the moment.',
-        },
+          },
         {
-          question: 'What is the Welcome Party like?',
-          answer: 'It is a short and easy event. We will walk and dance in the Calenda parade for around 30 minutes, and then head over for one or two drinks. We will wrap things up early so everyone can rest or enjoy a relaxed dinner, because the next day is the big one and we want everyone rested and ready for the fun. Think of it as a chance to say hi and kick off the weekend together.',
-        },
-
+          question: 'Will there be an open bar in the wedding reception?',
+          answer: 'Yes, an open bar will be provided during the Cocktail & Reception. Mezcal is delicious but stronger than it looks, so pace yourself!',
+          },
         {
           question: 'Will there be meal options for guests with dietary restrictions?',
           answer: "Yes. Please share any dietary restrictions or allergies when you RSVP, and we'll do our best to accommodate.",
-        },
+          },
+        {
+          question: 'How do I confirm my attendance?',
+          answer: "Please confirm through the RSVP page on this website. We'll also send a WhatsApp message a couple of months before the wedding to double-confirm your attendance.",
+          },
+        {
+          question: 'How do I know if I can bring a plus-one?',
+          answer: "All plus-ones are listed on your invitation. We've thoughtfully planned our guest list, so we kindly ask that you RSVP only for the names shown on the invitation.",
+          },
+        {
+          question: 'Can I bring children?',
+          answer: 'As much as we love children, this will be an adults-only celebration.',
+          },
+        {
+          question: 'How do I get to Oaxaca?',
+          answer: 'You can fly directly to Oaxaca (OAX) from select cities, or connect via Mexico City (MEX). Check our "Travel" section for routes and tips.',
+          },
+        {
+          question: "What's the best way to get from the airport to my hotel?",
+          answer: 'The easiest option is to hire a shuttle or private transfer inside the airport (official services), rather than arranging pickup once you are outside of the airport. We recommend the same approach in Mexico City as well; book your transport inside the airport (or prebook) for a smoother arrival.',
+          },
+        {
+          question: 'Where should I stay? (Hotels vs Airbnb)',
+          answer: "We recommend staying maximum 10-15 mins walk from Centro for the best walkability. We've shared a curated hotel list on the website, and we also highly recommend Airbnb—there are lots of affordable options, amazing design, and great variety. If you choose Airbnb, try to book as close to the center as possible so you can easily walk everywhere.",
+          },
+        {
+          question: 'How do I get around in Oaxaca?',
+          answer: "Oaxaca is very walkable, especially in Centro; walking is often the best way to explore. Uber isn't available, so transportation is mainly taxis (and walking).",
+          },
+        {
+          question: 'Is there parking available?',
+          answer: "There isn't designated wedding parking. Most guests won't need a car; Oaxaca is very walkable and taxis are easy. If you do rent a car, the typical option is street parking near your accommodation and then walking to the venue.",
+          },
+        {
+          question: "What's the weather like in Oaxaca?",
+          answer: 'Oaxaca is typically warm during the day and cooler at night. Plan for sun + comfortable shoes for walking on cobblestones.',
+          },
+        {
+          question: 'Is Oaxaca safe?',
+          answer: 'Yes, Oaxaca is generally considered a safe destination. As with any new place, we recommend staying aware of your surroundings, keeping valuables secure, and using trusted transportation at night.',
+          },
+        {
+          question: 'Do I need to speak Spanish?',
+          answer: 'No; many tourist operators and hotels speak English. Everything wedding-related will be provided in English and Spanish, and we (and our Mexican crew) will be around all weekend to help with anything you need.',
+          },
+        {
+          question: "What's the best way to pay in Oaxaca?",
+          answer: 'Most places accept cards, but we recommend carrying some Mexican pesos for markets, small shops, and taxis. There are plenty of international ATMs in the city.',
+          },
         {
           question: 'Gifts?',
           answer: "Your presence is truly the best gift. If you'd like to contribute, we'll share the registry / honeymoon experiences option on the website.",
-        },
-      ],
+          },
+        ],
       form: {
         title: 'Any other questions?',
         nameLabel: 'Name',
@@ -667,95 +666,94 @@ export const translations = {
       subtitle: 'Preguntas frecuentes sobre nuestro fin de semana de boda.',
       questions: [
         {
+          question: '¿Cómo es la Fiesta de Bienvenida?',
+          answer: 'Es un evento corto y tranquilo. Caminaremos y bailaremos en la Calenda durante unos 30 minutos y luego nos pasamos por una o dos copas. Terminaremos temprano para que todos puedan descansar o cenar algo relajado, porque al día siguiente es el gran día y queremos a todos descansados para la fiesta. Piénsalo como una oportunidad para decirnos hola y arrancar el fin de semana juntos.',
+          },
+        {
           question: '¿Cuándo y dónde es la boda?',
           answer: 'Nos casamos en la Ciudad de Oaxaca, México el 14 de noviembre de 2026, en El Jardín Etnobotánico de Oaxaca. El programa completo del fin de semana y los detalles del lugar están en este sitio web (ver "Programa" y "Recinto").',
-        },
+          },
         {
           question: '¿La ceremonia y la recepción serán en el mismo lugar?',
           answer: 'Sí, ambas se llevarán a cabo dentro del Jardín Botánico. La ceremonia está a 2 minutos caminando del área del jardín, y entrarás por "Patio El Huaje" (frente a "Hotel OTRO") — no por la entrada principal del Jardín Botánico.',
-        },
-        {
-          question: '¿Es seguro Oaxaca?',
-          answer: 'Sí, Oaxaca generalmente se considera un destino seguro. Como en cualquier lugar nuevo, recomendamos estar atento a tu entorno, mantener seguros tus objetos de valor y usar transporte de confianza por la noche.',
-        },
-        {
-          question: '¿Cuál es el código de vestimenta?',
-          answer: 'Piensa festivo y elegante. Telas cómodas para clima cálido son ideales. Para la celebración principal: formal. Para eventos de día: smart casual.',
-        },
-        {
-          question: '¿Será al aire libre?',
-          answer: 'Sí, la boda será al aire libre. Recomendamos traer una capa ligera para las noches.',
-        },
-        {
-          question: '¿Cómo es el clima en Oaxaca?',
-          answer: 'Oaxaca típicamente es cálido durante el día y más fresco por la noche. Planea para el sol + zapatos cómodos para caminar sobre los adoquines.',
-        },
-        {
-          question: '¿Cómo llego a Oaxaca?',
-          answer: 'Puedes volar directamente a Oaxaca (OAX) desde algunas ciudades, o conectar vía Ciudad de México (MEX). Consulta nuestra sección "Viaje" para rutas y consejos.',
-        },
-        {
-          question: '¿Cuál es la mejor manera de ir del aeropuerto al hotel?',
-          answer: 'La opción más fácil es contratar un shuttle o transfer privado dentro del aeropuerto (servicios oficiales), en lugar de organizar transporte una vez que estés afuera. Recomendamos lo mismo en Ciudad de México; reserva tu transporte dentro del aeropuerto (o con anticipación) para una llegada más tranquila.',
-        },
-        {
-          question: '¿Dónde debería hospedarme? (Hoteles vs Airbnb)',
-          answer: 'Recomendamos hospedarte máximo a 10-15 minutos caminando del Centro para la mejor accesibilidad. Hemos compartido una lista curada de hoteles en el sitio web, y también recomendamos mucho Airbnb—hay muchas opciones económicas, diseño increíble y gran variedad. Si eliges Airbnb, intenta reservar lo más cerca del centro posible para poder caminar a todos lados.',
-        },
-        {
-          question: '¿Cómo me muevo en Oaxaca?',
-          answer: 'Oaxaca es muy caminable, especialmente en el Centro; caminar suele ser la mejor manera de explorar. Uber no está disponible, así que el transporte es principalmente taxis (y caminando).',
-        },
-        {
-          question: '¿Cómo sé si puedo llevar acompañante?',
-          answer: 'Todos los acompañantes están indicados en tu invitación. Hemos planeado cuidadosamente nuestra lista de invitados, por lo que te pedimos amablemente que confirmes asistencia solo para los nombres que aparecen en la invitación.',
-        },
-        {
-          question: '¿Cómo confirmo mi asistencia?',
-          answer: 'Por favor confirma a través de la página de RSVP en este sitio web. También enviaremos un mensaje de WhatsApp un par de meses antes de la boda para confirmar tu asistencia.',
-        },
-        {
-          question: '¿Puedo llevar niños?',
-          answer: 'Por mucho que amamos a los niños, esta será una celebración solo para adultos.',
-        },
+          },
         {
           question: '¿A qué hora debo llegar a la boda?',
           answer: 'Por favor llega 30 minutos antes de la hora de inicio de la ceremonia para que puedas acomodarte tranquilamente. Por favor entra por la entrada del Patio El Huaje.',
-        },
+          },
         {
-          question: '¿Habrá barra libre?',
-          answer: '¡Sí, habrá barra libre durante el Cóctel y la Recepción! El mezcal es delicioso pero más fuerte de lo que parece, ¡así que tómalo con calma!',
-        },
+          question: '¿Será al aire libre?',
+          answer: 'Sí, la boda será al aire libre. Recomendamos traer una capa ligera para las noches.',
+          },
         {
-          question: '¿Hay estacionamiento disponible?',
-          answer: 'No hay estacionamiento designado para la boda. La mayoría de los invitados no necesitarán auto; Oaxaca es muy caminable y los taxis son fáciles. Si rentas un auto, la opción típica es estacionamiento en la calle cerca de tu alojamiento y luego caminar al lugar.',
-        },
-        {
-          question: '¿Necesito hablar español?',
-          answer: 'No; muchos operadores turísticos y hoteles hablan inglés. Todo lo relacionado con la boda se proporcionará en inglés y español, y nosotros (y nuestro equipo mexicano) estaremos disponibles todo el fin de semana para ayudar con lo que necesites.',
-        },
-        {
-          question: '¿Cuál es la mejor forma de pagar en Oaxaca?',
-          answer: 'La mayoría de los lugares aceptan tarjetas, pero recomendamos llevar algunos pesos mexicanos para mercados, tiendas pequeñas y taxis. Hay muchos cajeros automáticos internacionales en la ciudad.',
-        },
+          question: '¿Cuál es el código de vestimenta?',
+          answer: 'Piensa festivo y elegante. Telas cómodas para clima cálido son ideales. Para la celebración principal: formal. Para eventos de día: smart casual.',
+          },
         {
           question: '¿Hay tradiciones culturales?',
           answer: 'Sí, habrá algunas tradiciones mexicanas de boda durante el fin de semana como el desfile de la Calenda. Ven listo para celebrar, bailar y disfrutar el momento.',
-        },
+          },
         {
-          question: '¿Cómo es la Fiesta de Bienvenida?',
-          answer: 'Es un evento corto y tranquilo. Caminaremos y bailaremos en la Calenda durante unos 30 minutos y luego nos pasamos por una o dos copas. Terminaremos temprano para que todos puedan descansar o cenar algo relajado, porque al día siguiente es el gran día y queremos a todos descansados para la fiesta. Piénsalo como una oportunidad para decirnos hola y arrancar el fin de semana juntos.',
-        },
-
+          question: '¿Habrá barra libre?',
+          answer: '¡Sí, habrá barra libre durante el Cóctel y la Recepción! El mezcal es delicioso pero más fuerte de lo que parece, ¡así que tómalo con calma!',
+          },
         {
           question: '¿Habrá opciones de comida para invitados con restricciones dietéticas?',
           answer: 'Sí. Por favor comparte cualquier restricción dietética o alergia cuando confirmes tu asistencia, y haremos nuestro mejor esfuerzo para acomodarte.',
-        },
+          },
+        {
+          question: '¿Cómo confirmo mi asistencia?',
+          answer: 'Por favor confirma a través de la página de RSVP en este sitio web. También enviaremos un mensaje de WhatsApp un par de meses antes de la boda para confirmar tu asistencia.',
+          },
+        {
+          question: '¿Cómo sé si puedo llevar acompañante?',
+          answer: 'Todos los acompañantes están indicados en tu invitación. Hemos planeado cuidadosamente nuestra lista de invitados, por lo que te pedimos amablemente que confirmes asistencia solo para los nombres que aparecen en la invitación.',
+          },
+        {
+          question: '¿Puedo llevar niños?',
+          answer: 'Por mucho que amamos a los niños, esta será una celebración solo para adultos.',
+          },
+        {
+          question: '¿Cómo llego a Oaxaca?',
+          answer: 'Puedes volar directamente a Oaxaca (OAX) desde algunas ciudades, o conectar vía Ciudad de México (MEX). Consulta nuestra sección "Viaje" para rutas y consejos.',
+          },
+        {
+          question: '¿Cuál es la mejor manera de ir del aeropuerto al hotel?',
+          answer: 'La opción más fácil es contratar un shuttle o transfer privado dentro del aeropuerto (servicios oficiales), en lugar de organizar transporte una vez que estés afuera. Recomendamos lo mismo en Ciudad de México; reserva tu transporte dentro del aeropuerto (o con anticipación) para una llegada más tranquila.',
+          },
+        {
+          question: '¿Dónde debería hospedarme? (Hoteles vs Airbnb)',
+          answer: 'Recomendamos hospedarte máximo a 10-15 minutos caminando del Centro para la mejor accesibilidad. Hemos compartido una lista curada de hoteles en el sitio web, y también recomendamos mucho Airbnb—hay muchas opciones económicas, diseño increíble y gran variedad. Si eliges Airbnb, intenta reservar lo más cerca del centro posible para poder caminar a todos lados.',
+          },
+        {
+          question: '¿Cómo me muevo en Oaxaca?',
+          answer: 'Oaxaca es muy caminable, especialmente en el Centro; caminar suele ser la mejor manera de explorar. Uber no está disponible, así que el transporte es principalmente taxis (y caminando).',
+          },
+        {
+          question: '¿Hay estacionamiento disponible?',
+          answer: 'No hay estacionamiento designado para la boda. La mayoría de los invitados no necesitarán auto; Oaxaca es muy caminable y los taxis son fáciles. Si rentas un auto, la opción típica es estacionamiento en la calle cerca de tu alojamiento y luego caminar al lugar.',
+          },
+        {
+          question: '¿Cómo es el clima en Oaxaca?',
+          answer: 'Oaxaca típicamente es cálido durante el día y más fresco por la noche. Planea para el sol + zapatos cómodos para caminar sobre los adoquines.',
+          },
+        {
+          question: '¿Es seguro Oaxaca?',
+          answer: 'Sí, Oaxaca generalmente se considera un destino seguro. Como en cualquier lugar nuevo, recomendamos estar atento a tu entorno, mantener seguros tus objetos de valor y usar transporte de confianza por la noche.',
+          },
+        {
+          question: '¿Necesito hablar español?',
+          answer: 'No; muchos operadores turísticos y hoteles hablan inglés. Todo lo relacionado con la boda se proporcionará en inglés y español, y nosotros (y nuestro equipo mexicano) estaremos disponibles todo el fin de semana para ayudar con lo que necesites.',
+          },
+        {
+          question: '¿Cuál es la mejor forma de pagar en Oaxaca?',
+          answer: 'La mayoría de los lugares aceptan tarjetas, pero recomendamos llevar algunos pesos mexicanos para mercados, tiendas pequeñas y taxis. Hay muchos cajeros automáticos internacionales en la ciudad.',
+          },
         {
           question: '¿Regalos?',
           answer: 'Tu presencia es verdaderamente el mejor regalo. Si deseas contribuir, compartiremos la opción de registro / experiencias de luna de miel en el sitio web.',
-        },
-      ],
+          },
+        ],
       form: {
         title: '¿Alguna otra pregunta?',
         nameLabel: 'Nombre',
