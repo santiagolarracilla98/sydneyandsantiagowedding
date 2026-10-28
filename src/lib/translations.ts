@@ -282,7 +282,7 @@ export const translations = {
       questions: [
         {
           question: 'What is the Welcome Party like?',
-          answer: 'It is a short and easy event. We will walk and dance in the Calenda parade for around 30 minutes, and then head over for one or two drinks. We will wrap things up early so everyone can rest or enjoy a relaxed dinner, because the next day is the big one and we want everyone rested and ready for the fun. Think of it as a chance to say hi and kick off the weekend together.',
+          answer: 'It is a short and easy event. We will walk and dance in the Calenda parade for around 30 minutes, then head over for one or two drinks and some canapés. We wrap up at 8:00 PM, so we recommend booking an easy dinner afterwards — or simply resting up, because the next day is the big one and we want everyone ready for the fun. Think of it as a chance to say hi and kick off the weekend together.',
           },
         {
           question: 'When and where is the wedding?',
@@ -667,7 +667,7 @@ export const translations = {
       questions: [
         {
           question: '¿Cómo es la Fiesta de Bienvenida?',
-          answer: 'Es un evento corto y tranquilo. Caminaremos y bailaremos en la Calenda durante unos 30 minutos y luego nos pasamos por una o dos copas. Terminaremos temprano para que todos puedan descansar o cenar algo relajado, porque al día siguiente es el gran día y queremos a todos descansados para la fiesta. Piénsalo como una oportunidad para decirnos hola y arrancar el fin de semana juntos.',
+          answer: 'Es un evento corto y tranquilo. Caminaremos y bailaremos en la Calenda durante unos 30 minutos y luego nos pasamos por una o dos copas y unos canapés. Terminamos a las 8:00 PM, así que te recomendamos reservar una cena tranquila después, o simplemente descansar, porque al día siguiente es el gran día y queremos a todos listos para la fiesta. Piénsalo como una oportunidad para decirnos hola y arrancar el fin de semana juntos.',
           },
         {
           question: '¿Cuándo y dónde es la boda?',
