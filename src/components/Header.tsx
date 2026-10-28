@@ -41,7 +41,7 @@ function NavDropdown({ label, to, isActive, subItems, isHomePage }: NavDropdownP
     >
       <Link
         to={to}
-        className={`text-sm font-sans transition-colors duration-200 flex items-center gap-1 ${
+        className={`text-sm font-sans whitespace-nowrap transition-colors duration-200 flex items-center gap-1 shrink-0 ${
           isActive 
             ? 'text-foreground font-medium' 
             : 'text-muted-foreground hover:text-foreground'
@@ -59,7 +59,7 @@ function NavDropdown({ label, to, isActive, subItems, isHomePage }: NavDropdownP
                 <a
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                  className="block px-4 py-2 text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
                 >
                   {item.label}
                 </a>
@@ -67,7 +67,7 @@ function NavDropdown({ label, to, isActive, subItems, isHomePage }: NavDropdownP
                 <Link
                   key={item.href}
                   to={`${to}${item.href}`}
-                  className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                  className="block px-4 py-2 text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
                 >
                   {item.label}
                 </Link>
@@ -112,7 +112,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 bg-background/90 backdrop-blur-sm border-b border-border/50">
       <div className="container flex items-center justify-between py-4">
-        <nav className="flex items-center gap-6 md:gap-8">
+        <nav className="flex flex-wrap items-center gap-x-4 gap-y-2 lg:gap-x-8">
           {/* Home dropdown */}
           <div 
             className="relative"
@@ -122,7 +122,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             {isHome ? (
               <a
                 href="#home"
-                className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+                className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1 shrink-0"
               >
                 {t.nav.home}
                 <ChevronDown className="w-3 h-3" />
@@ -130,7 +130,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
             ) : (
               <Link
                 to="/"
-                className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+                className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1 shrink-0"
               >
                 {t.nav.home}
                 <ChevronDown className="w-3 h-3" />
@@ -145,7 +145,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
                       <a
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                        className="block px-4 py-2 text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
                       >
                         {item.label}
                       </a>
@@ -155,7 +155,7 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
                       <Link
                         key={item.href}
                         to={`/${item.href}`}
-                        className="block px-4 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
+                        className="block px-4 py-2 text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200"
                       >
                         {item.label}
                       </Link>
@@ -167,43 +167,16 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
           </div>
 
           <NavDropdown
-            label={t.nav.planYourTrip}
-            to="/plan-your-trip"
-            isActive={location.pathname === '/plan-your-trip'}
-            subItems={planYourTripSubItems}
-            isHomePage={false}
-          />
-
-          <NavDropdown
             label={t.nav.agenda}
             to="/agenda"
             isActive={location.pathname === '/agenda'}
             subItems={agendaSubItems}
             isHomePage={false}
           />
-          
-          <NavDropdown
-            label={t.nav.recommendations}
-            to="/recommendations"
-            isActive={location.pathname === '/recommendations'}
-            subItems={recommendationsSubItems}
-            isHomePage={false}
-          />
-
-          <Link
-            to="/gift-registry"
-            className={`text-sm font-sans transition-colors duration-200 ${
-              location.pathname === '/gift-registry' 
-                ? 'text-foreground font-medium' 
-                : 'text-muted-foreground hover:text-foreground'
-            }`}
-          >
-            {t.nav.giftRegistry}
-          </Link>
 
           <Link
             to="/rsvp"
-            className={`text-sm font-sans transition-colors duration-200 ${
+            className={`text-sm font-sans whitespace-nowrap transition-colors duration-200 ${
               location.pathname === '/rsvp'
                 ? 'text-foreground font-medium'
                 : 'text-muted-foreground hover:text-foreground'
@@ -213,8 +186,19 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
           </Link>
 
           <Link
+            to="/gift-registry"
+            className={`text-sm font-sans whitespace-nowrap transition-colors duration-200 ${
+              location.pathname === '/gift-registry' 
+                ? 'text-foreground font-medium' 
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {t.nav.giftRegistry}
+          </Link>
+
+          <Link
             to="/qa"
-            className={`text-sm font-sans transition-colors duration-200 ${
+            className={`text-sm font-sans whitespace-nowrap transition-colors duration-200 ${
               location.pathname === '/qa' 
                 ? 'text-foreground font-medium' 
                 : 'text-muted-foreground hover:text-foreground'
@@ -222,11 +206,27 @@ export function Header({ language, onLanguageChange, t }: HeaderProps) {
           >
             {t.nav.qa}
           </Link>
+
+          <NavDropdown
+            label={t.nav.recommendations}
+            to="/recommendations"
+            isActive={location.pathname === '/recommendations'}
+            subItems={recommendationsSubItems}
+            isHomePage={false}
+          />
+
+          <NavDropdown
+            label={t.nav.planYourTrip}
+            to="/plan-your-trip"
+            isActive={location.pathname === '/plan-your-trip'}
+            subItems={planYourTripSubItems}
+            isHomePage={false}
+          />
         </nav>
 
         <button
           onClick={() => onLanguageChange(language === 'en' ? 'es' : 'en')}
-          className="text-sm font-sans text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1"
+          className="text-sm font-sans whitespace-nowrap text-muted-foreground hover:text-foreground transition-colors duration-200 flex items-center gap-1 shrink-0"
           aria-label={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
         >
           <span className={language === 'en' ? 'text-foreground font-medium' : ''}>EN</span>
