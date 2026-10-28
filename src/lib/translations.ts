@@ -357,6 +357,11 @@ export const translations = {
           answer: 'Yes, there will be a few Mexican wedding traditions throughout the weekend like the Calenda parade. Come ready to celebrate, dance, and embrace the moment.',
         },
         {
+          question: 'What is the Welcome Party like?',
+          answer: 'It is a short and easy event. We will walk and dance in the Calenda parade for around 30 minutes, and then head over for one or two drinks. We will wrap things up early so everyone can rest or enjoy a relaxed dinner, because the next day is the big one and we want everyone rested and ready for the fun. Think of it as a chance to say hi and kick off the weekend together.',
+        },
+
+        {
           question: 'Will there be meal options for guests with dietary restrictions?',
           answer: "Yes. Please share any dietary restrictions or allergies when you RSVP, and we'll do our best to accommodate.",
         },
@@ -737,6 +742,11 @@ export const translations = {
           question: '¿Hay tradiciones culturales?',
           answer: 'Sí, habrá algunas tradiciones mexicanas de boda durante el fin de semana como el desfile de la Calenda. Ven listo para celebrar, bailar y disfrutar el momento.',
         },
+        {
+          question: '¿Cómo es la Fiesta de Bienvenida?',
+          answer: 'Es un evento corto y tranquilo. Caminaremos y bailaremos en la Calenda durante unos 30 minutos y luego nos pasamos por una o dos copas. Terminaremos temprano para que todos puedan descansar o cenar algo relajado, porque al día siguiente es el gran día y queremos a todos descansados para la fiesta. Piénsalo como una oportunidad para decirnos hola y arrancar el fin de semana juntos.',
+        },
+
         {
           question: '¿Habrá opciones de comida para invitados con restricciones dietéticas?',
           answer: 'Sí. Por favor comparte cualquier restricción dietética o alergia cuando confirmes tu asistencia, y haremos nuestro mejor esfuerzo para acomodarte.',
