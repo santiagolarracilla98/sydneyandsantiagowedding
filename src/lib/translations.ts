@@ -107,7 +107,7 @@ export const translations = {
           description: "The big day! We'll begin with a spiritual ceremony, followed by cocktail hour, then move into the botanical garden for dinner and dancing—all within the same stunning venue.",
           details: [
             {
-              name: 'Ceremony',
+              name: 'Spiritual Ceremony',
               time: '2:00 PM – 3:00 PM',
               description: 'The ceremony will take place in El Patio del Huaje, a stunning courtyard within the Jardín Etnobotánico.',
               venue: 'El Patio del Huaje',
