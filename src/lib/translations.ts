@@ -471,15 +471,15 @@ export const translations = {
           description: 'Comenzamos las celebraciones con una tradicional Calenda Oaxaqueña—un alegre desfile callejero con música en vivo, baile y shots de mezcal mientras caminamos por las calles históricas de Oaxaca. El desfile termina en Restaurante Copal para bebidas de bienvenida y bocadillos—¡una probadita de lo que vendrá el gran día!',
           details: [
             {
-              name: 'Calenda',
-              time: '5:00 PM',
+              name: 'Calenda (Desfile)',
+              time: '5:15 PM',
               description: 'Una Calenda es un desfile callejero tradicional oaxaqueño. Caminaremos por las calles con una banda de música, muñecos gigantes (monos de calenda) y mucho mezcal. ¡Es festivo, animado y únicamente oaxaqueño!',
-              meetingPoint: 'Punto de encuentro: Iglesia de Santo Domingo a las 4:55 PM',
+              meetingPoint: 'Punto de encuentro: Iglesia de Santo Domingo a las 5:00 PM',
               address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
             },
             {
-              name: 'Bebidas de Bienvenida',
-              time: '6:00 PM – 9:00 PM',
+              name: 'Reunión de Bienvenida',
+              time: '6:00 PM – 8:00 PM',
               description: 'La Calenda termina en el lugar de la fiesta de bienvenida. Este es un evento de llegada libre—ven en cualquier momento durante este horario para disfrutar de bebidas, bocadillos y buena compañía.',
               venue: 'Restaurante Copal',
               address: 'C. Macedonio Alcalá 803',
@@ -492,7 +492,7 @@ export const translations = {
           description: '¡El gran día! Comenzaremos con una ceremonia espiritual, seguida de la hora del cóctel, y luego nos moveremos al jardín botánico para la cena y el baile—todo dentro del mismo hermoso lugar.',
           details: [
             {
-              name: 'Ceremonia',
+              name: 'Ceremonia Espiritual',
               time: '2:00 PM – 3:00 PM',
               description: 'La ceremonia se llevará a cabo en El Patio del Huaje, un hermoso patio dentro del Jardín Etnobotánico.',
               venue: 'El Patio del Huaje',
@@ -667,7 +667,7 @@ export const translations = {
       questions: [
         {
           question: '¿Cómo es la Fiesta de Bienvenida?',
-          answer: 'Es un evento corto y tranquilo. Caminaremos y bailaremos en la Calenda durante unos 30 minutos y luego nos pasamos por una o dos copas y unos canapés. Terminamos a las 8:00 PM, así que te recomendamos reservar una cena tranquila después, o simplemente descansar, porque al día siguiente es el gran día y queremos a todos listos para la fiesta. Piénsalo como una oportunidad para decirnos hola y arrancar el fin de semana juntos.',
+          answer: 'Es un evento corto y tranquilo. Caminaremos y bailaremos en la Calenda durante unos 30 minutos, y nos pasamos a Copal por una o dos copas y unos canapés. Terminamos a las 8:00 PM, así que te recomendamos reservar una cena tranquila después, o simplemente descansar, porque al día siguiente es el gran día y queremos a todos listos para la fiesta. Piénsalo como una oportunidad para decirnos hola y arrancar el fin de semana juntos.',
           },
         {
           question: '¿Cuándo y dónde es la boda?',
@@ -694,7 +694,7 @@ export const translations = {
           answer: 'Sí, habrá algunas tradiciones mexicanas de boda durante el fin de semana como el desfile de la Calenda. Ven listo para celebrar, bailar y disfrutar el momento.',
           },
         {
-          question: '¿Habrá barra libre?',
+          question: '¿Habrá barra libre en la recepción de la boda?',
           answer: '¡Sí, habrá barra libre durante el Cóctel y la Recepción! El mezcal es delicioso pero más fuerte de lo que parece, ¡así que tómalo con calma!',
           },
         {
