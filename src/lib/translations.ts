@@ -223,7 +223,7 @@ export const translations = {
         items: [
           'The best time to book flights is 2-3 months in advance.',
           'November weather is pleasant—warm days (24°C/75°F) and cool evenings.',
-          'Uber and taxis are readily available. The airport is 15 minutes from Centro.',
+          'Taxis are readily available. The airport is 15 minutes from Centro.',
           'Mexican pesos are preferred, but USD is accepted at some tourist spots.',
           'Bring comfortable walking shoes—the city is best explored on foot!',
         ],
@@ -294,7 +294,7 @@ export const translations = {
           },
         {
           question: 'What time should I arrive to the wedding?',
-          answer: 'Please arrive 30 minutes before the ceremony start time so you can settle in comfortably. Please enter via the Patio El Huaje entrance.',
+          answer: 'Please arrive by 1:45 PM so you can settle in comfortably. Please enter via the Patio El Huaje entrance.',
           },
         {
           question: 'Will it be outdoors?',
@@ -608,7 +608,7 @@ export const translations = {
         items: [
           'El mejor momento para reservar vuelos es 2-3 meses antes.',
           'El clima en noviembre es agradable—días cálidos (24°C) y noches frescas.',
-          'Uber y taxis están disponibles. El aeropuerto está a 15 minutos del Centro.',
+          'Los taxis están disponibles. El aeropuerto está a 15 minutos del Centro.',
           'Se prefieren pesos mexicanos, pero algunos lugares turísticos aceptan dólares.',
           '¡Trae zapatos cómodos para caminar—la ciudad se explora mejor a pie!',
         ],
@@ -679,7 +679,7 @@ export const translations = {
           },
         {
           question: '¿A qué hora debo llegar a la boda?',
-          answer: 'Por favor llega 30 minutos antes de la hora de inicio de la ceremonia para que puedas acomodarte tranquilamente. Por favor entra por la entrada del Patio El Huaje.',
+          answer: 'Por favor llega a las 1:45 PM para que puedas acomodarte tranquilamente. Por favor entra por la entrada del Patio El Huaje.',
           },
         {
           question: '¿Será al aire libre?',
