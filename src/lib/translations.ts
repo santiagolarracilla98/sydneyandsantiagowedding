@@ -93,7 +93,7 @@ export const translations = {
               address: 'Templo de Santo Domingo, C. Macedonio Alcalá s/n, RUTA INDEPENDENCIA, Centro, 68000 Oaxaca de Juárez, Oax., México',
             },
             {
-              name: 'Welcome Party\u00a0',
+              name: 'Welcome Gathering',
               time: '6:00 PM – 8:00PM',
               description: 'The Calenda ends at the welcome party venue. This is a drop-in event—come anytime during this window to enjoy drinks, light snacks, and good company.',
               venue: 'Copal Restaurant',
